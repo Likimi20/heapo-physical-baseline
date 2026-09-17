@@ -70,10 +70,19 @@ dashboard reads parquet). 97 rows render, zero green elements on the page.
   looked like good news.
 
 ### What is left
-2. **The v1 export** still sits in the model tree under its own one-cycle rule. Delete
-   `outputs/export/physical_baseline_v1.*` and `SCHEMA.md` whenever you like —
-   `p11_export.py`'s `PREVIOUS_VERSION` constant is the only code that names them, and
-   that is deliberate bookkeeping. Nothing in the dashboard reads v1 any more.
+2. ~~The v1 export~~ **Retired 2026-09-18.** `physical_baseline_v1.*` and the old
+   `SCHEMA.md` are deleted; the export directory holds v2 only. The gate stayed green,
+   so nothing depended on them. `p11_export.py`'s `PREVIOUS_VERSION` constant still
+   names v1 — that is the bookkeeping that will implement the side-by-side rule at the
+   *next* version bump, not a live dependency.
+
+3. **A green-delta lint now covers every page.** `p28_page_test.py` parses all four
+   dashboard pages with `ast` and lists every `.metric()` call that passes a delta,
+   because Streamlit paints a delta green with an up arrow. It reports rather than
+   fails on pages outside this workstream. Currently one: `1_Forecast_cycle.py`
+   "Days carrying a prediction", a coverage percentage where up genuinely is better.
+   It does NOT execute the other pages, deliberately — they belong to other people and
+   may be mid-rewrite.
 
 The sections below describe the contract the new page implements; they are still the
 reference for *what* it shows and why.

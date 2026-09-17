@@ -7,9 +7,10 @@ household. Written as `.csv` (semicolon) and `.parquet`.
 frozen at `v2`; the values behind them move as the model improves. Bind to columns,
 never to a number in a report.
 
-**`physical_baseline_v1` stays on disk for one cycle** and is **frozen and stale** — it
-predates the sourced constants, normal-year weather and the heat-pump term. Do not mix
-the two.
+**`physical_baseline_v1` has been retired** (2026-09-18). Its one cycle is over: the
+dashboard page reads v2, the S-series split reads v2, and nothing else named it. The only
+remaining reference is `p11_export.py`’s `PREVIOUS_VERSION` constant, which is the
+bookkeeping that implements the side-by-side rule for the NEXT version bump.
 
 **Run order:** `p22_registry` → `p24_lifecycle` → `p13_visit_queue` → `p11_export` →
 `p_notebook`, then `p_pipeline_test` (141 checks) and `p10_portability` (23) must be green.

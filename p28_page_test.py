@@ -166,7 +166,53 @@ def run(view):
     return dict(CALLS)
 
 
+def scan_metric_deltas():
+    """Every dashboard page, statically: which .metric() calls pass a delta?
+
+    Streamlit renders a metric's delta GREEN with an up arrow. On pages whose numbers
+    are wasted energy or forecast error, green reads as good news. Found by eye on the
+    physical baseline page; this catches it everywhere without EXECUTING the other
+    pages, which matters because they are someone else's and may be mid-rewrite.
+    """
+    import ast
+    out = []
+    for p in sorted((DASH / "pages").glob("*.py")) + [DASH / "app.py"]:
+        try:
+            tree = ast.parse(p.read_text(encoding="utf-8"))
+        except (OSError, SyntaxError) as e:
+            out.append((p.name, None, "unparsed: %s" % e))
+            continue
+        for n in ast.walk(tree):
+            if not isinstance(n, ast.Call):
+                continue
+            f = n.func
+            if not (isinstance(f, ast.Attribute) and f.attr == "metric"):
+                continue
+            has_delta = len(n.args) >= 3 or any(k.arg == "delta" for k in n.keywords)
+            off = any(k.arg == "delta_color"
+                      and isinstance(k.value, ast.Constant) and k.value.value == "off"
+                      for k in n.keywords)
+            if has_delta and not off:
+                label = (n.args[0].value if n.args and isinstance(n.args[0], ast.Constant)
+                         else "<computed>")
+                out.append((p.name, n.lineno, str(label)[:46]))
+    return out
+
+
 print("smoke test: pages/3_Physical_baseline.py\n")
+
+print("metric deltas across EVERY page (a delta renders green with an up arrow):")
+_deltas = scan_metric_deltas()
+if not _deltas:
+    print("   none - no page paints a green delta")
+else:
+    for _f, _ln, _lab in _deltas:
+        print("   %-26s line %-5s %s" % (_f, _ln, _lab))
+    print("   ^ these render GREEN. Fine where up really is good; wrong where the")
+    print("     number is waste or error. Not failed here: pages other than the")
+    print("     physical baseline are not this workstream's to change.")
+print()
+
 print("colour tokens the page paints with:")
 for name, val, verdict in check_no_green_tokens():
     print("   %-10s %-30s %s" % (name, val, verdict))

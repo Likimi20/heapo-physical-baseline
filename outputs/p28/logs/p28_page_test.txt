@@ -1,5 +1,11 @@
 smoke test: pages/3_Physical_baseline.py
 
+metric deltas across EVERY page (a delta renders green with an up arrow):
+   1_Forecast_cycle.py        line 174   Days carrying a prediction
+   ^ these render GREEN. Fine where up really is good; wrong where the
+     number is waste or error. Not failed here: pages other than the
+     physical baseline are not this workstream's to change.
+
 colour tokens the page paints with:
    POS        #e66767                        ok
    SERIES1    #3987e5                        ok
