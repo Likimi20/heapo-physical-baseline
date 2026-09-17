@@ -15,10 +15,14 @@ see §0. What is left is to render-test it and retire v1.
 **The integration is done as a SEPARATE v2 page, not as an edit to the old one**
 (Miguel, 2026-09-17: keep a clean division between v1 and v2).
 
-| file | state |
-|---|---|
-| `pages/5_Physical_baseline_v2.py` | **NEW, the current model.** Three views: what the rank means · the one list · the worked example |
-| `pages/3_Physical_baseline.py` | **LEGACY, untouched except a warning banner.** Still bound to the frozen v1 export and still shows the removed fault columns. Do not extend it |
+**`pages/3_Physical_baseline.py` IS the v2 page** — three views: what the rank means ·
+the one list · the worked example. **One tab per workstream, four in total.**
+
+The v1-era page was built against `physical_baseline_v1` and displayed a fault
+probability and named fault by direct indexing; v2 removed both columns and replaced
+per-era ranking with a single fleet-wide order, so it was **replaced, not patched**. It
+is in git history if it is ever needed, and the bundle no longer carries
+`physical_baseline_v1.parquet` or the old `SCHEMA.md` because nothing reads them.
 
 Why a new file rather than a conversion: v2 deleted the two columns the old page
 displays (`visit_fault_probability`, `visit_named_fault` — direct indexing, so it would
@@ -50,11 +54,10 @@ used them). **Run it once before demonstrating it.**
 1. **Open it in a browser once.** The only step no test here can cover — layout,
    and whether the installed Streamlit has every API called. Streamlit is installed in
    **no** environment in this repo; `requirements.txt` is the dashboard's own.
-2. **Retire v1 — AFTER the demo, not before.** Deleting `physical_baseline_v1.*`,
-   `SCHEMA.md` and `pages/3_Physical_baseline.py` would undo the v1/v2 division that
-   exists precisely so the old page keeps working while v2 is shown. When you do:
-   `p11_export.py`'s `PREVIOUS_VERSION` constant is the only other v1 reference, and it
-   is deliberate bookkeeping.
+2. **The v1 export** still sits in the model tree under its own one-cycle rule. Delete
+   `outputs/export/physical_baseline_v1.*` and `SCHEMA.md` whenever you like —
+   `p11_export.py`'s `PREVIOUS_VERSION` constant is the only code that names them, and
+   that is deliberate bookkeeping. Nothing in the dashboard reads v1 any more.
 
 The sections below describe the contract the new page implements; they are still the
 reference for *what* it shows and why.

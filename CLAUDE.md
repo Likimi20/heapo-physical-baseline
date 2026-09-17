@@ -1839,13 +1839,19 @@ two model workstreams, never the dashboard.
 in place and Miguel confirmed; he then chose a clean split instead, and that is what
 shipped:
 
-| file | state |
-|---|---|
-| `pages/5_Physical_baseline_v2.py` | **NEW.** Three views: what the rank means · the one list · the worked example |
-| `pages/3_Physical_baseline.py` | **LEGACY**, untouched but for a warning banner and a retitle |
+The split ran for one step and was then **collapsed on Miguel's instruction the same day**
+("simplify, too many tabs"): once `p28_page_test.py` proved the v2 page executes, the
+legacy tab had outlived its purpose, and two physical-baseline tabs were exactly the
+confusion the division was meant to avoid.
 
-The split de-risks the demo — the old page keeps working — and lets the new one be built
-to the v2 contract instead of inheriting a per-era structure.
+**Final state: ONE tab per workstream.** `pages/3_Physical_baseline.py` *is* the v2 page
+(three views: what the rank means · the one list · the worked example). The v1-era page
+was deleted — recoverable from git history — and the dashboard bundle no longer carries
+`physical_baseline_v1.parquet` or the old `SCHEMA.md`, since nothing reads them. The
+model repo keeps v1.
+
+Sequence worth remembering: **build the replacement, prove it runs, then remove the
+original.** The division was not wasted work; it was what made the removal safe.
 
 **What the page implements:** ONE fleet-wide list on the lower bound (never per-era
 tables); the three groups with their owners, **computed from the frame, not hardcoded**;
@@ -1900,9 +1906,14 @@ three figures, **with v1 kept** because the legacy page still reads it. Both res
 roots — the live model tree and the bundled fallback — were verified to satisfy every
 path the new page opens, so a fresh clone runs it.
 
-**DO NOT retire v1 yet.** Deleting the v1 export or the legacy page would undo the very
-division Miguel asked for: the old page is what keeps working while v2 is demonstrated.
-Retire it *after* the demo.
+**The legacy PAGE is retired** (2026-09-17, after the page test proved v2 runs). The v1
+**export** still sits in `outputs/export/` under its own one-cycle rule, and
+`p11_export.py`'s `PREVIOUS_VERSION` constant is the only code that names it.
+
+**`p_test_all.py` is the front door** — one command, three suites, one exit code
+(141 + 23 + the page execution, 14.4s). The three files stay separate deliberately: each
+proves a different guarantee and keeps its own transcript, so a failure says *which*
+guarantee broke rather than which line of a merged file did.
 
 ## Layout and conventions
 

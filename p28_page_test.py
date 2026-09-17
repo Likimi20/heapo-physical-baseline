@@ -1,11 +1,11 @@
-"""P28 - smoke-test the dashboard pages without installing Streamlit.
+"""P28 - smoke-test the physical baseline dashboard page without Streamlit.
 
 IN THE REPO, not a scratchpad: a test that proves a guarantee is evidence, and
 evidence outside the tree cannot be re-run, diffed or trusted later.
 Run: ../venv_viz/Scripts/python.exe p28_page_test.py  (log: outputs/p28/logs/)
 
-Also asserts the two standing display rules - no fault column on the v2 page, and
-no green among the colour tokens it paints with. Streamlit is installed in no
+Also asserts the two standing display rules - no fault column, and no green
+among the colour tokens the page paints with. Streamlit is installed in no
 environment in this repo, which is why this exists.
 
 Stubs the Streamlit API the page uses, then imports the page once per view so main()
@@ -142,20 +142,20 @@ def run(view):
         CALLS[k] = 0
     st, comp, v1 = _mk_streamlit()
     for name in ("streamlit", "streamlit.components", "streamlit.components.v1",
-                 "notebook_render", "theme", "pages.5_Physical_baseline_v2"):
+                 "notebook_render", "theme", "pages.3_Physical_baseline"):
         sys.modules.pop(name, None)
     sys.modules["streamlit"] = st
     sys.modules["streamlit.components"] = comp
     sys.modules["streamlit.components.v1"] = v1
     sys.modules["notebook_render"] = _mk_notebook_render()
     sys.path.insert(0, str(DASH))
-    src = (DASH / "pages" / "5_Physical_baseline_v2.py").read_text(encoding="utf-8")
-    ns = {"__name__": "page5", "__file__": str(DASH / "pages" / "5_Physical_baseline_v2.py")}
-    exec(compile(src, "5_Physical_baseline_v2.py", "exec"), ns)
+    src = (DASH / "pages" / "3_Physical_baseline.py").read_text(encoding="utf-8")
+    ns = {"__name__": "page3", "__file__": str(DASH / "pages" / "3_Physical_baseline.py")}
+    exec(compile(src, "3_Physical_baseline.py", "exec"), ns)
     return dict(CALLS)
 
 
-print("smoke test: pages/5_Physical_baseline_v2.py\n")
+print("smoke test: pages/3_Physical_baseline.py\n")
 print("colour tokens the page paints with:")
 for name, val, verdict in check_no_green_tokens():
     print("   %-10s %-30s %s" % (name, val, verdict))
@@ -180,32 +180,6 @@ for view in ["What the rank means", "The one list", "Worked example"]:
         print("  %-22s FAILED  %s: %s" % (view, type(e).__name__, e))
         import traceback
         traceback.print_exc()
-
-print("\nlegacy page 3 (must still run, and must WARN):")
-try:
-    VIEW = "Building score"
-    for k in CALLS:
-        CALLS[k] = 0
-    st, comp, v1 = _mk_streamlit()
-    # page 3 legitimately renders the fault columns; drop that assertion for it.
-    st.markdown = lambda body, **k: CALLS.__setitem__("markdown", CALLS["markdown"] + 1)
-    for name in ("streamlit", "streamlit.components", "streamlit.components.v1",
-                 "notebook_render", "theme"):
-        sys.modules.pop(name, None)
-    sys.modules["streamlit"] = st
-    sys.modules["streamlit.components"] = comp
-    sys.modules["streamlit.components.v1"] = v1
-    sys.modules["notebook_render"] = _mk_notebook_render()
-    src = (DASH / "pages" / "3_Physical_baseline.py").read_text(encoding="utf-8")
-    exec(compile(src, "3_Physical_baseline.py", "exec"),
-         {"__name__": "page3", "__file__": str(DASH / "pages" / "3_Physical_baseline.py")})
-    print("  OK   warnings=%d (the legacy banner)" % CALLS["warning"])
-    if CALLS["warning"] < 1:
-        print("  !! the legacy banner did not fire")
-        ok = False
-except Exception as e:
-    print("  FAILED  %s: %s" % (type(e).__name__, e))
-    ok = False
 
 print("\n%s" % ("ALL VIEWS EXECUTED" if ok else "FAILURES ABOVE"))
 sys.stdout.flush()

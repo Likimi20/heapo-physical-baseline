@@ -68,13 +68,17 @@ p_notebook.py        # the deliverable notebook
 p27_walkthrough.py   # the worked example
 ```
 
-Then these must stay green:
+Then these must stay green — `p_test_all.py` runs all three and gives one verdict:
 
 ```
-p_pipeline_test.py   # 141 checks
-p10_portability.py   # 23 checks — asserts the physics layer knows no HEAPO column names
-p28_page_test.py     # executes the dashboard pages without installing Streamlit
+p_test_all.py        # the front door: 3 suites, one exit code
+  p_pipeline_test.py   # 141 checks — the physics and the pipeline
+  p10_portability.py   #  23 checks — no HEAPO column name may reach the physics layer
+  p28_page_test.py     #  executes the dashboard page without installing Streamlit
 ```
+
+They stay three files on purpose: each proves a different guarantee and keeps its own
+transcript, so a failure tells you *which guarantee* broke.
 
 `heapo_data/` is **not** in this repository — it is read from the parent directory and is
 never modified.
