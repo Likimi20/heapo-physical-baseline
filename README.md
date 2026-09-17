@@ -1,116 +1,154 @@
-# Physical baseline model — HEAPO heat pumps
+# Physical baseline model (HEAPO heat pumps)
 
-How much more electricity does a house use than **a code-compliant version of itself**?
+Say a house used 14,000 kWh of electricity last year. Is that bad?
 
-Not "does this house use a lot" — a big house uses a lot and that says nothing. The model
-builds each house twice, once as it is and once as the Swiss building code would have it,
-on the same plot, in the same weather, with the same number of people. The answer is the
-gap between the two.
+You can't tell. A big old farmhouse with an electric water tank will burn a lot no matter
+how well it's run. A small new flat will look fine even if something is genuinely wrong
+with it. The raw number doesn't mean much on its own.
 
-Part of a research fellowship at Technology Campus Mainburg (THD) on the
-[HEAPO](https://arxiv.org/abs/2503.16993) Swiss smart-meter dataset.
+So this model asks a different question. How much more does this house use than *the same
+house* would if it had been built to today's Swiss building rules? Same size, same plot,
+same weather, same number of people in it. The only things that change are how well it's
+insulated, whether it has radiators or floor heating, and how old the heat pump is.
 
----
+To get that, we build the house twice on paper. Once the way it really is, once the way
+the rules would have it. The difference between the two is the answer.
 
-## The one thing that defines this model
+This came out of a research fellowship at Technology Campus Mainburg (THD), using
+[HEAPO](https://arxiv.org/abs/2503.16993), a Swiss dataset of smart meter readings and
+on-site inspections from about 1,400 homes.
 
-**Nothing is calibrated to consumption.** No constant was chosen, tuned or selected by
-looking at how much electricity these houses actually used. Every value comes from a
-published source or is derived from published inputs, and the registry records which.
-Where the physics and the meter disagree, **the disagreement is reported, never tuned
-away** — a constant that happened to reproduce the data would be treated as a warning
-sign, not a success.
+## The rule that shaped everything
 
-The meter is read for **weather only**.
+No number in here was picked because it made the results look good.
 
-## Start here
+That sounds obvious. It isn't. The tempting move, when your model disagrees with the
+meter, is to nudge a constant until they line up. Then you have a model that agrees with
+your data and tells you nothing, because you fitted it to the answer.
 
-| file | what it is |
-|---|---|
-| `outputs/p27/reports/p27_walkthrough.md` | **Read this first.** One house traced end to end, every number tagged by where it came from. The `.html` beside it prints to PDF |
-| `outputs/export/SCHEMA_v2.md` | the export contract — every column, its unit, and how it must be displayed |
-| `outputs/export/physical_baseline_v2.parquet` | the result: 214 audited households × 66 columns |
-| `CLAUDE.md` | the full decision record, P0–P28, including every rejected option and why |
-| `constants_ch.json` | the constants registry: value, band, unit, source, section and a status per constant |
+So every constant comes from a published source, and the registry records where it came
+from and whether someone actually opened the document and read it there. When the physics
+and the meter disagree, we write down that they disagree. If a constant happened to
+reproduce the measurements perfectly, that would worry me rather than please me.
 
-## What it produces
+The meter is only used for one thing: the weather.
 
-Four states, and **none of them says "normal"** — confirming a house is fine would need
-its whole uncertainty band at or below code, and not one household achieves that. The
-model confirms an excess or says nothing.
+## What comes out
 
-| state | n | meaning |
+A list of houses, worst first, and for each one a note about who should go and fix it.
+
+That last part matters more than the ranking. The gap splits into two halves. Most of it
+is usually the building itself, so insulation, radiators, the hot water tank, all of which
+need a builder. The rest is the heat pump being an older design than what you'd install
+today, which needs an installer. Telling someone "this house wastes 8,000 kWh a year" is
+useless. Telling them "7,500 of that is the walls and 500 is the heat pump" is something
+they can act on.
+
+Of the 214 inspected homes:
+
+| | how many | what it means |
 |---|---:|---|
-| `HIGH_EXCESS` | 40 | confirmed excess, worst 25% of the fleet — act |
-| `EXCESS_CONFIRMED` | 118 | confirmed excess, below the action cut |
-| `INCONCLUSIVE` | 14 | computed, but the band crosses zero — no claim |
-| `INCOMPLETE_AUDIT` | 42 | never computed; mixed cause, per household |
+| act on these | 40 | clearly using more than the rules allow, and in the worst quarter |
+| confirmed, lower priority | 118 | also using more, just less of it |
+| can't say | 14 | the maths ran, but the uncertainty is wider than the result |
+| never ran | 42 | missing building data, or too short a meter record |
 
-The excess splits three ways, because **different people fix different parts**: the
-**house** (envelope, emitters, hot-water cylinder → a builder), the **heat pump** (the
-unit's technology generation → an installer), and the **total**, which is the two summed
-and is what the list is ordered on.
+There's no "this house is fine" category, on purpose. To say a house is fine you'd need
+the whole uncertainty range to sit at or below the rules, and not one house in the set
+does. So the model either finds extra usage or says nothing. It never hands out a clean
+bill of health.
 
-Every figure travels with a band sampled from the **published spread of the constants**,
-and the list is ordered on the **lower** bound — "at least this much" — so a household's
-position survives the least favourable reading of the sources.
+Every figure comes with a range rather than a single number, because the published
+sources themselves disagree with each other. The ranking uses the *bottom* of that range.
+If a house is listed at 7,142 kWh, that's the "at least this much" figure, the one that
+survives reading every source in the least flattering way.
+
+## Where to start
+
+The walkthrough is the best entry point. It follows one house from the floor area an
+inspector wrote on a form all the way to its place at the top of the list, and every
+number along the way is labelled with where it came from: measured in the field, read out
+of a published document, or calculated by us.
+
+| file | what's in it |
+|---|---|
+| `outputs/p27/reports/p27_walkthrough.md` | the walkthrough. Read this one first. The `.html` next to it prints nicely if you want it on paper |
+| `outputs/export/SCHEMA_v2.md` | what every column in the output means, and how it should be displayed |
+| `outputs/export/physical_baseline_v2.parquet` | the results: 214 houses, 66 columns |
+| `constants_ch.json` | every constant, with its source and whether it was verified |
+| `CLAUDE.md` | the long version. Every decision, including the ones we rejected and why |
 
 ## Running it
 
-Needs numpy + pandas only (matplotlib for the figures). In order:
+Needs numpy and pandas. Matplotlib too, if you want the figures redrawn.
 
 ```
-p22_registry.py      # the sourced constants registry
-p24_lifecycle.py     # the heat-pump keep/replace recommendation
+p22_registry.py      # the constants and their sources
+p24_lifecycle.py     # should this heat pump be replaced or kept?
 p13_visit_queue.py   # the visit axis
-p11_export.py        # the export; validates itself and refuses to write if a rule fails
-p_notebook.py        # the deliverable notebook
-p27_walkthrough.py   # the worked example
+p11_export.py        # the output file. Refuses to write if a check fails
+p_notebook.py        # the notebook
+p27_walkthrough.py   # the walkthrough
 ```
 
-Then these must stay green — `p_test_all.py` runs all three and gives one verdict:
+Then run `p_test_all.py`, which runs three sets of checks and gives you one answer:
 
 ```
-p_test_all.py        # the front door: 3 suites, one exit code
-  p_pipeline_test.py   # 141 checks — the physics and the pipeline
-  p10_portability.py   #  23 checks — no HEAPO column name may reach the physics layer
-  p28_page_test.py     #  executes the dashboard page without installing Streamlit
+p_pipeline_test.py   141 checks on the physics and the pipeline
+p10_portability.py    23 checks that no HEAPO column name leaked into the physics code
+p28_page_test.py      runs the dashboard page without needing Streamlit installed
 ```
 
-They stay three files on purpose: each proves a different guarantee and keeps its own
-transcript, so a failure tells you *which guarantee* broke.
+They're three files rather than one because each proves a different thing. When something
+breaks you want to know which thing.
 
-`heapo_data/` is **not** in this repository — it is read from the parent directory and is
-never modified.
+The raw HEAPO data isn't in this repository. It's read from the folder above and never
+written to.
 
-## Portability
+## Using it on other data
 
-`p_physics.py` takes variable **roles**, never dataset column names; each dataset supplies
-its own adapter (`p_adapter_*.py`). `p10_portability.py` asserts the separation by failing
-if a HEAPO column name appears in the physics layer. **The method ports; the constants do
-not** — another country means a new registry file, not new code.
+The physics code doesn't know anything about HEAPO. It asks for "floor area" and "number
+of residents" as roles, and a small adapter file maps those onto whatever a given dataset
+calls them. If you want to run this on German or Austrian homes, you write a new adapter
+and a new constants file. `p10_portability.py` fails the build if a HEAPO column name ever
+sneaks into the physics layer, which is the only way to keep that honest over time.
 
-## Known limits — stated, not hidden
+The method travels. The constants don't, since they're Swiss building rules.
 
-* **The order leans old.** Per m² the physics under-predicts newer construction by
-  24–53%, so a fleet-wide list tilts toward older houses. Era is therefore a filter, and
-  the within-era rank is kept as a column.
-* **Chart-read inputs.** The era U-values were read off bar charts in the source report.
-  They pass the report's own text check but are approximate, and they are marked `DERIVED`
-  rather than `VERIFIED`.
-* **One envelope split**, from a single Swiss reference building, with a German typology
-  as the band.
-* **Air-source service life rests on 53 units**, 43 of them from one firm — the authors
-  themselves call it less reliable. Ground-source rests on 223.
-* **63 households have no recorded installation year**, so their heat-pump figure is a
-  deliberate no-claim: the point estimate is 0 while the band sits above it. Show the
-  band, never the zero.
-* **Neither energy level is a bill.** Appliances are excluded from both baselines, so
-  only the *difference* is meaningful.
+## What it's bad at
 
-## Scope
+Worth knowing before you trust any single number.
 
-This model answers "above a code-compliant version of itself". It does **not** detect
-heat-pump misconfiguration — that is a separate model with its own section — and it is
-never merged with the peer-comparison model, which asks the different question "above
-comparable houses". Two methods, two answers, never one combined number.
+It's harsher on old houses than new ones. Per square metre, the physics underestimates
+newer buildings by somewhere between a quarter and a half, so a straight ranking drifts
+towards older homes. We kept construction era as a filter and kept the within-era ranking
+as a separate column, but the tilt is real.
+
+Some of the insulation values were read off bar charts in a government report, because
+that's the only place they're published. They match the report's own text, but they're
+approximate, and they're marked as derived rather than verified so you can tell them
+apart.
+
+The insulation split comes from one Swiss reference building, with a German building
+typology used to set the uncertainty range around it.
+
+The expected lifetime for air source heat pumps rests on 53 units, 43 of them from a
+single installer. The authors of that study say themselves it's the weaker half of their
+data. Ground source sits on 223 units and is more solid.
+
+For 63 houses nobody wrote down when the heat pump was installed. Those show a heat pump
+figure of zero, which does not mean the heat pump is fine. It means we're not claiming
+anything, and the range next to it is the part to read.
+
+Neither of the two energy totals is a power bill. Fridges, lights and washing machines
+are left out of both, so only the difference between them tells you anything.
+
+## What this model is not
+
+It doesn't tell you whether a heat pump is set up wrong. That's a separate model with its
+own section, and the two are never added together into one score.
+
+It also isn't the same thing as comparing a house against similar houses nearby. That's a
+third model, answering "is this house unusual for its type" rather than "is this house
+worse than the rules allow". Both are useful. They're different questions, and mixing
+their numbers would give you something that answers neither.

@@ -290,7 +290,7 @@ if Q is not None:
     print("no fault column in the queue:",
           not any("fault" in c for c in Q.columns))"""),
 
-md("""## Limitations — display these, do not hide them
+md("""## Limits worth knowing before you quote a number
 
 | | |
 |---|---|

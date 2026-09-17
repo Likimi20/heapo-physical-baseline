@@ -187,7 +187,7 @@ For the **end section** only, where the two models meet.
 Computed on **post-visit days only**, with the step fitted free and status from a 95%
 band. `USES_LESS_THAN_MODELLED` replaced `BELOW_PHYSICS` and **is not a fault**.
 
-## Standing limitations — display, do not hide
+## Limits worth knowing before you quote a number
 
 1. **Era gradient:** per m² the physics under-predicts newer eras by 24–53%; the list is
    fleet-wide by decision, so the filter and `phys_rank_in_era` are the mitigation.
