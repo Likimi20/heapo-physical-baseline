@@ -1,0 +1,11 @@
+role;n_present;pct;status;why_missing
+area_m2;1339;98.6;OK;
+footprint_m2;0;0.0;MISSING;no per-storey areas - only one whole-dwelling living area
+n_storeys_above;0;0.0;MISSING;no storey information of any kind
+heated_basement;0;0.0;MISSING;no basement information of any kind
+era;0;0.0;MISSING;no construction or installation year exists in meta_data.csv
+renovation_count;0;0.0;MISSING;no renovation flags
+residents;1348;99.3;OK;
+hp_type;1354;99.7;OK;
+emitter;1310;96.5;OK;
+dhw_electric;1358;100.0;OK;

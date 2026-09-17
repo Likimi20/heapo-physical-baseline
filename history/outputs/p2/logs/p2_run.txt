@@ -1,0 +1,138 @@
+
+==============================================================================
+0. CONSTANTS CROSS-CHECK - two independent routes to the reference U
+==============================================================================
+  SIA 380/1 target U, area-weighted with the TABULA envelope split:
+    0.20*0.50 + 0.15*0.22 + 0.20*0.18 + 1.00*0.10 = 0.269 W/m2K
+  TABULA '> 2010' overall mean band                : 0.20 - 0.28 W/m2K
+  -> the two AGREE. Independent standards, same answer. The reference
+     envelope is not a choice of taste.
+
+  ventilation loss coefficient, identical in both baselines:
+    0.34 * 0.7 * 2.05 = 0.4879 W/m2K  <- CANCELS in the difference
+  NOTE this is comparable to a good envelope: a >2010 house at U 0.24 and
+  Huellzahl 1.4 has transmission 0.34 W/m2K against ventilation 0.49.
+  In new buildings ventilation DOMINATES. Physically correct, and invisible
+  to any peer model.
+
+==============================================================================
+1. POPULATION
+==============================================================================
+  distinct protocol households        : 214
+  with area+residents+era+type+emitter: 209
+  dropped: no era 2, water-source/none 1, no emitter 2
+
+  building type (Huellzahl band applies to SFH):
+    {'single family house': np.int64(205), 'other': np.int64(6), 'multi family house': np.int64(2), nan: np.int64(1)}
+    non-SFH inside the usable set: 8  -> FLAGGED, SFH Huellzahl used
+
+==============================================================================
+2. HEAT LOSS COEFFICIENTS
+==============================================================================
+  specific heat loss H_tot / area, W/m2K:
+    < 1975       n=49   as-built 3.19   reference 1.03
+    1976 - 80    n=30   as-built 1.81   reference 0.93
+    1981 - 85    n=29   as-built 1.81   reference 0.93
+    1986 - 90    n=13   as-built 1.81   reference 0.93
+    1991 - 95    n=15   as-built 1.40   reference 0.93
+    1995 - 00    n=13   as-built 1.40   reference 0.93
+    2000 - 10    n=39   as-built 1.05   reference 0.86
+    > 2010       n=21   as-built 0.82   reference 0.86
+
+==============================================================================
+3. BALANCE TEMPERATURE - COMPUTED FROM PHYSICS, NEVER FITTED
+==============================================================================
+  T_bal = 20 - q_int * A / H_tot , internal gains only.
+  Solar is NOT included: the supplied 15-25 kWh/m2a is an ANNUAL figure
+  and solar is lowest exactly when heating is needed. Using an annual mean
+  would overstate winter gains. DECLARED GAP.
+
+  T_bal by era (q_int = 5.0 W/m2):
+    < 1975       n=49   median 18.4 C   range 18.4 - 18.4
+    1976 - 80    n=30   median 17.2 C   range 17.2 - 17.2
+    1981 - 85    n=29   median 17.2 C   range 17.2 - 17.2
+    1986 - 90    n=13   median 17.2 C   range 17.2 - 17.2
+    1991 - 95    n=15   median 16.4 C   range 16.4 - 16.4
+    1995 - 00    n=13   median 16.4 C   range 16.4 - 16.4
+    2000 - 10    n=39   median 15.2 C   range 15.2 - 15.2
+    > 2010       n=21   median 13.9 C   range 13.9 - 13.9
+
+  FINDING: the balance temperature is NOT a fleet constant. It moves with
+  the envelope, by design - a leaky house needs heating at a higher outdoor
+  temperature than a tight one. A single fleet-wide base is wrong for both
+  ends, and this is invisible to any model that fixes the base.
+
+  nearest stored HDD base actually used:
+    {14: np.int64(21), 15: np.int64(39), 16: np.int64(28), 17: np.int64(72), 18: np.int64(49)}
+  clipped at 8 : 0    clipped at 18 : 49
+
+==============================================================================
+4. CROSS-CHECK - physics design load versus the SIA 384.201 benchmark
+==============================================================================
+  our H_tot * (20 - (-10)) / area   versus   SIA 384.201 midpoint
+    < 1975       n=49   ours  95.6 W/m2   benchmark 60.0   ratio 1.59
+    1976 - 80    n=30   ours  54.2 W/m2   benchmark 45.0   ratio 1.21
+    1981 - 85    n=29   ours  54.2 W/m2   benchmark 45.0   ratio 1.21
+    1986 - 90    n=13   ours  54.2 W/m2   benchmark 45.0   ratio 1.21
+    1991 - 95    n=15   ours  41.9 W/m2   benchmark 35.0   ratio 1.20
+    1995 - 00    n=13   ours  41.9 W/m2   benchmark 35.0   ratio 1.20
+    2000 - 10    n=39   ours  31.4 W/m2   benchmark 32.5   ratio 0.97
+    > 2010       n=21   ours  24.7 W/m2   benchmark 25.0   ratio 0.99
+
+  Two INDEPENDENT routes to the same physical quantity: one from TABULA
+  U-values plus SIA geometry and ventilation, one from the SIA 384.201
+  design-load table. Agreement is evidence the constants are mutually
+  consistent. Disagreement is a finding about the constants, NOT a licence
+  to tune either one.
+
+==============================================================================
+5. THE TWO BASELINES
+==============================================================================
+  households on a DERIVED (not published) GSHP JAZ: 26  (12.4%)
+  joined to daily observations: 203 of 209 have any usable day
+
+  annual electricity, kWh/yr, over 203 households with days:
+    heat_as_built          median     5101   IQR    3258 -     9355
+    heat_reference         median     2782   IQR    2188 -     3665
+    dhw_as_built           median     1109   IQR     740 -     1701
+    dhw_reference          median      740   IQR     740 -     1479
+    E_as_built             median     6365   IQR    4838 -    10903
+    E_reference            median     3835   IQR    3174 -     4913
+    deficiency_kwh_yr      median     2584   IQR    1456 -     5899
+
+==============================================================================
+6. DECOMPOSITION - what the deficiency is MADE OF
+==============================================================================
+  residual of the decomposition (must be ~0): max |sum - total| = 0.000000 kWh
+
+  median kWh/yr per term, and how many households carry it:
+    term_envelope    median    2321   share of total  86.3%   n>0 183
+    term_emitter     median       0   share of total   6.0%   n>0  68
+    term_dhw         median       0   share of total   8.3%   n>0  59
+
+  fleet total deficiency: 942634 kWh/yr across 203 households
+
+  deficiency by era, median kWh/yr:
+    < 1975       n=48   median    9832   median % of E_as_built  68.6%
+    1976 - 80    n=30   median    2935   median % of E_as_built  46.3%
+    1981 - 85    n=29   median    3042   median % of E_as_built  43.2%
+    1986 - 90    n=12   median    2707   median % of E_as_built  42.8%
+    1991 - 95    n=14   median    2380   median % of E_as_built  29.7%
+    1995 - 00    n=13   median    1814   median % of E_as_built  29.0%
+    2000 - 10    n=37   median     965   median % of E_as_built  26.7%
+    > 2010       n=20   median     -92   median % of E_as_built  -2.9%
+
+==============================================================================
+7. SANITY - the model against the meter
+==============================================================================
+  actual / E_as_built:  median 1.55   IQR 1.01 - 2.10   5-95% 0.60 - 3.49
+
+  E_as_built EXCLUDES all non-heat-pump household electricity - lighting,
+  cooking, appliances, entertainment - because no SIA heating standard
+  supplies it. So a ratio ABOVE 1 is EXPECTED and is not evidence of a
+  fault. This is exactly why the LEVEL is not the deliverable and the
+  DIFFERENCE is. Reported so the gap is visible, not to be corrected away.
+
+  written: p2_two_baselines.parquet, p2_deficiency.csv
+
+P2 complete.

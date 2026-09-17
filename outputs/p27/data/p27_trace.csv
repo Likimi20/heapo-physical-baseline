@@ -1,0 +1,44 @@
+household;step;quantity;value;unit;provenance;source;note
+116121;1;area_m2;395.0;;DATABASE;Building_FloorAreaHeated_Total;
+116121;1;footprint_m2;235.0;;DATABASE;max(Building_FloorAreaHeated_<storey>);
+116121;1;n_storeys_above;1;;DATABASE;count(Building_FloorAreaHeated_<storey> > 0);
+116121;1;heated_basement;True;;DATABASE;Building_FloorAreaHeated_Basement > 0;
+116121;1;era;pre1975;;DATABASE;Building_ConstructionYear_Interval;
+116121;1;renovation_count;0;;DATABASE;Building_Renovated_Windows + _Walls + _Roof;
+116121;1;residents;2;;DATABASE;Building_Residents;
+116121;1;hp_type;air-source;;DATABASE;HeatPump_Installation_Type;
+116121;1;emitter;radiator_only;;DATABASE;HeatPump heat-distribution flags (floor / radiator);
+116121;1;dhw_electric;True;;DATABASE;DHW_Production_ByElectricWaterHeater;
+116121;1;hp_install_year;2009.0;;DATABASE;HeatPump_Installation_Year;
+116121;1;hdd_normal_per_day;4.052917477628678;;DATABASE;weather_daily.parquet, station NORMAL year;
+116121;2;storey_height;2.7;m;SECOND_HAND;SIA 416:2003 | clear 2.40-2.60, gross 2.70;
+116121;2;b_ground;0.5;-;VERIFIED;"Hoffmann & Geissler, FHNW, Energy Procedia 122 (2017); TABULA CCM eq. 4 | measured 0.51, recommended 0.5 for existing buildings (lo); SIA 380/1:2015 0.7/0.8 (hi)";
+116121;2;perimeter_factor;1.0;-;DERIVED;geometry | square plan is MINIMUM perimeter;
+116121;2;perimeter;61.318838867023565;m;GENERATED;4*sqrt(footprint)*perimeter_factor;
+116121;2;a_thermal;600.8412974114453;m2;GENERATED;envelope_area();wall + roof + b_ground*(basement wall + lowest floor)
+116121;3;n_air;0.6;1/h;VERIFIED;TABULA Common Calculation Method (IEE TABULA) - European standard method | Table 1: n_air,use 0.4 + n_air,infiltration 0.2;
+116121;3;v_net_per_m2;2.05;m3/m2;DERIVED;SIA 416 route | net air volume per m2 A_E;
+116121;3;rho_c;0.34;Wh/m3K;PHYSICAL;physical constant | air;
+116121;3;H_ventilation;165.189;W/K;GENERATED;ventilation_coefficient();
+116121;4;u_as_built (u_era_pre1975);0.9028;W/m2K;DERIVED;"derived: TEP Energy 2016 EFH x area_split | Abb. 30-33 +/- aggregated SD; pre-1975 pooled by Tabelle 19 shares";era pre1975, 0 renovations
+116121;4;u_reference;0.2466;W/m2K;DERIVED;derived: MuKEn 2014 limits x area_split | EnDK 2014 Abb. 13;
+116121;4;du_thermal_bridge;0.1;W/m2K;VERIFIED;TABULA Common Calculation Method (IEE TABULA) | eq. 4 / Table 3 and worked example: 0.10 original, 0.05 advanced refurbishment;ONE draw, added to BOTH baselines
+116121;4;H_as_built;767.7126530441974;W/K;GENERATED;u_as_built*A + H_vent;
+116121;4;H_reference;373.44059368280693;W/K;GENERATED;u_reference*A + H_vent;
+116121;5;jaz_current_unit (jaz_ashp_rad);2.9;-;VERIFIED;"OST WPZ Buchs P+I 11/12-2020 Tabelle 1; RISE IEA HPC 2023 Paper 478 Table 1 | value = heating-only column; lo = heating & TWW column";
+116121;5;vintage_factor;0.9084444444444445;-;GENERATED;vintage_factor();install year 2009.0 vs the table's ~2017 units
+116121;5;jaz_as_built;2.634488888888889;-;GENERATED;jaz_current_unit * vintage_factor;
+116121;5;jaz_reference (jaz_ashp_floor);3.7;-;VERIFIED;"OST WPZ Buchs P+I 11/12-2020 Tabelle 1; RISE IEA HPC 2023 Paper 478 Table 1 | value = heating-only column; lo = heating & TWW column";the reference house gets floor heating AND a current unit
+116121;5;jaz_dhw_hp;2.8;-;VERIFIED;"OST P+I 2020 Abb. 3; OST Feldmessungen 2021/22 sec. 2.2 | air-source DHW: JAZ 2.8 (2018), JAZ+ 2.9 / WNG 2.5 (2021/22)";
+116121;5;dhw_kwh_person_day;2.61;kWh/p/d;VERIFIED;"FAWA 2004 Table 3 p.44 (3,811 kWh/yr, 4-person EFH); SIA 385/2 via IEA HPT Annex 46 Table 1 | value FAWA measured; band SIA 385/2 simple 40 L to high 55 L at dT 50 K";
+116121;6;hdd_normal_per_day;4.052917477628678;K;DATABASE;weather_daily.parquet, station NORMAL year;station NORMAL year: the length of this household's record never enters
+116121;6;heating_as_built;10346.040984190484;kWh/yr;GENERATED;heating_electricity() / dhw_electricity();
+116121;6;heating_reference;3583.3701196700977;kWh/yr;GENERATED;heating_electricity() / dhw_electricity();
+116121;6;dhw_as_built;1905.3;kWh/yr;GENERATED;heating_electricity() / dhw_electricity();
+116121;6;dhw_reference;680.4642857142858;kWh/yr;GENERATED;heating_electricity() / dhw_electricity();
+116121;6;E_as_built;12251.340984190483;kWh/yr;GENERATED;heating + hot water, as built;
+116121;6;E_reference;4263.834405384383;kWh/yr;GENERATED;heating + hot water, code twin;
+116121;7;term_envelope;5313.387592218429;kWh/yr;GENERATED;evaluate();owner: builder
+116121;7;term_emitter;988.515895081407;kWh/yr;GENERATED;evaluate();owner: builder
+116121;7;term_dhw;1224.8357142857142;kWh/yr;GENERATED;evaluate();owner: builder
+116121;7;term_vintage;460.7673772205523;kWh/yr;GENERATED;evaluate();owner: installer

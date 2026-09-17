@@ -1,0 +1,43 @@
+{
+  "answer": "1. **Default thermal bridge surcharge (\\\\(\\Delta U_{\\text{WB}}\\\\) or \\\\(\\Delta U_{\\text{tb}}\\\\))**:\n   * **Status**: **not in the sources**. \n   * The uploaded sources do not provide a default numerical value for the thermal bridge surcharge.\n\n2. **Temperature correction or reduction factor (\\\\(b\\\\) or \\\\(f_g\\\\)) for floors against ground or unheated cellars**:\n   * **Status**: **not in the sources**. \n   * The uploaded sources do not contain a numerical temperature reduction factor (\\\\(b\\\\) or \\\\(f_g\\\\)) for ground-adjacent floors or unheated basements. (*Research report: Swiss Building Standards & Heat Pump Benchmarks*, Section 3 lists a target limit \\\\(U\\\\)-value of \\\\(0.20 \\text{ W/m}^2\\text{K}\\\\) for \"Floor against ground/unheated\", but does not provide a \\\\(b\\\\) or \\\\(f_g\\\\) temperature correction factor [1]).\n\n3. **Minimum air change rate for heat load calculation (EN 12831)**:\n   * **Status**: **not in the sources** for **EN 12831** specifically. \n   * The uploaded sources do not specify the EN 12831 minimum air change rate. The sources only specify standard air change rates under **SIA 380/1 & SIA 2024** (*Research report: Swiss Building Standards & Heat Pump Benchmarks*, Section 3) [1]:\n     * **\\\\(0.7 \\text{ h}^{-1}\\\\)** for natural window ventilation [1]\n     * **\\\\(0.4 \\text{ h}^{-1}\\\\)** for mechanical ventilation with heat recovery (MVHR) [1]",
+  "conversation_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+  "turn_number": 28,
+  "is_follow_up": true,
+  "references": [
+    {
+      "source_id": "88cca6a2-3c36-48af-ae90-8691552e3a28",
+      "citation_number": 1,
+      "cited_text": "\n--------------------------------------------------------------------------------\n3. SIA 380/1 & SIA 2024: Target Values & Standard Usage Data (E_{\\text{reference}})Target Envelope Limit Values (U_{\\text{limit}} for Reference House)Façade / Exterior Wall: 0.20 \\text{ W/m}^2\\text{K}Roof / Attic Floor: 0.15 \\text{ W/m}^2\\text{K}Floor against ground/unheated: 0.20 \\text{ W/m}^2\\text{K}Windows: 1.00 \\text{ W/m}^2\\text{K}Standard Usage Parameters (SIA 380/1 & SIA 2024 Raumnutzungsdaten)Standard Indoor Setpoint (T_{\\text{set}}): 20.0^\\circ\\text{C}Internal Heat Gains (q_{\\text{int}}): 5.0 \\text{ W/m}^2 (120 \\text{ MJ/m}^2\\text{a} \\approx 33.3 \\text{ kWh/m}^2\\text{a})Air Change Rate (n_{\\text{air}}): 0.7 \\text{ h}^{-1} (Natural window ventilation) / 0.4 \\text{ h}^{-1} (Mechanical MVHR)",
+      "start_char": 2712,
+      "end_char": 3500,
+      "chunk_id": "e2777401-ea4e-475f-9965-533b5b10218f",
+      "passage_id": null,
+      "answer_start_char": 2712,
+      "answer_end_char": 3500,
+      "score": 0.783580094002728,
+      "fragment_start_char": 2712,
+      "fragment_end_char": 3500,
+      "answer_anchor_start": 672,
+      "answer_anchor_end": 701
+    }
+  ],
+  "turn_key": {
+    "session_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+    "turn_id": "bad6c2da-0b39-481d-a868-058883e81488",
+    "turn_code": 218176690
+  },
+  "next_steps": [
+    {
+      "question": "How does the 15% deviation gate compare to the uncertainty-band approach in practice?",
+      "type_code": 9
+    },
+    {
+      "question": "What logic defines the +1.25 safety margin for oversized heat pumps?",
+      "type_code": 9
+    },
+    {
+      "question": "Can we apply the 30-40 W/m2 1990s heat load value to the scoring now?",
+      "type_code": 9
+    }
+  ]
+}

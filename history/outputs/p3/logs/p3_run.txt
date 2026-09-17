@@ -1,0 +1,91 @@
+
+==============================================================================
+1. GEOMETRY FROM THE AUDIT
+==============================================================================
+  households with a usable footprint + era : 191 of 214
+  storeys above ground: {1: np.int64(28), 2: np.int64(114), 3: np.int64(49)}
+  with a heated basement : 72
+
+  A_wall uses a SQUARE plan = MINIMUM perimeter, so wall area and every
+  quantity built on it is a LOWER BOUND. A real elongated plan has 5-15%
+  more wall. Declared, not corrected.
+
+==============================================================================
+2. GEOMETRIC HUELLZAHL VERSUS THE SIA ERA LOOKUP
+==============================================================================
+  geometric (b=0.5): median 1.83   IQR 1.63-2.00   5-95% 1.24-2.33
+  SIA era lookup   : median 1.65   (only 3 distinct values)
+
+  BY NUMBER OF STOREYS - this is Miguel's point, measured:
+    1 storey  n=28   median huellzahl 1.64   median area   190 m2
+    2 storey  n=114  median huellzahl 1.83   median area   200 m2
+    3 storey  n=49   median huellzahl 1.89   median area   200 m2
+  A bungalow carries far more envelope per heated m2 than a stacked house.
+  An era lookup cannot see this at all.
+
+  WITHIN-ERA SPREAD of the geometric huellzahl - what the lookup destroys:
+    < 1975       n=42   median 1.70   5-95% 1.23 - 2.32   SIA says 2.00
+    1976 - 80    n=26   median 1.87   5-95% 1.27 - 2.37   SIA says 1.65
+    1981 - 85    n=29   median 1.83   5-95% 0.97 - 2.33   SIA says 1.65
+    1986 - 90    n=12   median 1.90   5-95% 1.66 - 2.37   SIA says 1.65
+    1991 - 95    n=15   median 1.79   5-95% 1.16 - 2.10   SIA says 1.65
+    1995 - 00    n=10   median 1.84   5-95% 1.54 - 2.33   SIA says 1.65
+    2000 - 10    n=38   median 1.74   5-95% 1.30 - 2.28   SIA says 1.40
+    > 2010       n=19   median 1.83   5-95% 1.50 - 2.14   SIA says 1.40
+
+==============================================================================
+3. HEAT LOSS AND BALANCE TEMPERATURE, ON REAL GEOMETRY
+==============================================================================
+  T_bal, computed not fitted:
+    SIA era lookup (P2)      median 17.2 C   5-95% 13.9 - 18.4   distinct 5
+    real geometry b=0.5      median 17.2 C   5-95% 14.6 - 18.4   distinct 45
+    real geometry b=1.0      median 17.5 C   5-95% 14.9 - 18.6   distinct 45
+
+==============================================================================
+4. TEST 1 - DOES T_bal NOW TRACK THE FITTED CHANGEPOINT?
+==============================================================================
+  households with a qualifying fit : 133
+  fitted tau: median 15.2 C   5-95% 12.8 - 18.5
+
+  balance temperature        median d median  corr(tau)
+  SIA era lookup (P2)          17.2      1.7     -0.052
+  real geometry b=0.5          17.4      1.8     -0.066
+  real geometry b=1.0          17.6      2.0     -0.057
+
+  P2 measured -0.016 on the era lookup. If real geometry does not move
+  this, the balance-temperature route fails for a reason other than
+  geometry, and the fixed HDD_12 from P0 stands.
+
+==============================================================================
+5. TEST 2 - DOES THE PRE-1975 DESIGN-LOAD GAP CLOSE?
+==============================================================================
+  ours = H_tot * 30 / area, versus the SIA 384.201 midpoint
+  era              n SIA-lookup geom b=0.5  benchmark ratio b05
+  < 1975          42       95.6       85.1       60.0      1.42
+  1976 - 80       26       54.2       59.2       45.0      1.31
+  1981 - 85       29       54.2       57.0       45.0      1.27
+  1986 - 90       12       54.2       61.9       45.0      1.38
+  1991 - 95       15       41.9       42.8       35.0      1.22
+  1995 - 00       10       41.9       46.3       35.0      1.32
+  2000 - 10       38       31.4       35.9       32.5      1.10
+  > 2010          19       24.7       27.7       25.0      1.11
+
+  P2 had pre-1975 at ratio 1.59 on the era lookup.
+
+==============================================================================
+6. WITHIN-ERA VERSUS ACROSS-ERA RANKING
+==============================================================================
+  Miguel, 2026-09-10: the pre-1975 inconsistency matters less because we
+  are comparing. That is TRUE WITHIN AN ERA and FALSE ACROSS ERAS.
+
+  If every pre-1975 house is inflated by the same factor, their order
+  among themselves is untouched - a common factor cannot reorder a list.
+  But a single fleet-wide ranked list puts inflated pre-1975 houses above
+  correctly-scaled modern ones that may waste more.
+
+  So: RANK WITHIN ERA is safe under the P2 F1 defect.
+      ONE FLEET-WIDE LIST is not, until the 1.59 is resolved.
+
+  written: p3_geometry.parquet, p3_geometry.csv
+
+P3 complete.

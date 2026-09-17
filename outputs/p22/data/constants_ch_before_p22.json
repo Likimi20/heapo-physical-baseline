@@ -1,0 +1,250 @@
+{
+ "region": "CH",
+ "checked": "2026-09-11 (documents) + notebook b02e42f0",
+ "status_levels": {
+  "VERIFIED": "value read in the primary document here",
+  "SECOND_HAND": "source named, document not read here",
+  "CITATION_MISMATCH": "document checked; the cited value or table is not in it",
+  "DERIVED": "computed from geometry or other constants",
+  "PHYSICAL": "physical constant"
+ },
+ "era_order": [
+  "pre1975",
+  "1976_1990",
+  "1991_2000",
+  "2001_2010",
+  "post2010"
+ ],
+ "constants": {
+  "u_era_pre1975": {
+   "value": 1.35,
+   "lo": 1.2,
+   "hi": 1.5,
+   "unit": "W/m2K",
+   "source": "TABULA/EPISCOPE CH 2013",
+   "section": "Tab 4 Sec 3.2",
+   "status": "CITATION_MISMATCH",
+   "note": "Switzerland is not a TABULA/EPISCOPE country (episcope.eu country list, checked 2026-09-11); the cited CH typology could not be found. Values plausible, UNVERIFIED. The notebook holds these values ONLY in its AI-generated 'Research report: Swiss Building Standards & Heat Pump Benchmarks' (source 7) - circular, not verification. Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/) SOURCED CANDIDATE: TEP Energy 2016 BFE, Abb. 30-33 EFH, envelope mean 0.943 +/- 0.081. P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "u_era_1976_1990": {
+   "value": 0.8,
+   "lo": 0.7,
+   "hi": 0.9,
+   "unit": "W/m2K",
+   "source": "TABULA/EPISCOPE CH 2013",
+   "section": "Tab 4 Sec 3.2",
+   "status": "CITATION_MISMATCH",
+   "note": "Switzerland is not a TABULA/EPISCOPE country (episcope.eu country list, checked 2026-09-11); the cited CH typology could not be found. Values plausible, UNVERIFIED. The notebook holds these values ONLY in its AI-generated 'Research report: Swiss Building Standards & Heat Pump Benchmarks' (source 7) - circular, not verification. Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/) SOURCED CANDIDATE: TEP Energy 2016 BFE, Abb. 30-33 EFH, envelope mean 0.740 +/- 0.083. P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "u_era_1991_2000": {
+   "value": 0.55,
+   "lo": 0.5,
+   "hi": 0.6,
+   "unit": "W/m2K",
+   "source": "TABULA/EPISCOPE CH 2013",
+   "section": "Tab 4 Sec 3.2",
+   "status": "CITATION_MISMATCH",
+   "note": "Switzerland is not a TABULA/EPISCOPE country (episcope.eu country list, checked 2026-09-11); the cited CH typology could not be found. Values plausible, UNVERIFIED. The notebook holds these values ONLY in its AI-generated 'Research report: Swiss Building Standards & Heat Pump Benchmarks' (source 7) - circular, not verification. Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/) SOURCED CANDIDATE: TEP Energy 2016 BFE, Abb. 30-33 EFH, envelope mean 0.393 +/- 0.044. P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "u_era_2001_2010": {
+   "value": 0.4,
+   "lo": 0.35,
+   "hi": 0.45,
+   "unit": "W/m2K",
+   "source": "TABULA/EPISCOPE CH 2013",
+   "section": "Tab 4 Sec 3.2",
+   "status": "CITATION_MISMATCH",
+   "note": "Switzerland is not a TABULA/EPISCOPE country (episcope.eu country list, checked 2026-09-11); the cited CH typology could not be found. Values plausible, UNVERIFIED. The notebook holds these values ONLY in its AI-generated 'Research report: Swiss Building Standards & Heat Pump Benchmarks' (source 7) - circular, not verification. Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/) SOURCED CANDIDATE: TEP Energy 2016 BFE, Abb. 30-33 EFH, envelope mean 0.393 +/- 0.044. P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "u_era_post2010": {
+   "value": 0.24,
+   "lo": 0.2,
+   "hi": 0.28,
+   "unit": "W/m2K",
+   "source": "TABULA/EPISCOPE CH 2013",
+   "section": "Tab 4 Sec 3.2",
+   "status": "CITATION_MISMATCH",
+   "note": "Switzerland is not a TABULA/EPISCOPE country (episcope.eu country list, checked 2026-09-11); the cited CH typology could not be found. Values plausible, UNVERIFIED. The notebook holds these values ONLY in its AI-generated 'Research report: Swiss Building Standards & Heat Pump Benchmarks' (source 7) - circular, not verification. Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/) SOURCED CANDIDATE: legal MuKEn 2008 0.319 (lo MuKEn 2014 0.267), EnDK 2014 Abb. 13. P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "u_reference": {
+   "value": 0.269,
+   "lo": 0.24,
+   "hi": 0.3,
+   "unit": "W/m2K",
+   "source": "SIA 380/1:2016 + TABULA split",
+   "section": "Ziff 3.4",
+   "status": "SECOND_HAND",
+   "note": "Element targets SIA 380/1 (paywalled, not read); the area weights inherit the TABULA CH citation. In the notebook only via the AI-generated report (source 7); the SIA standard itself is not uploaded. Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/) MuKEn 2014 limits on the same split give 0.267 (EnDK/Energiehub 2014 Abb. 13, in notebook). P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "storey_height": {
+   "value": 2.7,
+   "lo": 2.4,
+   "hi": 2.7,
+   "unit": "m",
+   "source": "SIA 416:2003",
+   "section": "clear 2.40-2.60, gross 2.70",
+   "status": "SECOND_HAND",
+   "note": ""
+  },
+  "perimeter_factor": {
+   "value": 1.0,
+   "lo": 1.0,
+   "hi": 1.15,
+   "unit": "-",
+   "source": "geometry",
+   "section": "square plan is MINIMUM perimeter",
+   "status": "DERIVED",
+   "note": ""
+  },
+  "b_ground": {
+   "value": 0.5,
+   "lo": 0.4,
+   "hi": 1.0,
+   "unit": "-",
+   "source": "TABULA Common Calculation Method (IWU)",
+   "section": "eq. 4 b_tr, Table 2; worked example floor 0.50. Band NOT sourced",
+   "status": "VERIFIED",
+   "note": "Value read in TABULA Common Calculation Method eq. 4 worked example (floor 0.50). BAND 0.40-1.00 NOT sourced; SIA 380/1 simplified b (via BFH 2013 Tab 2): cellar in ground 0.7, partly above 0.8. Read outside the notebook; not uploaded there. IN NOTEBOOK: measured 0.51, recommended 0.5 for existing buildings (Hoffmann & Geissler, FHNW, Energy Procedia 122, 2017); normative SIA 380/1:2015 0.7/0.8. Candidate band 0.5-0.8. P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "n_air": {
+   "value": 0.7,
+   "lo": 0.7,
+   "hi": 0.7,
+   "unit": "1/h",
+   "source": "SIA 380/1:2016",
+   "section": "Ziff 3.5.3.1 Tab 7, NET volume",
+   "status": "SECOND_HAND",
+   "note": "In the notebook only via the AI-generated report (source 7); the SIA standard itself is not uploaded. Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/) TABULA CCM (in notebook): 0.4 use + 0.2 infiltration = 0.6. P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "v_net_per_m2": {
+   "value": 2.05,
+   "lo": 2.0,
+   "hi": 2.1,
+   "unit": "m3/m2",
+   "source": "SIA 416 route",
+   "section": "net air volume per m2 A_E",
+   "status": "DERIVED",
+   "note": ""
+  },
+  "rho_c": {
+   "value": 0.34,
+   "lo": 0.34,
+   "hi": 0.34,
+   "unit": "Wh/m3K",
+   "source": "physical constant",
+   "section": "air",
+   "status": "PHYSICAL",
+   "note": ""
+  },
+  "t_set": {
+   "value": 20.0,
+   "lo": 20.0,
+   "hi": 20.0,
+   "unit": "degC",
+   "source": "SIA 380/1:2016",
+   "section": "Ziff 3.2.1 Tab 3",
+   "status": "VERIFIED",
+   "note": "TABULA CCM Table 1; RISE IEA HPC 2023; HEAPO paper eq. 1 - all in notebook. P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "t_design": {
+   "value": -10.0,
+   "lo": -10.0,
+   "hi": -10.0,
+   "unit": "degC",
+   "source": "SIA 2028:2008",
+   "section": "Tab 1 Zurich/Kloten",
+   "status": "CITATION_MISMATCH",
+   "note": "-10 C occurs only in the AI report. In notebook: -8 C Zurich (EnDK/Energiehub 2014 Abb. 43-44; CEPE 2002 per SIA 382/4). P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "jaz_ashp_floor": {
+   "value": 3.5,
+   "lo": 3.4,
+   "hi": 3.6,
+   "unit": "-",
+   "source": "OST WPZ Buchs, 'Wie gut sind aktuelle Waermepumpen im Feld?', Heizungsplaner+Installateur 11/12-2020, Tabelle 1 (notebook source 15)",
+   "section": "Tabelle 1, column Heizen & TWW",
+   "status": "VERIFIED",
+   "note": "Value 3.5 is the 'Heizen & TWW' column of Tabelle 1. Heating-only column gives 3.7; the model has a SEPARATE DHW term, so heating-only is the consistent boundary. Body text confirms L/W Altbau 2.8, Sanierung 3.1. Sample size not stated. P19's earlier CITATION_MISMATCH checked the wrong OST document (Jahresbericht). Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/)"
+  },
+  "jaz_ashp_lowrad": {
+   "value": 3.1,
+   "lo": 3.0,
+   "hi": 3.2,
+   "unit": "-",
+   "source": "OST WPZ Buchs, 'Wie gut sind aktuelle Waermepumpen im Feld?', Heizungsplaner+Installateur 11/12-2020, Tabelle 1 (notebook source 15)",
+   "section": "Tabelle 1, column Heizen & TWW",
+   "status": "VERIFIED",
+   "note": "Value 3.1 is the 'Heizen & TWW' column of Tabelle 1. Heating-only column gives 3.3; the model has a SEPARATE DHW term, so heating-only is the consistent boundary. Body text confirms L/W Altbau 2.8, Sanierung 3.1. Sample size not stated. P19's earlier CITATION_MISMATCH checked the wrong OST document (Jahresbericht). Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/)"
+  },
+  "jaz_ashp_rad": {
+   "value": 2.8,
+   "lo": 2.7,
+   "hi": 2.9,
+   "unit": "-",
+   "source": "OST WPZ Buchs, 'Wie gut sind aktuelle Waermepumpen im Feld?', Heizungsplaner+Installateur 11/12-2020, Tabelle 1 (notebook source 15)",
+   "section": "Tabelle 1, column Heizen & TWW",
+   "status": "VERIFIED",
+   "note": "Value 2.8 is the 'Heizen & TWW' column of Tabelle 1. Heating-only column gives 2.9; the model has a SEPARATE DHW term, so heating-only is the consistent boundary. Body text confirms L/W Altbau 2.8, Sanierung 3.1. Sample size not stated. P19's earlier CITATION_MISMATCH checked the wrong OST document (Jahresbericht). Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/)"
+  },
+  "jaz_gshp_floor": {
+   "value": 4.25,
+   "lo": 4.1,
+   "hi": 4.4,
+   "unit": "-",
+   "source": "FAWA 2004 / OST 2020",
+   "section": "N=236 / N=25",
+   "status": "CITATION_MISMATCH",
+   "note": "NOT in any primary source. OST P+I 2020 Tabelle 1 gives ground-source Neubau 5.7 (heating) / 4.9 (heating & TWW); FAWA 1996-2003 mean 3.5. 4.25 and its range 4.10-4.40 occur only in the AI-generated notebook report (source 7). The same table gives GSHP Altbau/radiators 4.4 / 4.3 and Sanierung 5.0 / 4.6, so the rejected '4.4' was the table's GSHP radiator value and the error was in the floor value. Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/)"
+  },
+  "jaz_dhw_hp": {
+   "value": 2.3,
+   "lo": 2.1,
+   "hi": 2.5,
+   "unit": "-",
+   "source": "FAWA 2004 / OST 2020",
+   "section": "N=236 / N=25",
+   "status": "CITATION_MISMATCH",
+   "note": "2.10-2.50 occurs only in the AI-generated notebook report. Primary: OST P+I 2020 Abb. 3 DHW-alone JAZ air 2.8 / ground 3.3 (WNG 2.6 / 2.8); FAWA Tagungsband 2004 JAZ_BWW 3.4 (ground, boiler with internal HX), 2.8 (ground + solar combi). Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/)"
+  },
+  "dhw_kwh_person_day": {
+   "value": 2.33,
+   "lo": 2.07,
+   "hi": 2.59,
+   "unit": "kWh/p/d",
+   "source": "SIA 385/2:2015",
+   "section": "Ziff 4.1, 40-50 L at dT 50K",
+   "status": "SECOND_HAND",
+   "note": "SIA 385/2 not in the notebook. FAWA Tagungsband 2004 (notebook source 13): 3,811 kWh/yr DHW heat for a standard 4-person EFH = 2.61 kWh/person/day (Table 3 p.44 / Table 4 p.55, per notebook). Notebook b02e42f0 (queried 2026-09-11, outputs/p19/data/notebooklm/) SIA 385/2 via IEA HPT Annex 46 Table 1: EFH normal 45 L/p/d (simple 40, high 55) -> 2.62 kWh at dT 50 K; FAWA measured 2.61. P21 (outputs/p21/reports/p21_findings.md)."
+  },
+  "appl_efh_4p": {
+   "value": 4048.0,
+   "lo": 4048.0,
+   "hi": 5200.0,
+   "unit": "kWh/yr",
+   "source": "BFE/EnergieSchweiz Faktenblatt 08.2021; hi S.A.F.E. Nipkow 2013",
+   "section": "Tab 1 EFH vier Personen Total; 2013 Tab 1 EFH 4 P",
+   "status": "VERIFIED",
+   "note": "Read: BFE/EnergieSchweiz Faktenblatt 08.2021 Tab 1; S.A.F.E. Nipkow 2013 Tab 1. Read outside the notebook; not uploaded there."
+  },
+  "appl_efh_per_person": {
+   "value": 593.5,
+   "lo": 593.5,
+   "hi": 850.0,
+   "unit": "kWh/yr/p",
+   "source": "BFE/EnergieSchweiz Faktenblatt 08.2021; hi S.A.F.E. Nipkow 2013",
+   "section": "Tab 1 +/- eine Person; 2013 Tab 1 EFH increments 750-850",
+   "status": "VERIFIED",
+   "note": "Read: as appl_efh_4p. Read outside the notebook; not uploaded there."
+  },
+  "appl_taper_5plus": {
+   "value": 50.0,
+   "lo": 50.0,
+   "hi": 50.0,
+   "unit": "kWh/yr/p",
+   "source": "BFE/EnergieSchweiz Faktenblatt 08.2021",
+   "section": "Tab 1 footnote 1, from five persons",
+   "status": "VERIFIED",
+   "note": "Read: Faktenblatt 08.2021 Tab 1 footnote 1. Read outside the notebook; not uploaded there."
+  }
+ }
+}

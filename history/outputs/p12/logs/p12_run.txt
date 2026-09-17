@@ -1,0 +1,122 @@
+
+==============================================================================
+1. THE TWO SOURCES, AND WHAT THEY SHARE
+==============================================================================
+  fault bundle : 38 features, 4 targets, 89 train / 30 test, base rate 0.854
+  physical export : 214 households
+  fault cohort    : 119 households
+  overlap         : 119  (the fault cohort is a SUBSET of ours)
+
+  SHARED INPUTS - 8 of 38 fault-model features are physical-model roles:
+    Building_ConstructionYear
+    Building_FloorAreaHeated_Total
+    Building_Residents
+    HeatPump_Installation_Type
+    HeatPump_Installation_HeatingCapacity
+    HeatDistribution_System_Radiators
+    HeatDistribution_System_FloorHeating
+    DHW_Production_ByHeatPump
+
+  THE AXES ARE THEREFORE NOT INDEPENDENT. Agreement between them is
+  partly mechanical. Operationally meaningful - the cells imply different
+  interventions - but NEVER 'two independent methods agreeing'.
+
+==============================================================================
+2. PREDICT - and keep train and test apart
+==============================================================================
+  split: {'train': np.int64(89), 'test': np.int64(30)}
+  scored columns: 12
+
+==============================================================================
+3. DOES THE FAULT MODEL BEAT THE BASE RATE ON THE RECORDED FLAG?
+==============================================================================
+
+  HeatPump_HeatingCurveSetting_TooHigh_BeforeVisit   base rate 0.496
+    logistic        train AUC 0.841 [0.752,0.914] n=41/48  test AUC 0.560 [0.329,0.773] n=18/12
+    random_forest   train AUC 1.000 [1.000,1.000] n=41/48  test AUC 0.454 [0.259,0.667] n=18/12
+    hist_gbm        train AUC 1.000 [1.000,1.000] n=41/48  test AUC 0.477 [0.273,0.690] n=18/12
+
+  HeatPump_NightSetbackSetting_Activated_BeforeVisit   base rate 0.387
+    logistic        train AUC 0.843 [0.756,0.922] n=36/53  test AUC 0.230 [0.060,0.460] n=10/20
+    random_forest   train AUC 1.000 [1.000,1.000] n=36/53  test AUC 0.400 [0.195,0.630] n=10/20
+    hist_gbm        train AUC 1.000 [1.000,1.000] n=36/53  test AUC 0.520 [0.305,0.740] n=10/20
+
+  HeatPump_HeatingLimitSetting_TooHigh_BeforeVisit   base rate 0.277
+    logistic        train AUC 0.959 [0.915,0.990] n=21/68  test AUC 0.560 [0.343,0.759] n=12/18
+    random_forest   train AUC 1.000 [1.000,1.000] n=21/68  test AUC 0.486 [0.269,0.704] n=12/18
+    hist_gbm        train AUC 1.000 [1.000,1.000] n=21/68  test AUC 0.468 [0.250,0.681] n=12/18
+
+  DHW_Storage_LastDescaling_TooLongAgo   base rate 0.193
+    logistic        train AUC 0.918 [0.847,0.973] n=18/71  test AUC 0.552 [0.296,0.792] n=5/25
+    random_forest   train AUC 1.000 [1.000,1.000] n=18/71  test AUC 0.728 [0.424,0.960] n=5/25
+    hist_gbm        train AUC 1.000 [1.000,1.000] n=18/71  test AUC 0.752 [0.536,0.944] n=5/25
+
+  TRAIN figures are IN-SAMPLE and optimistic - 89 of 119 households.
+  Only the TEST column is evidence, and n=30 makes it very wide.
+
+==============================================================================
+4. THE TEST THAT MATTERS - faults, or buildings?
+==============================================================================
+  For each target: does the model's score track the RECORDED FAULT, or
+  does it track the PHYSICAL EXCESS - i.e. is it finding misconfigured
+  controllers, or just old large buildings?
+
+                                                         vs TRUTH  vs EXCESS
+  HeatPump_HeatingCurveSetting_TooHigh_BeforeVisit          0.912     -0.145
+  HeatPump_NightSetbackSetting_Activated_BeforeVisit        0.923     -0.077
+  HeatPump_HeatingLimitSetting_TooHigh_BeforeVisit          0.873      0.185
+  DHW_Storage_LastDescaling_TooLongAgo                      0.953      0.115
+
+  (hist_gbm, all households pooled - train-inflated, shown for shape only)
+  A model finding FAULTS should track the truth and NOT the excess.
+  A model finding BUILDINGS tracks the excess as strongly as the truth.
+
+==============================================================================
+5. THE 2x2 - built on the RECORDED flag, not the prediction
+==============================================================================
+  Setting faults used for axis A (DHW descaling excluded - it is not a
+  controller setting and is another project's):
+    HeatPump_HeatingCurveSetting_TooHigh_BeforeVisit
+    HeatPump_NightSetbackSetting_Activated_BeforeVisit
+    HeatPump_HeatingLimitSetting_TooHigh_BeforeVisit
+
+  households where BOTH axes exist: 97 of 214
+
+  rows = setting fault recorded, cols = physical excess confirmed
+phys_excess_confirmed  False  True 
+setting_fault_flag                 
+False                      3     18
+True                      10     66
+
+  {'C': np.int64(66), 'B': np.int64(18), 'A': np.int64(10), 'D': np.int64(3)}
+    A  setting fault only      -> adjust the setting. Cheap, it sticks.
+    B  physical excess only    -> capital work
+    C  BOTH                    -> the hard one, see below
+    D  neither                 -> no finding on either axis
+
+==============================================================================
+6. CATEGORY C - compensating or compounding?
+==============================================================================
+  66 households carry both a setting fault and a confirmed excess.
+  COMPENSATING: consumption sits near E_as_built - the house needs the
+                heat it is getting. Turning the curve down will not stick.
+  COMPOUNDING : consumption exceeds even E_as_built - deficient AND
+                over-heated. Fix the setting first, it is free.
+
+  {'compounding': np.int64(63), 'compensating': np.int64(3)}
+  split at actual/E_as_built > 1.5, DECLARED AND ARBITRARY - E_as_built
+  excludes appliance electricity, so the ratio is above 1 for everyone and
+  no principled cut exists. See P4 section 3. This is a PLACEHOLDER.
+
+==============================================================================
+7. WRITE BACK INTO THE EXPORT
+==============================================================================
+  p12_combined.csv     - the export plus the fault axis and the 2x2
+  p12_fault_predictions.csv - model scores, with the train/test split
+
+  NOT written back into physical_baseline_v1 yet. The setting axis here
+  is the PROTOCOL RECORD, which exists only for audited households. Whether
+  the shipped export should carry the record, the model prediction, or both
+  is a decision, not a default.
+
+P12 complete.

@@ -1,0 +1,78 @@
+{
+  "status": "completed",
+  "task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+  "sources_found": 10,
+  "sources": [
+    {
+      "url": "http://users.fs.cvut.cz/~vavrirom/Heating/01_Heating_Load.pdf",
+      "title": "Heating Load",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You can find room-specific minimum air change rates required by EN 12831-1:2017."
+    },
+    {
+      "url": "https://www.enerprog.ch/W%C3%A4rmebr%C3%BCckenkatalog.pdf",
+      "title": "Wärmebrückenkatalog",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You will see linear thermal bridge surcharge values and proof requirements for SIA 380/1."
+    },
+    {
+      "url": "https://irf.fhnw.ch/bitstreams/9bf27939-902d-45a1-8b3b-10f52c028d14/download",
+      "title": "The prebound-effect in detail: real indoor temperatures in basements and measured versus calculated U-values - Fachhochschule Nordwestschweiz",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You can compare calculated b-factors versus SIA 380/1 default values for unheated cellars."
+    },
+    {
+      "url": "https://energiehub-gebaeude.ch/wp-content/uploads/2026/01/EN-102c.pdf",
+      "title": "Checkliste Wärmebrücken Neubauten Version 10.0 Vereinfachtes Verfahren beim Einzelbauteilnachweis: Untergeschoss innerhalb der - Energiehub Gebäude",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You will find the official checklist for thermal bridge compliance in Swiss energy proofs."
+    },
+    {
+      "url": "https://www.ibo-plan.de/tga/heizung/heizlastberechnung/Heizlastberechnung-detailliert_mit_KWL-Beispiel.pdf",
+      "title": "Heizlastberechnung nach DIN EN 12831 detailliert mit KWL- Beispiel - Ingenieurbüro Oertel",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You can review detailed calculation parameters for ground-coupled floors including B-prime factors."
+    },
+    {
+      "url": "https://www.schoeck.com/viewfile/11745/Technische_Information_Grundlagen_des_Waerme_und_Feuchteschutzes__11745__.pdf",
+      "title": "Grundlagen des Wärme- und Feuchteschutzes - Schoeck",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You will learn the specific application methods for thermal bridge surcharges in SIA 380/1."
+    },
+    {
+      "url": "https://www.ewe.de/waerme/ratgeber/luftwechselrate",
+      "title": "Luftwechselrate einfach berechnen und verstehen - EWE",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You can access standard minimum air change rate tables for various residential room types."
+    },
+    {
+      "url": "https://rechtsbuch.ur.ch/api/annex_document_dictionaries/37",
+      "title": "1 Anhang 1a U-Wert-Grenzwerte bei Neubauten Die Typen der Wärmebrücken sind in der Norm SIA 380/1, Ausgabe 2007, definiert.",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You will find official definitions of thermal bridge types and ground-coupling depth limits."
+    },
+    {
+      "url": "https://www.geak.ch/media/dche_checkliste_publikationen_240101_geak.pdf",
+      "title": "Checkliste GEAK Publikationen",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You can identify how b-factors vary depending on U-values in modern certifications."
+    },
+    {
+      "url": "https://cdn.standards.iteh.ai/sist-preview/77414/6965a99b94b8403497135a1552d567cc/oSIST-prEN-12831-1-2025.pdf",
+      "title": "oSIST prEN 12831-1:2025 - iTeh Standards",
+      "result_type": 1,
+      "research_task_id": "739b3df3-3f88-44cd-a752-0152c8d7dde3",
+      "hint": "You will see the official standard structure for design heat load and ventilation calculations."
+    }
+  ],
+  "report": ""
+}

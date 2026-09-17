@@ -1,0 +1,149 @@
+[
+ {
+  "title": "Energetische Erneuerungsraten im Gebäu- debereich in der Periode von 2010 bis 20",
+  "url": "https://pubdb.bfe.admin.ch/de/publication/download/11867",
+  "why": "BFE official, U-values by construction period",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"42d815bc-32e4-4af3-bafd-a4202c20d358\",\n    \"title\": \"https://pubdb.bfe.admin.ch/de/publication/download/11867\",\n    \"type\": \"pdf\",\n    \"url\": \"https://pubdb.bfe.admin.ch/de/publication/download/11867\"\n  }\n}\n"
+ },
+ {
+  "title": "Erweiterung des Gebäudeparkmodells gemäss SIA-Effizienzpfad Energie - TEP Energy",
+  "url": "https://www.tep-energy.ch/docs/2016_GEPAMOD_GPM_SIA_Effizienzpfad_Schlussbericht.pdf",
+  "why": "TEP Energy building-stock model, SIA Effizienzpfad",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"d02ebf4a-d252-4139-a4e0-16005a23ab07\",\n    \"title\": \"2016_GEPAMOD_GPM_SIA_Effizienzpfad_Schlussbericht\",\n    \"type\": \"pdf\",\n    \"url\": \"https://www.tep-energy.ch/docs/2016_GEPAMOD_GPM_SIA_Effizienzpfad_Schlussbericht.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "Grundlagenbericht zu SIA 2024 –",
+  "url": "https://cms.sia.ch/de/api/getMedia/941",
+  "why": "SIA Grundlagenbericht SIA 2024",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"2bbdbdb6-f6c5-4893-a457-2ad2c49e6ac8\",\n    \"title\": \"https://cms.sia.ch/de/api/getMedia/941\",\n    \"type\": \"pdf\",\n    \"url\": \"https://cms.sia.ch/de/api/getMedia/941\"\n  }\n}\n"
+ },
+ {
+  "title": "4 Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebereich - ET",
+  "url": "https://ethz.ch/content/dam/ethz/special-interest/mtec/cepe/cepe-dam/documents/people/ejochem/Jakob_Jochem_Christen_Grenzkosten_Schlussbericht_Teil2.pdf",
+  "why": "ETH/CEPE Jakob-Jochem, EFH by construction period",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"148d1a84-4e7d-483b-aa30-33afc2a85fb0\",\n    \"title\": \"Jakob_Jochem_Christen_Grenzkosten_Schlussbericht_Teil2\",\n    \"type\": \"pdf\",\n    \"url\": \"https://ethz.ch/content/dam/ethz/special-interest/mtec/cepe/cepe-dam/documents/people/ejochem/Jakob_Jochem_Christen_Grenzkosten_Schlussbericht_Teil2.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "The prebound-effect in detail: real indoor temperatures in basements and measure",
+  "url": "https://irf.fhnw.ch/bitstreams/9bf27939-902d-45a1-8b3b-10f52c028d14/download",
+  "why": "FHNW prebound effect, measured U and basement b",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"e97e54fb-e779-4dc2-9e70-5a5e9895faf8\",\n    \"title\": \"https://irf.fhnw.ch/bitstreams/9bf27939-902d-45a1-8b3b-10f52c028d14/download\",\n    \"type\": \"pdf\",\n    \"url\": \"https://irf.fhnw.ch/bitstreams/9bf27939-902d-45a1-8b3b-10f52c028d14/download\"\n  }\n}\n"
+ },
+ {
+  "title": "Checkliste Wärmebrücken Neubauten Version 10.0 Vereinfachtes Verfahren beim Einz",
+  "url": "https://energiehub-gebaeude.ch/wp-content/uploads/2026/01/EN-102c.pdf",
+  "why": "EnFK Checkliste Waermebruecken, official Swiss proof",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"9dffa3f3-4d16-4277-8e9e-ed696fda400f\",\n    \"title\": \"EN-102c\",\n    \"type\": \"pdf\",\n    \"url\": \"https://energiehub-gebaeude.ch/wp-content/uploads/2026/01/EN-102c.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "1 Anhang 1a U-Wert-Grenzwerte bei Neubauten Die Typen der Wärmebrücken sind in d",
+  "url": "https://rechtsbuch.ur.ch/api/annex_document_dictionaries/37",
+  "why": "Kanton Uri Anhang 1a, legal U limits from SIA 380/1",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"d1a6592c-a5f1-4ce7-9501-79c68d56606c\",\n    \"title\": \"https://rechtsbuch.ur.ch/api/annex_document_dictionaries/37\",\n    \"type\": \"pdf\",\n    \"url\": \"https://rechtsbuch.ur.ch/api/annex_document_dictionaries/37\"\n  }\n}\n"
+ },
+ {
+  "title": "Checkliste GEAK Publikationen",
+  "url": "https://www.geak.ch/media/dche_checkliste_publikationen_240101_geak.pdf",
+  "why": "GEAK checklist, b-factors",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"179a16c8-2679-49c3-b1aa-f89357be5966\",\n    \"title\": \"dche_checkliste_publikationen_240101_geak\",\n    \"type\": \"pdf\",\n    \"url\": \"https://www.geak.ch/media/dche_checkliste_publikationen_240101_geak.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "oSIST prEN 12831-1:2025 - iTeh Standards",
+  "url": "https://cdn.standards.iteh.ai/sist-preview/77414/6965a99b94b8403497135a1552d567cc/oSIST-prEN-12831-1-2025.pdf",
+  "why": "prEN 12831-1:2025 preview, design heat load",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"3491fc43-5355-44f6-9f82-871e9470271a\",\n    \"title\": \"oSIST-prEN-12831-1-2025\",\n    \"type\": \"pdf\",\n    \"url\": \"https://cdn.standards.iteh.ai/sist-preview/77414/6965a99b94b8403497135a1552d567cc/oSIST-prEN-12831-1-2025.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "Test Procedures and Quality Labels for Heat Pump Water Heaters",
+  "url": "https://heatpumpingtechnologies.org/annex46/wp-content/uploads/sites/53/2020/10/hpt-an46-05-task-1-test-procedures-and-quality-labels-for-heat-pump-water-heaters.pdf",
+  "why": "IEA HPT Annex 46, heat pump water heaters, DHW demand",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"3ad8373f-3bc4-4bda-b418-46c1ccab9d08\",\n    \"title\": \"hpt-an46-05-task-1-test-procedures-and-quality-labels-for-heat-pump-water-heaters\",\n    \"type\": \"pdf\",\n    \"url\": \"https://heatpumpingtechnologies.org/annex46/wp-content/uploads/sites/53/2020/10/hpt-an46-05-task-1-test-procedures-and-quality-labels-for-heat-pump-water-heaters.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "Field Experience with Residential Heat Pumps in Switzerland: Potential for Impro",
+  "url": "https://etkhpcorderapi.extweb.sp.se/api/file/2574",
+  "why": "RISE, field experience Swiss residential heat pumps",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"7735d135-ff0b-446a-b3c3-881f0f56062b\",\n    \"title\": \"https://etkhpcorderapi.extweb.sp.se/api/file/2574\",\n    \"type\": \"pdf\",\n    \"url\": \"https://etkhpcorderapi.extweb.sp.se/api/file/2574\"\n  }\n}\n"
+ },
+ {
+  "title": "Field Performance Of Domestic Heat Pumps For Heating And Hot Water In Switzerlan",
+  "url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=3372&context=iracc",
+  "why": "Purdue, field performance Swiss heat pumps heating + DHW",
+  "ok": false,
+  "out": "{\n  \"error\": true,\n  \"code\": \"NOTEBOOKLM_ERROR\",\n  \"message\": \"Error: Failed to add source: https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=3372&context=iracc\\nPossible causes:\\n  - URL is invalid or inaccessible\\n  - Content is behind a paywall or requires authentication\\n  - Page content is empty or could not be parsed\\n  - Rate limiting or quota exceeded\"\n}\n"
+ },
+ {
+  "title": "Bericht «Feldmessungen von Wärme- pumpen-Anlagen Heizsaison 2021/22» - Ostschwei",
+  "url": "https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/institute/ies/wpz/sonstige_wichtige_dokumente/2022_jahresbericht_feldmessungen.pdf",
+  "why": "OST Feldmessungen 2021/22",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"b1ecdcbb-1538-4bd4-8d8d-55a96db0f046\",\n    \"title\": \"2022_jahresbericht_feldmessungen\",\n    \"type\": \"pdf\",\n    \"url\": \"https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/institute/ies/wpz/sonstige_wichtige_dokumente/2022_jahresbericht_feldmessungen.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "Der Heizleistungsbedarf als Beurteilungsgrösse für die energetische Qualität der",
+  "url": "https://energiehub-gebaeude.ch/wp-content/uploads/2025/08/ME_AgBau_Heizleistung_2014-1.pdf",
+  "why": "Energiehub, Heizleistungsbedarf, Zurich design temperature",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"184dc7e3-7755-4813-a59a-c5160871ca45\",\n    \"title\": \"ME_AgBau_Heizleistung_2014-1\",\n    \"type\": \"pdf\",\n    \"url\": \"https://energiehub-gebaeude.ch/wp-content/uploads/2025/08/ME_AgBau_Heizleistung_2014-1.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "TABULA Common Calculation Method",
+  "url": "https://episcope.eu/fileadmin/tabula/public/docs/report/TABULA_CommonCalculationMethod.pdf",
+  "why": "primary document already read in P14-P20",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"78db783e-5401-41d7-ac12-7365432f66fd\",\n    \"title\": \"TABULA_CommonCalculationMethod\",\n    \"type\": \"pdf\",\n    \"url\": \"https://episcope.eu/fileadmin/tabula/public/docs/report/TABULA_CommonCalculationMethod.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "BFH Waermebrueckenkatalog 2013",
+  "url": "https://www.bfh.ch/.documents/ris/2009-484.698.880/BFHID-1286002156-15/Waermebrueckenkatalog.pdf",
+  "why": "primary document already read in P14-P20",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"b89028c2-00cc-410e-af78-34788da9d12f\",\n    \"title\": \"Waermebrueckenkatalog\",\n    \"type\": \"pdf\",\n    \"url\": \"https://www.bfh.ch/.documents/ris/2009-484.698.880/BFHID-1286002156-15/Waermebrueckenkatalog.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "BFE Faktenblatt typischer Haushalt 2021",
+  "url": "https://pubdb.bfe.admin.ch/de/publication/download/10559",
+  "why": "primary document already read in P14-P20",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"ece5039d-ff79-4aab-bc08-a818664687ea\",\n    \"title\": \"https://pubdb.bfe.admin.ch/de/publication/download/10559\",\n    \"type\": \"pdf\",\n    \"url\": \"https://pubdb.bfe.admin.ch/de/publication/download/10559\"\n  }\n}\n"
+ },
+ {
+  "title": "SAFE Nipkow 2013 typischer Haushalt-Stromverbrauch",
+  "url": "https://www.energieeffizienz.ch/dam/studien/2013_typischer_haushalt_stromverbrauch_d/pdf_de/SAFE_typischer_Haushaltstromverbrauch_12_2013/Der%20typische%20Haushalt-SV-SAFE-Dez-2013.pdf",
+  "why": "primary document already read in P14-P20",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"856ec104-f16f-4ed4-a885-995680e07eb2\",\n    \"title\": \"Der typische Haushalt-SV-SAFE-Dez-2013\",\n    \"type\": \"pdf\",\n    \"url\": \"https://www.energieeffizienz.ch/dam/studien/2013_typischer_haushalt_stromverbrauch_d/pdf_de/SAFE_typischer_Haushaltstromverbrauch_12_2013/Der%20typische%20Haushalt-SV-SAFE-Dez-2013.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "OST Feldmessungen 2019/20",
+  "url": "https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/institute/ies/wpz/sonstige_wichtige_dokumente/2020_jahresbericht_feldmessungen.pdf",
+  "why": "primary document already read in P14-P20",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"3055e175-acca-4f77-a62b-ddf8fea70445\",\n    \"title\": \"2020_jahresbericht_feldmessungen\",\n    \"type\": \"pdf\",\n    \"url\": \"https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/institute/ies/wpz/sonstige_wichtige_dokumente/2020_jahresbericht_feldmessungen.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "OST Feldmessungen 2020/21",
+  "url": "https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/institute/ies/wpz/sonstige_wichtige_dokumente/2021_bericht_feldmessungen.pdf",
+  "why": "primary document already read in P14-P20",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"c58f7eeb-746c-4416-acb3-89a1a36f12a5\",\n    \"title\": \"2021_bericht_feldmessungen\",\n    \"type\": \"pdf\",\n    \"url\": \"https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/institute/ies/wpz/sonstige_wichtige_dokumente/2021_bericht_feldmessungen.pdf\"\n  }\n}\n"
+ },
+ {
+  "title": "FAWA Schlussbericht 2004",
+  "url": "https://www.fws.ch/wp-content/uploads/2018/06/FAWA_Schlussbericht.pdf",
+  "why": "primary document already read in P14-P20",
+  "ok": true,
+  "out": "{\n  \"source\": {\n    \"id\": \"875e9f19-a5b6-48ad-b87d-f981c526193c\",\n    \"title\": \"FAWA_Schlussbericht\",\n    \"type\": \"pdf\",\n    \"url\": \"https://www.fws.ch/wp-content/uploads/2018/06/FAWA_Schlussbericht.pdf\"\n  }\n}\n"
+ }
+]

@@ -1,0 +1,81 @@
+
+==============================================================================
+1. THE DEFICIENCY, FROM THE PHYSICS - it never touches the meter
+==============================================================================
+  households with a deficiency and a visit date : 184
+  deficiency median 1609 kWh/yr  IQR 879 - 2557
+
+==============================================================================
+2. PRE AND POST FITS - how many households can be measured at all?
+==============================================================================
+  STRICT 180/60/60     both sides sufficient : 83 of 184
+  RELAXED 120/30/30    both sides sufficient : 86 of 184
+
+  STRICT is used. Relaxing to 120/30/30 buys only 3 households (86 vs 83),
+  so there is no case for loosening the rule and it is not loosened.
+  households in the test : 83
+
+==============================================================================
+3. DID THE CURVE CHANGE DO ANYTHING AT ALL?
+==============================================================================
+  curve CHANGED at the visit : 52
+  curve left alone           : 26
+  not recorded               : 5
+
+  heating slope, %
+    changed    median   -5.03  [ -11.29,   +1.20]  n=52
+    unchanged  median   -3.16  [  -9.36,   -0.01]  n=26
+    AUC changed-over-unchanged 0.501 [0.368, 0.637]
+
+  normalised level, %
+    changed    median   -7.77  [  -9.80,   -5.76]  n=52
+    unchanged  median   -4.69  [  -7.34,   -2.24]  n=26
+    AUC changed-over-unchanged 0.408 [0.276, 0.547]
+
+  AUC below 0.5 means the changed houses fell FURTHER, i.e. the fix worked.
+
+==============================================================================
+4. THE COMPENSATION TEST - does a deficiency blunt the fix?
+==============================================================================
+  Among the 52 households whose curve WAS turned down, split at the
+  median computed deficiency:
+
+  heating slope, %
+    low deficiency   median  -11.74  [ -15.04,   +4.55]  n=26
+    high deficiency  median   -0.65  [  -6.80,   +3.80]  n=26
+    AUC high-over-low 0.596 [0.436, 0.759]
+    PREDICTION: AUC > 0.5 - deficient houses fall LESS, i.e. the fix
+    is blunted. AUC crossing 0.5 means not shown.
+
+  normalised level, %
+    low deficiency   median   -9.09  [ -10.34,   -4.59]  n=26
+    high deficiency  median   -6.19  [ -12.61,   -3.77]  n=26
+    AUC high-over-low 0.536 [0.382, 0.689]
+    PREDICTION: AUC > 0.5 - deficient houses fall LESS, i.e. the fix
+    is blunted. AUC crossing 0.5 means not shown.
+
+  continuous check, Spearman of deficiency against the change:
+    deficiency vs d_slope_pct    rho +0.276  n=52
+    deficiency vs d_level_pct    rho +0.117  n=52
+
+==============================================================================
+5. THE SAME TEST ON THE HOUSES WHOSE CURVE WAS LEFT ALONE
+==============================================================================
+    d_slope_pct    AUC high-over-low 0.562 [0.320, 0.775]
+    d_level_pct    AUC high-over-low 0.627 [0.396, 0.840]
+
+  This is the FALSIFICATION arm. If deficient houses drift upward even
+  when NOTHING was changed, then section 4 measures drift, not blunting.
+
+==============================================================================
+6. WHAT THIS CAN AND CANNOT SHOW
+==============================================================================
+  n is small and the intervals will be wide. Report both halves, always.
+  A confirmed result would give S10's null a MECHANISM and would justify
+  routing category C differently from A on the dashboard.
+  A null result leaves the C split defensible on mechanism and unproven
+  on evidence - which is exactly what the CLAUDE.md already claims.
+
+  written: p7_compensation.parquet, p7_compensation.csv
+
+P7 complete.

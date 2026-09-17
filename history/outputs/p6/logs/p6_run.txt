@@ -1,0 +1,82 @@
+
+==============================================================================
+1. THE TWO WINDOWS
+==============================================================================
+  modellable households : 190 of 214
+
+                           all days post-visit
+  households with any day       1387        200
+  clear >=180/60/60            1313        154
+  AND modellable                172        145
+
+  COST OF THE POST-VISIT RULE: 172 -> 145 households  (-15.7%)
+  of the 27 lost: 4 have NO post-visit day at all, 23 have too few
+    among those with some post-visit data, median n_days 77, n_warm 0, n_cold 77
+  Visits cluster Nov-Feb, so a short post-visit record often holds no
+  summer at all. That is what the attrition is.
+
+==============================================================================
+2. DOES THE WINDOW CHANGE THE ANSWER?
+==============================================================================
+  all days     n=172  median deficiency   1609   median band   1086   decisive  90.1%
+  post-visit   n=145  median deficiency   1429   median band   1067   decisive  89.0%
+
+  on the 145 households present in BOTH windows:
+    hdd_per_day    all 3.884  post 3.820  (weather differs between windows)
+    deficiency     median ratio post/all 0.987
+    Spearman of the ranking: 0.9916
+  The deficiency is COMPUTED from geometry and constants; the only thing
+  the window changes is hdd_per_day. So a high rank correlation is
+  EXPECTED and is not evidence the window choice is unimportant.
+
+==============================================================================
+3. PV - AND WHY IT DOES NOT BIAS CATEGORY B
+==============================================================================
+  PV on the modellable, post-visit population:
+    {False: np.int64(99), nan: np.int64(25), True: np.int64(21)}
+  Absence is NOT 'no PV' - Unknown is its own level (parent trap 3).
+
+  deficiency by PV level:
+    PV       n=21   median deficiency   1522   decisive  90.5%
+    Unknown  n=25   median deficiency   2016   decisive 100.0%
+    no PV    n=99   median deficiency   1356   decisive  85.9%
+
+  MEASURED CONCLUSION: Category B is computed from geometry, era, JAZ,
+  residents and HDD. IT NEVER TOUCHES THE METER. A PV household's grid
+  import under-states its true draw, but that number does not enter the
+  deficiency at all. So PV DOES NOT BIAS CATEGORY B.
+
+  PV bites only on meter-based checks. Here is the damage, on the level:
+    PV       implied non-heating electricity: median   3679 kWh/yr  5-95%    -124 -   10501
+    Unknown  implied non-heating electricity: median   6964 kWh/yr  5-95%    2344 -   18862
+    no PV    implied non-heating electricity: median   5980 kWh/yr  5-95%    2544 -   16200
+  If PV households sit LOWER, that is the invisible self-consumption, and
+  it is a reason to keep them out of any meter-based comparison - never
+  out of Category B.
+
+==============================================================================
+4. THE DELIVERABLE - post-visit, ranked within era on the LOWER BOUND
+==============================================================================
+  era            n  decisive  median def_lo median band
+  pre1975       29        29           1722       3339
+  1976_1990     53        53            987       1298
+  1991_2000     17        17            779        674
+  2001_2010     29        29            337        550
+  post2010      17         1            808        394
+
+  TOP 10 OVERALL by lower bound (the honest 'at least this much'):
+  household    era        tier  PV         def_lo      point       band
+  116121       pre1975    T1    no PV        7779       8842       4957
+  5011111      pre1975    T1    Unknown       6703       7850       4450
+  1111201      pre1975    T1    PV           5402       6049       2658
+  876511       1991_2000  T1    Unknown       4733       5346       1370
+  4710670      pre1975    T1    PV           4230       4978       3279
+  901187       pre1975    T1    no PV        3988       4473       2577
+  700831       1976_1990  T2    Unknown       3892       5045       3416
+  1137376      1976_1990  T1    no PV        3477       3904       1298
+  7771161      pre1975    T2    no PV        2719       4604       4369
+  671781       pre1975    T2    no PV        2690       4112       3339
+
+  written: p6_final.parquet, p6_category_b.csv, p6_window_comparison.csv
+
+P6 complete.

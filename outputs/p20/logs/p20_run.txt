@@ -1,0 +1,41 @@
+
+==============================================================================
+1. POPULATION - P17's 172 households, with the step-model measured slope
+==============================================================================
+  households: 172
+hp_type        emitter      
+air-source     both             12
+               floor_only       71
+               radiator_only    20
+ground-source  both             11
+               floor_only       47
+               radiator_only    11
+  S0 fleet deficiency 321330 kWh/yr (P6 record 321,330)
+
+==============================================================================
+2. CATEGORY B - deficiency and its terms, kWh/yr fleet
+==============================================================================
+  scenario             fleet   median |  envelope   emitter       dhw | worst-quartile overlap vs S0
+  S0_live             321330     1609 |    238980     18418     63932 | 45 / 45
+  S1_heat+dhw         304337     1462 |    225321     15084     63932 | 42 / 45
+  S2_boundary         303634     1414 |    211637     17489     74508 | 41 / 45
+  S3_fawa_vintage     336585     1792 |    272653         0     63932 | 40 / 45
+
+  the 22 ground-source non-floor households (live JAZ DERIVED):
+    S0_live          median as-built JAZ 3.58   median deficiency   2517
+    S1_heat+dhw      median as-built JAZ 4.45   median deficiency   2004
+    S2_boundary      median as-built JAZ 4.70   median deficiency   2174
+    S3_fawa_vintage  median as-built JAZ 3.50   median deficiency   2238
+
+==============================================================================
+3. THE LEVEL CHECK (validation only) - physics vs P17's step slope
+==============================================================================
+  scenario         phys/meas |   pre1975  1976_1990  1991_2000  2001_2010   post2010 | rho per m2
+  S0_live              0.946 |      0.80       1.00       1.07       1.32       1.01 | +0.534
+  S1_heat+dhw          0.882 |      0.80       1.07       1.13       1.33       1.08 | +0.573
+  S2_boundary          0.816 |      0.85       1.15       1.21       1.40       1.18 | +0.579
+  S3_fawa_vintage      1.112 |      0.71       0.83       0.87       1.02       0.80 | +0.551
+
+  A scenario landing nearer 1.0 is NOT evidence for it (trap 4).
+
+  written: p20_scenarios.parquet

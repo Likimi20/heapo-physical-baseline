@@ -1,0 +1,107 @@
+{
+  "answer": "### 1. Domestic Hot Water Heat Pump SPF / JAZ in DHW Mode\n\n* **Air-to-Water Heat Pumps (LW-WP)**:\n  * **JAZ = 2.8** for DHW mode alone (*TWW*) (WNG = 2.6, SNG_TWW = 1.9) [1, 2].\n  * *Source Title*: **\"Wie gut sind aktuelle Wärmepumpen im Feld?\"** (OST WPZ Buchs / P+I 11/12-2020), Abb. 3 / p. 21 [1, 2].\n* **Ground-Source Heat Pumps (SW-WP)**:\n  * **JAZ = 3.3** for DHW mode alone (*TWW*) (WNG = 2.8, SNG_TWW = 1.6) [1, 2].\n  * *Source Title*: **\"Wie gut sind aktuelle Wärmepumpen im Feld?\"** (OST WPZ Buchs / P+I 11/12-2020), Abb. 3 / p. 21 [1, 2].\n* **System Configuration DHW Performance (FAWA Field Study)**:\n  * **JAZ_BWW = 3.4** for a ground-source heat pump heating DHW via a standard boiler with an internal heat exchanger [3].\n  * **JAZ_BWW = 2.8** for a ground-source heat pump combined with solar thermal collectors and a combi-storage tank (*Kombispeicher*) [3].\n  * *Source Title*: **\"FAWA – Feldanalyse von Wärmepumpen-Anlagen\"** (BFE, 2004), Table 3 / p. 44 [3].\n* **General Swiss Field Benchmark Range**:\n  * **Field JAZ_DHW = 2.10–2.50** [4].\n  * *Source Title*: **\"Research report: Swiss Building Standards & Heat Pump Benchmarks\"**, Section 4 [4].\n\n---\n\n### 2. DHW Energy Demand per Person per Day\n\n* **Annual Household Benchmark (4-Person Single-Family House)**:\n  * **3,811 kWh/year** total hot water thermal heat demand for a standard 4-person single-family house (*Standard EFH*) [3, 5]. This corresponds to **952.75 kWh/person/year** (approximately **2.61 kWh/person/day**) [3, 5].\n  * *Source Title*: **\"FAWA – Feldanalyse von Wärmepumpen-Anlagen\"** (BFE, 2004), Table 3 / p. 44 [3] & Table 4 / p. 55 [5].\n* **Litres per Person per Day & Temperature Rise (\\\\(\\Delta T\\\\))**:\n  * **Not in the sources**. The uploaded sources do not state a specific volume demand in litres per person per day or a stated temperature rise (\\\\(\\Delta T\\\\)).\n\n---\n\n💡 **Next Step**: Would you like to review how this annual DHW benchmark (**3,811 kWh/year for 4 residents**) is implemented in the `E_as_built` and `E_reference` equations inside `heapo-physical-model-spec-v3.md`?",
+  "conversation_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+  "turn_number": 27,
+  "is_follow_up": true,
+  "references": [
+    {
+      "source_id": "de90ecc6-f823-4e52-bd97-c6dd52425447",
+      "citation_number": 1,
+      "cited_text": "Vergleich der Systemgrenzen Beim Vergleich der Systeme in der Praxis müssen unbedingt identische System-grenzen betrachtet werden. Zwischen der Effizienz der Wärmeerzeugung durch eine Wärmepumpe und der tatsächlich genutzten Wärme besteht insbesondere beim Trink-warmwasser teilweise ein signifikanter Unterschied. Dieser ist einerseits auf den Einsatz der Elektroheizstäbe (z. B. für Legionellenschaltungen), aber vor allem auch auf Speicherverluste zurückzuführen. Abbildung 3 zeigt einen Vergleich von Jahresarbeitszahl (JAZ), Wärmenutzungs-grad (WNG) und Systemnutzungsgrad (SNG) für Sole/Wasser- und Luft/Wasser- Wärmepumpen. Es handelt sich dabei um die gemittelten Werte der gemessenen Wärmepumpen. Wie zu erwarten, liegt die Effizienz der Trinkwarmwasserbereitung aufgrund der höheren Aufladetemperaturen tiefer als die Gesamteffizienz für Heizen und Trinkwarmwasser. Bei Sole/Was-ser-Wärmepumpen fällt diese Differenz wesentlich grösser aus, da diese im  Heizbetrieb einen deutlich kleineren  Temperaturhub als für die Trinkwarm-wasserbereitung aufweisen. ",
+      "start_char": 5054,
+      "end_char": 6119,
+      "chunk_id": "81714f8c-53fc-4224-b2fe-cecae7d38933",
+      "passage_id": null,
+      "answer_start_char": 5054,
+      "answer_end_char": 6119,
+      "score": 0.7209684592635424,
+      "fragment_start_char": 5054,
+      "fragment_end_char": 6119,
+      "answer_anchor_start": 118,
+      "answer_anchor_end": 146
+    },
+    {
+      "source_id": "de90ecc6-f823-4e52-bd97-c6dd52425447",
+      "citation_number": 2,
+      "cited_text": "Für den Vergleich von Heizsystemen untereinander ist es wichtig, die jeweils richtigen Systemgrenzen zu verwenden, um die korrekten Schlüsse zu ziehen. Vergleich zu Öl­ und Gasheizungen sind kaum möglich, weil dort vergleichbaren Messungen nicht vorliegen. ■ www.wpz.ch Abb. 3: Vergleich von JAZ, Wärmenutzungsgrad (WNG) und Systemnutzungsgrad (SNG) gemittelt über  alle Anlagen. Unterschieden wird zwischen Heizbetrieb («Heizen»), Trinkwarmwasserbetrieb («TWW»)  und Gesamteffizienz «Total». Tabelle 1: Jahresarbeitszahl (JAZ) der gemessenen Wärmepumpen je nach Einsatzbereich. ",
+      "start_char": 8816,
+      "end_char": 9395,
+      "chunk_id": "750c97d6-6a24-4cb7-a6cb-4dcd884946d4",
+      "passage_id": null,
+      "answer_start_char": 8816,
+      "answer_end_char": 9395,
+      "score": 0.7094715975715005,
+      "fragment_start_char": 8816,
+      "fragment_end_char": 9395,
+      "answer_anchor_start": 118,
+      "answer_anchor_end": 146
+    },
+    {
+      "source_id": "490d9246-2ee3-4f40-814e-d67266df5d67",
+      "citation_number": 3,
+      "cited_text": "Tabelle 3: Vergleich der Varianten Warmwasser mit WP + Solaranlage + PV-Strom  mit WP + PV-Strom. WW-Wärmekosten WP+SoKo+PV Personen 4.0 c Verbrauch 3'811 kWh Fläche 5.0 m2 Ertrag SoKo 2'100 kWh Deckung 0.55 -Mehrkosten der Haustechnik Kosten* 16'000 CHF Nutzungsdauer 20 a Zins 0.0275 -Annuität -1'051 CHF Wärmepreis Solar 0.50 CHF JAZBWW 2.8 -Stromverbrauch 653 kWh PV-Strom 0.95 CHF/kWh Wärmepreis total 0.44 CHF/kWh *mit Kombispeicher WW-Wärmekosten WP+PV Personen 4.0 c Verbrauch 3'811 kWh Fläche 0 m2 Ertrag SoKo 0 kWh Deckung 0.00 -Mehrkosten der Haustechnik Kosten* 4'075 CHF Nutzungsdauer 20 a Zins 0.0275 -Annuität -268 CHF Wärmepreis Solar - CHF JAZBWW 3.4 -Stromverbrauch 1'121 kWh PV-Strom 0.95 CHF/kWh Wärmepreis total 0.35 CHF/kWh *Elektroboiler 2'500 CHF  EWS (zusätzlich) 1'575 CHF",
+      "start_char": 75491,
+      "end_char": 76289,
+      "chunk_id": "4cd71ea7-a711-4e2e-bd80-2dcb7e2cbd67",
+      "passage_id": null,
+      "answer_start_char": 75491,
+      "answer_end_char": 76289,
+      "score": 0.7263854541112822,
+      "fragment_start_char": 75491,
+      "fragment_end_char": 76289,
+      "answer_anchor_start": 528,
+      "answer_anchor_end": 623
+    },
+    {
+      "source_id": "88cca6a2-3c36-48af-ae90-8691552e3a28",
+      "citation_number": 4,
+      "cited_text": "\n--------------------------------------------------------------------------------\n4. Field-Measured Seasonal Performance Factors (JAZ / SCOP)From FAWA (Feldanalyse von Wärmepumpen-Anlagen) and OST WPZ Buchs field measurement studies in Switzerland:Air-to-Water HP (ASHP) — Radiators (50\\text{--}55^\\circ\\text{C} flow temp): Field \\text{JAZ} = \\mathbf{2.80}Air-to-Water HP (ASHP) — Low-Temp Radiators / Renovated (40\\text{--}45^\\circ\\text{C} flow temp): Field \\text{JAZ} = \\mathbf{3.10}Air-to-Water HP (ASHP) — Floor Heating (35^\\circ\\text{C} flow temp): Field \\text{JAZ} = \\mathbf{3.40\\text{--}3.60}Ground-Source HP (GSHP / Brine) — Floor Heating (35^\\circ\\text{C} flow temp): Field \\text{JAZ} = \\mathbf{4.10\\text{--}4.40}Ground-Source HP (GSHP / Brine) — Radiators (55^\\circ\\text{C} flow temp): Field \\text{JAZ} = \\mathbf{3.20\\text{--}3.50}Domestic Hot Water (DHW) Field Efficiency: Field \\text{JAZ}_{\\text{DHW}} = \\mathbf{2.10\\text{--}2.50}",
+      "start_char": 3500,
+      "end_char": 4442,
+      "chunk_id": "1bf62a43-8e9e-4f88-b3c0-ba973ac47029",
+      "passage_id": null,
+      "answer_start_char": 3500,
+      "answer_end_char": 4442,
+      "score": 0.7831868788825166,
+      "fragment_start_char": 3500,
+      "fragment_end_char": 4442,
+      "answer_anchor_start": 897,
+      "answer_anchor_end": 897
+    },
+    {
+      "source_id": "490d9246-2ee3-4f40-814e-d67266df5d67",
+      "citation_number": 5,
+      "cited_text": "Betriebskosten (Strom) Anteil Jahreskosten Anteil Jahreskosten Heizen 649.- 857.-Warmwasser 168.- 229.-Betriebskosten total 26% 817.- 36% 1'086.-Jahreskosten total 3'097.- 2'980.-Wärmekosten [CHF/kWh] 0.156 0.150 Die Betriebskosten liegen wegen der besseren JAZ der S/W-Anlage um 25% unter jenen der L/W-Anlage. Als wichtiges Ergebnis zeigt sich, dass die Jahreskosten und entsprechend der Wärmepreis für beide Varianten sehr ähnlich sind. Standard EFH (4 Personen) Wärmeleistungsbedarf Gebäude 8.0 kW Wärmebedarf Heizen 16'000 kWh Wärmebedarf WW 3'811 kWh Wärmebedarf total 19'811 kWh Nutzungsdauer Haustechnik 15 Jahre EWS 30 Jahre Kapitalzins (real) 2.75 % Stromkosten (real) 0.15 CHF/kWh JAZ [-] Heizen WW L/W 2.8 2.5 S/W 3.7 3.4 EWS-Länge [m] 146 34",
+      "start_char": 92254,
+      "end_char": 93008,
+      "chunk_id": "778590a9-4ce6-4df0-b07e-28b03ce65911",
+      "passage_id": null,
+      "answer_start_char": 92254,
+      "answer_end_char": 93008,
+      "score": 0.7146218124921557,
+      "fragment_start_char": 92254,
+      "fragment_end_char": 93008,
+      "answer_anchor_start": 1196,
+      "answer_anchor_end": 1197
+    }
+  ],
+  "turn_key": {
+    "session_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+    "turn_id": "925aef3d-7a00-49e7-84f0-340f34317c68",
+    "turn_code": 567636715
+  },
+  "next_steps": [
+    {
+      "question": "What are the typical JAZ ranges for air-source versus ground-source pumps?",
+      "type_code": 9
+    },
+    {
+      "question": "How does the 'performance gap' affect heat pump consumption in newer houses?",
+      "type_code": 9
+    },
+    {
+      "question": "Tell me more about the 15% relative deviation rule for Category B.",
+      "type_code": 9
+    }
+  ]
+}

@@ -1,0 +1,506 @@
+sources total 38, not ready: ['https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=3372']
+asking over 35 sources (AI-generated reports excluded)
+
+##### q7_u_by_era   cited: {}
+
+
+##### q13_tep_charts   cited: {'TABULA_CommonCalculationMethod': 1, 'ME_AgBau_Heizleistung_2014-1': 2}
+### 1. EFH U-Values by Construction Period from Abbildung 30 to 33
+
+* **Source Title:** *Erweiterung des Gebäudeparkmodells gemäss SIA-Effizienzpfad Energie* (TEP Energy, 2016) [1]
+* **Section / Page:** Section 3.2.1, Pages 78–79, Abbildung 30–33
+* **Building Type:** Single-Family House (**EFH** / *Einfamilienhaus*)
+* **Data Year:** 2010 (Model baseline stock)
+
+Values are read from the **EFH** bars across the five construction periods (**vor 1920**, **1920 bis 1946**, **1947 bis 1975**, **1976 bis 1990**, **1991 bis 2009**), including error bars representing standard deviation:
+
+#### **Abbildung 30: Wand-U-Wert (Exterior Walls)**
+* **vor 1920:** **~0.86 W/m²K** (Standard deviation: **±0.10 W/m²K**)
+* **1920 bis 1946:** **~0.90 W/m²K** (Standard deviation: **±0.10 W/m²K**)
+* **1947 bis 1975:** **~0.95 W/m²K** (Standard deviation: **±0.20 W/m²K**)
+* **1976 bis 1990:** **~0.65 W/m²K** (Standard deviation: **±0.15 W/m²K**)
+* **1991 bis 2009:** **~0.27 W/m²K** (Standard deviation: **±0.07 W/m²K**)
+
+#### **Abbildung 31: Fenster-U-Wert (Windows)**
+* **vor 1920:** **~2.20 W/m²K** (Standard deviation: **±0.20 W/m²K**)
+* **1920 bis 1946:** **~2.09 W/m²K** (Standard deviation: **±0.20 W/m²K**)
+* **1947 bis 1975:** **~1.98 W/m²K** (Standard deviation: **±0.20 W/m²K**)
+* **1976 bis 1990:** **~1.75 W/m²K** (Standard deviation: **±0.20 W/m²K**)
+* **1991 bis 2009:** **~1.40 W/m²K** (Standard deviation: **±0.20 W/m²K**)
+
+#### **Abbildung 32: Dach-U-Wert (Roofs)**
+* **vor 1920:** **~0.75 W/m²K** (Standard deviation: **±0.15 W/m²K**)
+* **1920 bis 1946:** **~0.71 W/m²K** (Standard deviation: **±0.15 W/m²K**)
+* **1947 bis 1975:** **~0.70 W/m²K** (Standard deviation: **±0.05 W/m²K**)
+* **1976 bis 1990:** **~0.60 W/m²K** (Standard deviation: **±0.10 W/m²K**)
+* **1991 bis 2009:** **~0.25 W/m²K** (Standard deviation: **±0.06 W/m²K**)
+
+#### **Abbildung 33: Kellerdecke-U-Wert (Cellar Ceilings)**
+* **vor 1920:** **~0.67 W/m²K** (Standard deviation: **±0.03 W/m²K**)
+* **1920 bis 1946:** **~0.67 W/m²K** (Standard deviation: **±0.03 W/m²K**)
+* **1947 bis 1975:** **~0.70 W/m²K** (Standard deviation: **±0.05 W/m²K**)
+* **1976 bis 1990:** **~0.60 W/m²K** (Standard deviation: **±0.10 W/m²K**)
+* **1991 bis 2009:** **~0.35 W/m²K** (Standard deviation: **±0.06 W/m²K**)
+
+---
+
+### 2. Historical Component U-Values from Jakob / CEPE Studies
+
+* **Source Title:** *Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebereich* (Teil 2, Jakob, Jochem, Christen / CEPE ETH Zürich, 2002) [2]
+* **Table / Page:** Page 179, **Tabelle 4.3-38** (*Flächenspezifische U-Werte von Wand und Estrichboden...*)
+* **Building Type:** Residential / Existing Stock (Unrenovated Baseline State / *Ausgangslage*)
+* **Data Year:** 2002 (Data derived from SIA-Wärmebrückenkatalog 3 / SIA 1993)
+
+#### **Aussenwand (Exterior Wall)**
+* **Bis 1900:** **1.55 W/m²K**
+* **1900–1925:** **1.00 W/m²K**
+* **1925–1965:** **1.16 W/m²K**
+
+#### **Estrichboden (Attic Floor)**
+* **Bis 1900:** **0.72 W/m²K**
+* **1900–1925:** **0.87 W/m²K**
+* **1925–1965:** **0.88 W/m²K**
+
+---
+
+### 3. Area-Weighted Envelope Mean or Specific Heat Loss per Period
+
+* **Status:** **not in the sources** (as the summary research documents containing these aggregated envelope averages were excluded from this query).
+
+---
+
+### 4. Historical Legal U Limits by Period
+
+* **Pre-2000 Cantonal Legal U Limits:** **not in the sources**. The uploaded documents do not tabulate historical mandatory legal U-value limits for periods prior to 2000.
+* **Post-2000 Cantonal Energy Requirements (MuKEn / Minergie):**
+  * **Source Title:** *Beurteilung der energetischen Qualität der Gebäudehülle* (EnDK / Energiehub Gebäude, 2014) [3]
+  * **Table / Page:** Page 22, Abbildung 13 / **MuKEn Standards**
+  * **Building Type:** Multi-Family House (**MFH**) / New Build Standards
+  * **Data Year:** 2014
+  * **Values:**
+    * **MuKEn 2000:** Opake Bauteile Aussenluft: **0.30 W/m²K** | Unbeheizt / Erdreich: **0.35 W/m²K** | Fenster \\(U_w\\): **1.60 W/m²K**
+    * **MuKEn 2008:** Opake Bauteile Aussenluft: **0.20 W/m²K** | Unbeheizt / Erdreich: **0.25 W/m²K** | Fenster \\(U_w\\): **1.30 W/m²K**
+    * **MuKEn 2014:** Opake Bauteile Aussenluft: **0.17 W/m²K** | Unbeheizt / Erdreich: **0.25 W/m²K** | Fenster \\(U_w\\): **1.00 W/m²K**
+
+##### q8_envelope   cited: {'EN-102c': 10, 'TABULA_CommonCalculationMethod': 8, 'ME_AgBau_Heizleistung_2014-1': 3, 'https://irf.fhnw.ch/bitstreams/9bf27939-902d-45a1-8b3b-10f52': 12, 'oSIST-prEN-12831-1-2025': 2, 'https://cms.sia.ch/de/api/getMedia/941': 1}
+### (a) Thermal Bridge Surcharges and Linear \\(\Psi\\)-Values in Swiss Proofs
+
+* **SIA 380/1 Limit Values (\\(\Psi\\)-limits) for New Construction Details**:
+  * **Source Title**: *Checkliste Wärmebrücken Neubau Version 10.0* (Konferenz Kantonaler Energiefachstellen EnFK / EnDK) [1]
+  * **Section / Page**: Pages 4, 6, 8, 12–15 [2-5]
+  * **Building Type**: Residential buildings (single-family and multi-family / *Wohnbauten*) [1]
+  * **Year of Data**: 2023 (valid through 31.12.2026) [2]
+  * **Values**:
+    * **1.1 Balkonplatte (Balcony slab):** Limit **\\(\Psi \le 0.30 \text{ W/mK}\\)** [2]
+    * **2.1 Geschossdecke / Soletta (Floor slab):** Limit **\\(\Psi \le 0.20 \text{ W/mK}\\)** [6]
+    * **2.2 Wandanschluss an Kellerdecke (Wall connection to cellar ceiling):** Limit **\\(\Psi \le 0.20 \text{ W/mK}\\)** (example construction details range from \\(0.35 \text{ to } 0.80 \text{ W/mK}\\)) [3, 7]
+    * **3.4 Sockeldetail (Cellar base detail, unheated or heated cellar):** Limit **\\(\Psi \le 0.20 \text{ W/mK}\\)** [4, 8, 9]
+    * **5.1–5.3 Fensteranschlag (Window reveal / sill / lintel):** Limit **\\(\Psi \le 0.15 \text{ W/mK}\\)** (example construction details range from \\(0.08 \text{ to } 0.20 \text{ W/mK}\\)) [5, 10]
+
+* **Default Thermal Bridge Surcharge (\\(\Delta U_{tb}\\))**:
+  * **Source Title**: *TABULA Common Calculation Method* (IWU / TABULA) [11]
+  * **Section / Page**: Appendix / Pages 32, 34, 54 [12-14]
+  * **Building Type**: Multi-Family House (**MFH** example building) [15]
+  * **Year of Data**: 2013 [16]
+  * **Values**: Standard default surcharge **\\(\Delta U_{tb} = 0.10 \text{ W/(m²K)}\\)** for original/unrefurbished states; **\\(\Delta U_{tb} = 0.05 \text{ W/(m²K)}\\)** for advanced refurbishment [13, 14].
+
+* **Thermal Bridge Contribution to Heat Load**:
+  * **Source Title**: *Schlussbericht: Der Heizleistungsbedarf als Beurteilungsgrösse für die energetische Qualität der Gebäudehülle* (Minergie / EnDK) [17]
+  * **Section / Page**: Section 9 & Appendix A4, Pages 23 & 54 [18, 19]
+  * **Building Type**: Single-family houses (**EFH**, \\(n = 73\\)) and Multi-family houses (**MFH**, \\(n = 74\\)) [17, 19]
+  * **Year of Data**: 2014 [17]
+  * **Values**: Thermal bridge losses contribute **\\(0.5 \text{ to } 5 \text{ W/m²}\\)** of floor area to the design heat load (representing **ca. 5% to 20%**, with an average of **~10%** of total design heat load) [18, 19].
+
+---
+
+### (b) Temperature Reduction Factors \\(b\\) for Floors / Cellars (Measured vs. Default)
+
+* **Default Normative \\(b\\)-Factors**:
+  * **Source Title**: *The prebound-effect in detail: real indoor temperatures in basements and measured versus calculated U-values* (Caroline Hoffmann & Achim Geissler, FHNW / CISBAT 2017 / Energy Procedia 122 (2017) 32–37) [20]
+  * **Section / Page**: Section 2.2 & Section 4.2, Pages 33 & 36 [21-23]
+  * **Building Type**: Single-family houses (e.g. Basel 07 built 1928, Münchenstein 01 built 1925) and Multi-family houses (e.g. Basel 08 ~1950, Reinach 01 1962/63) [21, 24]
+  * **Year of Data**: 2017 (field measurements from winter 2015/16) [25]
+  * **Values**:
+    * **SIA 380/1:2015 Default Values:** **\\(b = 0.7\\)** for unheated cellar full-faced to ground; **\\(b = 0.8\\)** for cellar partly faced to ground [22, 23].
+    * **Calculated Normative \\(b\\)-factor (SN EN ISO 13789):** **\\(b = 0.78\\)** for an unheated basement (yielding a calculated basement temperature of \\(8.3^\circ\text{C}\\) at an outdoor mean of \\(5.1^\circ\text{C}\\)) [22, 23].
+    * **TABULA Default:** **\\(b_{tr} = 0.5\\)** for unheated cellars and soil (*TABULA Common Calculation Method*, 2013, Table 2, p. 11) [26].
+
+* **Measured \\(b\\)-Factors & Real Basement Temperatures**:
+  * **Source Title**: *The prebound-effect in detail: real indoor temperatures in basements and measured versus calculated U-values* (Hoffmann & Geissler, FHNW, 2017) [20]
+  * **Section / Page**: Section 3.2, 4.2 & 5, Pages 34–37 [22, 27, 28]
+  * **Building Type**: Single-family houses and Multi-family houses [21, 24]
+  * **Year of Data**: 2017 (winter 2015/16 measurements) [25]
+  * **Values**:
+    * **Measured unheated basement temperatures:** Ranged between **\\(13^\circ\text{C} \text{ and } 21^\circ\text{C}\\)** across six measured basements (averaging **~8 K higher** than normative calculation methods yielding \\(8.3^\circ\text{C}\\)) [27, 29-31].
+    * **Derived Measured \\(b\\)-factor:** Based on the lowest measured basement temperature of \\(13^\circ\text{C}\\), the iterative \\(b\\)-factor is **0.51** (authors recommend using **\\(b = 0.5\\)** for existing buildings with uninsulated cellar ceilings when balancing demand and consumption) [22, 23, 28, 32].
+
+---
+
+### (c) Minimum Air Change Rate for Design Heat Load
+
+* **Status in Sources**: **not in the sources**. The specific numerical minimum air change rate for design heat load calculation (e.g., under EN 12831 / SIA 384.201) is not provided in the uploaded source excerpts (the excerpt for `prEN 12831-1:2025` lists table of contents headings Annex A.3.4 / B.3.4 "Air change rate", but does not contain the numerical values) [33, 34].
+
+* **Related Ventilation Figures Available in Sources**:
+  * **TABULA Standard Calculation**: Utilisation air change \\(n_{\text{use}} = 0.4 \text{ h}^{-1}\\), infiltration air change \\(n_{\text{infilt}} = 0.2 \text{ h}^{-1}\\) (total \\(n = 0.6 \text{ h}^{-1}\\)) (*TABULA Common Calculation Method*, 2013, Table 1, p. 9) [11, 13, 35].
+  * **SIA Standard Usage Air Flow**: In *Harmonisierung SIA-Standardwerte* (`cms.sia.ch/getMedia/941`, 2019, Table 14, p. 25), SIA 2024:2015 specifies **\\(36 \text{ m³/h per person}\\)** (\\(1.00 \text{ W/m²}\\) for EFH, \\(0.60 \text{ W/m²}\\) for MFH), updated in prSIA 2024:2021 to **\\(29 \text{ m³/h per person}\\)** (\\(0.83 \text{ W/m²}\\) for EFH, \\(0.58 \text{ W/m²}\\) for MFH) [36].
+
+---
+
+🔍 **Next Step**: Would you like to explore incorporating these specific \\(\Psi\\)-limits and the measured \\(b = 0.5\\) cellar reduction factor directly into your Python specification files?
+
+##### q9_prebound   cited: {}
+Based on the uploaded sources, here is what is documented regarding the prebound effect, measured versus calculated U-values/consumption, and real indoor temperatures in existing buildings:
+
+---
+
+### 1. Prebound Effect: Definition and Causes
+* **Definition**: The prebound effect is defined as the gap or deviation between calculated energy demand and actual measured space heating consumption in existing buildings.
+  * **Source Title**: *TABULA Common Calculation Method* (2013), Section 6, p. 27; *The prebound-effect in detail: real indoor temperatures in basements and measured versus calculated U-values* (2017), Section 1, p. 32–33.
+  * **Building Type**: Existing residential dwellings (single-family and multi-family).
+  * **Data Year**: 2012 / 2013 / 2017.
+* **Primary Causes Identified in the Sources**:
+  1. Calculated U-values in building audits/regulations are systematically higher (worse) than actual measured U-values.
+  2. Assumed unheated basement/cellar temperatures in normative standards are significantly lower than real measured temperatures.
+  3. Discrepancies exist between actual local outdoor temperatures and official climate datasets.
+  4. Real winter indoor room temperatures in unrenovated old buildings are typically lower than standard nominal assumptions due to night setbacks, unheated buffer rooms, and higher costs per degree of temperature increase.
+  * **Source Title**: *The prebound-effect in detail: real indoor temperatures in basements and measured versus calculated U-values* (2017), Section 1, p. 32–33; *TABULA Common Calculation Method* (2013), Section 6, p. 27.
+
+---
+
+### 2. Measured versus Calculated U-Values in Existing Buildings
+* **Source Title**: *The prebound-effect in detail: real indoor temperatures in basements and measured versus calculated U-values* (Caroline Hoffmann & Achim Geissler, FHNW / Energy Procedia 122)
+* **Data Year**: 2017 (measurements conducted in winter 2015/16, Jan–Feb 2016)
+* **Overall Component Deviation**: For 7 out of 9 uninsulated/existing building wall constructions tested, calculated U-values (determined independently by 10 GEAK energy consultants using SN EN ISO 6946) were higher (worse) than measured values (using heat flux sensors), with measured values being **12% to 111% lower (better)** than calculated consultant averages (Section 3.1 & Section 4.1, p. 34–35).
+* **Specific Building Element Comparisons** (Table 1 & Figure 1a, p. 33–34):
+  * **Zürich 01** (*Office / Non-residential*, built 1951, wall built 1905, 30 cm brick):
+    * Measured U-value: **1.2 W/(m²K)** | Calculated Mean: **1.5 W/(m²K)** (Data year: 2016)
+  * **Münchenstein 01 B1** (*Single-family house*, built 1925, basement wall, 40 cm tamped concrete):
+    * Measured U-value: **1.8 W/(m²K)** | Calculated Mean: **2.1 W/(m²K)** (Data year: 2016)
+  * **Münchenstein 01 G** (*Single-family house*, built 1925, ground floor wall, 2×12 cm brick with 6 cm air gap):
+    * Measured U-value: **1.1 W/(m²K)** | Calculated Mean: **1.2 W/(m²K)** (Data year: 2016)
+  * **Rheinfelden 01** (*Building type not specified / historical*, built ~1600, 55 cm rubble sandstone masonry):
+    * Measured U-value: **0.6 W/(m²K)** | Calculated Mean: **1.3 W/(m²K)** (Data year: 2016)
+  * **Küttingen 01** (*Building type not specified*, built 1953, 30 cm reinforced concrete):
+    * Measured U-value: **2.7 W/(m²K)** | Calculated Mean: **3.0 W/(m²K)** (Data year: 2016)
+  * **Wegenstetten 01** (*Building type not specified*, built 1850, 67.5 cm limestone):
+    * Measured U-value: **1.1 W/(m²K)** | Calculated Mean: **1.0 W/(m²K)** (Data year: 2016)
+  * **Muhen 01** (*Building type not specified*, built 1965, 2×12 cm honeycomb brick with 3 cm glass wool):
+    * Measured U-value: **0.6 W/(m²K)** | Calculated Mean: **0.7 W/(m²K)** (Data year: 2016)
+  * **Reinach 01 IC** (*Multi-family house*, built 1962/63, 6 cm mineral wool + 30 cm concrete):
+    * Measured U-value: **0.7 W/(m²K)** | Calculated Mean: **0.5 W/(m²K)** (Data year: 2016)
+  * **Reinach 01 USC** (*Multi-family house*, built 1962/63, 30 cm uninsulated special concrete):
+    * Measured U-value: **1.3 W/(m²K)** | Calculated Mean: **2.7 W/(m²K)** (Data year: 2016)
+* **Consultant Calculation Variance**: The standard deviation of calculated values reported by the 10 energy consultants ranged between **0.04 W/(m²K)** (Reinach 01 IC) and **0.34 W/(m²K)** (Reinach 01 USC) (Figure 1a caption, p. 34).
+* **Physical Cause & Demand Impact**: Normative U-value calculation (SN EN ISO 6946) assumes a conservative external wind velocity of **4 m/s** (\\(h_e = 25 \text{ W/m²K}\\)). In DRY Zurich, actual winter wind velocity is below **3 m/s** during **71%** of the heating period (Section 4.1, Table 3, p. 35–36). Adjusting wind velocity to 0 m/s improves calculated U-values by **2% to 20%** (average **8%** improvement for 4 uninsulated buildings), reducing calculated heating demand by **4% to 8%** (Section 4.1, p. 36).
+
+---
+
+### 3. Real Indoor Temperatures in Unheated Basements / Cellars
+* **Source Title**: *The prebound-effect in detail: real indoor temperatures in basements and measured versus calculated U-values* (Hoffmann & Geissler, 2017)
+* **Data Year**: Winter 2015/16 (12.10.2015 to 21.02.2016)
+* **Measured Basement Air Temperatures**: Across 6 unheated basements with uninsulated cellar ceilings, measured indoor air temperatures ranged between a minimum of **13 °C** and a maximum of **21 °C** (at weekly outdoor mean temperatures between **-0.8 °C and 13.8 °C**) (Section 3.2, p. 34–35).
+* **Measured vs. Calculated Basement Temperature Gap**: Measured basement temperatures were **around 8 K (mean 7.3 K)** higher than normative EN ISO 13789 / SIA 380/1 calculations (which yielded a calculated mean basement temperature of **8.3 °C** at an outdoor mean of **5.1 °C**, corresponding to a normative \\(b\\)-factor of **0.78**) (Section 2.2, p. 34, Section 3.2, p. 34 & Section 4.2, p. 36).
+* **Temperature Spread Across Objects**: Excluding one building with a heat-emitting boiler room in the basement (Reinach 01), the temperature spread between the remaining 5 basements was only **0.5 to 2.5 K** (Section 3.2 & Section 4.2, p. 34–36).
+* **Tested Building Cohort for Basement Temperatures** (Table 2, p. 34–35):
+  * **Basel 07**: *Single-family house*, built 1928 (2/3 ground, 1/3 air)
+  * **Münchenstein 01**: *Single-family house*, built 1925 (2/3 ground, 1/3 air)
+  * **Basel 08**: *Multi-family house*, built ~1950 (ground)
+  * **Basel 09**: *Multi-family house*, built ~1950 (2/3 ground, 1/3 air)
+  * **Basel 10**: *Multi-family house*, built 1918 (2/3 ground, 1/3 air)
+  * **Reinach 01**: *Multi-family house*, built 1962/63 (2/3 ground, 1/3 air; contains boiler room)
+  * **Zürich Office**: *Office / Non-residential*, built 1951 (ground)
+* **Impact on Calculated Heating Demand**: Using measured cellar temperatures (or an empirical \\(b\\)-factor of **0.5** instead of normative default **0.7–0.8**) reduces calculated heating demand by **5% to 10%** (Section 4.2 & Section 5, p. 36–37).
+
+---
+
+### 4. Size of the Prebound Effect by Building Age
+* **Status**: **not in the sources**.
+* *Details*: While the sources quantify component U-value deviations (12% to 111%), basement temperature deviations (7.3 K / 8 K higher), and overall space heating demand reductions from boundary condition adjustments (4% to 10%), the uploaded sources do **not** tabulate or report numerical prebound effect percentages broken down by specific building age bands (e.g. pre-1920 vs 1950s vs 1970s).
+
+##### q10_design_load   cited: {'ME_AgBau_Heizleistung_2014-1': 4, 'Jakob_Jochem_Christen_Grenzkosten_Schlussbericht_Teil2': 4}
+### 1. Design Outdoor Temperature for Zurich
+
+* **Design Outdoor Temperature (\\(T_{\text{design}}\\))**: **\\(-8.0^\circ\text{C}\\)**
+  * **Source Title**: *Schlussbericht: Der Heizleistungsbedarf als Beurteilungsgrösse für die energetische Qualität der Gebäudehülle* (EnDK / Minergie / Energiehub Gebäude) [1, 2]
+  * **Section / Page**: Section 11, Page 44, Abbildung 43 & 44 (Klimastation Zürich MeteoSchweiz, "Klima A, kalt": \\(-8^\circ\text{C}\\)) [2]
+  * **Building Type**: Multi-Family House (**MFH**) and Single-Family House (**EFH**) context [3, 4]
+  * **Year of Data**: 2014
+  * **Additional Source**: *Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebereich* (CEPE ETH Zürich, Teil 2) [68–69]
+  * **Section / Page**: Section 4.2.10, Page 69 (Outdoor design temperature \\(T_a = -8^\circ\text{C}\\) for Swiss Mittelland / Zurich per SIA 382/4) [5]
+  * **Building Type**: Single-Family House (**EFH**) and Multi-Family House (**MFH**) [6]
+  * **Year of Data**: 2002
+
+---
+
+### 2. Specific Design Heat Load (\\(\text{W/m}^2\\) of EBF) by Building Energy Standard
+
+#### **A. Cantonal Building Energy Standards (MuKEn / Minergie)**
+* **Source Title**: *Schlussbericht: Der Heizleistungsbedarf als Beurteilungsgrösse für die energetische Qualität der Gebäudehülle* (EnDK / Minergie / Energiehub Gebäude) [1]
+* **Data Year**: 2014
+
+1. **Multi-Family House (MFH)** (Data sample: 74 MFH, Zurich MeteoSchweiz climate) [3]:
+   * **MuKEn 2000 Standard** (\\(U_{\text{opake}} = 0.30 \text{ W/m}^2\text{K}\\)): **\\(\approx 25 - 35\text{ W/m}^2\\)** (Section 8, Page 21, Abbildung 14) [26–28]
+   * **MuKEn 2008 Standard** (\\(U_{\text{opake}} = 0.20 \text{ W/m}^2\text{K}\\)): **\\(\approx 20 - 30\text{ W/m}^2\\)** (mean fit line at **\\(25\text{ W/m}^2\\)**) (Section 8, Page 21, Abbildung 15) [26, 28–29]
+   * **MuKEn 2014 Standard** (\\(U_{\text{opake}} = 0.17 \text{ W/m}^2\text{K}\\)): **\\(15 - 35\text{ W/m}^2\\)** (mean fit line at **\\(25\text{ W/m}^2\\)**) (Section 7.1 & Section 8, Pages 12 & 20, Abbildung 6 & 13) [17–18, 26–27]
+   * **MINERGIE-P Standard** (\\(U_{\text{opake}} = 0.10 \text{ W/m}^2\text{K}\\)): **\\(12 - 22\text{ W/m}^2\\)** (mean fit line at **\\(18\text{ W/m}^2\\)**) (Section 8, Page 22, Abbildung 17) [26, 29–30]
+
+2. **Single-Family House (EFH)** (Data sample: 73 EFH, Zurich MeteoSchweiz climate) [4]:
+   * **MuKEn 2014 Standard** (\\(U_{\text{opake}} = 0.17 \text{ W/m}^2\text{K}\\)): **\\(20 - 35\text{ W/m}^2\\)** (mean fit line around **\\(25\text{ W/m}^2\\)**) (Section 7.2, Page 14, Abbildung 7) [19–20]
+
+---
+
+#### **B. SIA Normative Standards & Efficiency Tiers**
+* **Source Title**: *Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebereich* (CEPE ETH Zürich, Teil 2) [7]
+* **Section / Page**: Section 4.2.10, Page 71, Tabelle 4.2-26 [8]
+* **Data Year**: 2002
+* **Building Types**: Single-Family House (**EFH**) and Multi-Family House (**MFH**) [6]
+
+* **SIA 380/1 (1988) Grenzwert (Limit Value)**:
+  * **MFH**: **\\(25\text{ W/m}^2\\)** Gross / **\\(18\text{ W/m}^2\\)** Net [8]
+  * **EFH**: **\\(28\text{ W/m}^2\\)** Gross / **\\(22\text{ W/m}^2\\)** Net [8]
+* **SIA 380/1 (2001) Zielwert (Target Value)**:
+  * **MFH**: **\\(23\text{ W/m}^2\\)** Gross / **\\(16\text{ W/m}^2\\)** Net [8]
+  * **EFH**: **\\(25\text{ W/m}^2\\)** Gross / **\\(21\text{ W/m}^2\\)** Net [8]
+* **Minergie (2001 Baseline)**:
+  * **MFH**: **\\(19\text{ W/m}^2\\)** Gross / **\\(14\text{ W/m}^2\\)** Net [8]
+  * **EFH**: **\\(21\text{ W/m}^2\\)** Gross / **\\(18\text{ W/m}^2\\)** Net [8]
+* **Minergie-GHa (Building Envelope Alone)**:
+  * **MFH**: **\\(12\text{ W/m}^2\\)** Gross / **\\(8\text{ W/m}^2\\)** Net [8]
+  * **EFH**: **\\(13\text{ W/m}^2\\)** Gross / **\\(12\text{ W/m}^2\\)** Net [8]
+* **Passivhaus / Minergie-P**:
+  * **MFH**: **\\(8\text{ W/m}^2\\)** Gross / **\\(6\text{ W/m}^2\\)** Net [8]
+  * **EFH**: **\\(9\text{ W/m}^2\\)** Gross / **\\(10\text{ W/m}^2\\)** Net [8]
+
+---
+
+### 3. Specific Design Heat Load by Historical Building Age / Construction Decade
+
+* **Status**: **not in the sources**
+* *Details*: Specific design heat load (\\(\text{W/m}^2\\)) values broken down by historical construction decades (e.g., pre-1920, 1950s, 1970s) are **not in the uploaded sources** (the sources only provide design heat load values broken down by building energy standards as listed above).
+
+##### q11_jaz_vintage   cited: {}
+Based on the uploaded sources, here is the breakdown of how field seasonal performance (JAZ / SPF / WNG) depends on installation vintage, operational age, source type, and heat distribution system:
+
+---
+
+### 1. Dependence on Installation Year / Historical Vintage
+
+* **Historical Fleet Evolution (1994/95 – 2002)**
+  * **Source Title**: *FAWA – Feldanalyse von Wärmepumpen-Anlagen* (BFE / FWS, 2004)
+  * **Section / Page**: Section 5.2.1 (p. 51, Abbildung 37) & Section 5.2.2 (p. 52–53, Abbildung 38)
+  * **Building Type**: Single-family and multi-family residential buildings (< 20 kWth capacity)
+  * **Data Year**: 1994/95 to 2002
+  * **Sample Size**: **N = 221 installations** with climate-normalized data (out of 236 total)
+  * **Values & Findings**:
+    * Ground-source (Sole/Wasser) heat pumps showed an average efficiency improvement of **1.2% per installation year** (Abbildung 37).
+    * Fleet-wide average JAZ across all newly installed Swiss heat pumps increased by **20%**, rising from **2.5** in 1994/95 to **3.0** in 2002 (Abbildung 38). This was driven by heat pump technical improvements (+15%) and an increasing market share of ground-source systems (rising from 28% in 1995 to 43% in 2002).
+
+* **Modern Field Monitoring Campaign Evolution (2018 vs. 2021/22)**
+  * **Source Title**: *Field Experience with Residential Heat Pumps in Switzerland...* (14th IEA Heat Pump Conference, Paper 478, 2023)
+  * **Section / Page**: Section 3, Table 1 (p. 3 / p. 12)
+  * **Building Type**: Single-family houses (new builds / renovations) and multi-family homes
+  * **Data Year**: 2018
+  * **Sample Size**: **N = 26 monitored systems** (14 air-to-water, 12 brine-to-water)
+  * **Values**:
+    * Air-to-water (AWHP) combined SPF (SH+DHW): **3.5** (new build), **3.1** (renovation), **2.8** (old build).
+    * Brine-to-water (BWHP) combined SPF (SH+DHW): **4.9** (new build), **4.6** (renovation), **4.3** (old build).
+
+  * **Source Title**: *Feldmessungen von Wärmepumpen-Anlagen Heizsaison 2021/22 (Jahresbericht)* (OST WPZ Buchs, 2022)
+  * **Section / Page**: Zusammenfassung (p. 2) & Section 2.1 (p. 22, Abbildung 4 & 5)
+  * **Building Type**: Single-family and multi-family residential buildings
+  * **Data Year**: Heating season 2021/22
+  * **Sample Size**: **N = 25 heat pump installations** (13 air-to-water, 12 ground-source) across 91 monitored heating seasons
+  * **Values**:
+    * Air-to-water (LW-WP) overall heat utilization factor (WNG) for combined heating + DHW averaged **3.10** (range: 2.36 at Obj 25 to 4.06 at Obj 15). Mean component JAZ+ = **3.34** (best: 4.24 at Obj 15).
+    * Ground-source (SW-WP) overall WNG for combined heating + DHW averaged **4.23** (range: 3.00 at Obj 26 to 5.18 at Obj 21). Mean component JAZ+ = **4.48** (best: 5.46 / 5.63 at Obj 13).
+
+---
+
+### 2. Dependence on Operational Age (Aging / Degradation Over Time)
+
+* **Source Title**: *FAWA – Feldanalyse von Wärmepumpen-Anlagen* (BFE / FWS, 2004)
+* **Section / Page**: Section 10.1 (p. 91–92, Abbildung 113 & 114)
+* **Building Type**: Single-family and multi-family residential buildings
+* **Data Year**: 1995–2003 monitoring period
+* **Sample Size**: Multi-year monitored sub-sample (9th operating year based on N = 1 for AWHP, N = 3 for SW-WP)
+* **Values & Findings**:
+  * **Air-Source (Luft/Wasser)**: Relative JAZ compared to Year 1 remains stable in Years 2–5 (**1.01–1.02×** of Year 1), with slight fluctuations in Years 6–9 (**0.96–0.98×** of Year 1) (Abbildung 113).
+  * **Ground-Source (Sole/Wasser)**: Relative JAZ remains nearly constant across 9 operating years (**0.98–1.01×** of Year 1 performance), showing no significant long-term performance degradation (Abbildung 114).
+
+---
+
+### 3. Dependence on Source Type and Distribution System / Supply Temperature
+
+* **Source Title**: *Field Experience with Residential Heat Pumps in Switzerland...* (14th IEA Heat Pump Conference, Paper 478, 2023)
+* **Section / Page**: Section 3, Table 1 (p. 3 / p. 12)
+* **Building Type**: Single-family houses (new builds / renovations) and multi-family homes
+* **Data Year**: 2018
+* **Sample Size**: **N = 26 monitored systems** (14 AWHP, 12 BWHP)
+* **Space Heating Performance (SPF_SH)**:
+  * **Underfloor Heating (35–30 °C design flow temp, New Buildings)**:
+    * Air-to-Water (AWHP): **SPF_SH = 3.7**
+    * Ground-Source / Brine-to-Water (BWHP): **SPF_SH = 5.7**
+  * **Low-Temperature Radiators / Mixed (45–40 °C design flow temp, Renovations)**:
+    * Air-to-Water (AWHP): **SPF_SH = 3.3**
+    * Ground-Source / Brine-to-Water (BWHP): **SPF_SH = 5.0**
+  * **Radiators (55–50 °C design flow temp, Old Buildings)**:
+    * Air-to-Water (AWHP): **SPF_SH = 2.9**
+    * Ground-Source / Brine-to-Water (BWHP): **SPF_SH = 4.4**
+
+* **Supply Temperature Sensitivity Rule**:
+  * **Source Title**: *FAWA – Feldanalyse von Wärmepumpen-Anlagen* (BFE / FWS, 2004)
+  * **Section / Page**: Section 6.1 (p. 55)
+  * **Building Type**: Single-family and multi-family residential buildings
+  * **Data Year**: 1995–2003
+  * **Sample Size**: **N = 221 installations**
+  * **Values**: A **5 K increase** in mean supply flow temperature results in an average **8% reduction** in COP / JAZ. Renovated buildings with radiators had a 5 K higher supply temperature than new builds with underfloor heating, yielding a **9% lower JAZ**.
+
+---
+
+### 4. Domestic Hot Water (DHW) Mode Performance
+
+* **Modern Monitored Fleet (2018 Data)**
+  * **Source Title**: *Field Experience with Residential Heat Pumps in Switzerland...* (14th IEA Heat Pump Conference, Paper 478, 2023)
+  * **Section / Page**: Section 3, Table 1 (p. 3 / p. 12)
+  * **Building Type**: Single-family and multi-family residential buildings
+  * **Data Year**: 2018
+  * **Sample Size**: **N = 26 systems**
+  * **Values**:
+    * Air-to-Water (AWHP) in DHW mode: **SPF_DHW = 2.8**
+    * Ground-Source (BWHP) in DHW mode: **SPF_DHW = 3.2**
+
+* **Modern Monitored Fleet (2021/22 Heating Season)**
+  * **Source Title**: *Feldmessungen von Wärmepumpen-Anlagen Heizsaison 2021/22 (Jahresbericht)* (OST WPZ Buchs, 2022)
+  * **Section / Page**: Section 2.2 (p. 26, Abbildung 10 & 11)
+  * **Building Type**: Single-family and multi-family residential buildings
+  * **Data Year**: Heating season 2021/22
+  * **Sample Size**: **N = 25 installations**
+  * **Values**:
+    * Air-to-Water (LW-WP) DHW mode: JAZ+_Aufladung ranged from **2.5 to 3.8** (mean **2.9**); WNG_Aufladung averaged **2.5** (15% lower due to standby & electric backup rod losses).
+    * Ground-Source (SW-WP) DHW mode: JAZ+_Aufladung ranged from **1.6 to 4.8** (mean **3.3**); WNG_Aufladung averaged **2.9** (12% lower due to standby & electric backup rod losses). System utilization ratio SNG_TWW including tapping losses ranged from **0.64 to 2.84** (LW-WP) and **0.20 to 2.84** (SW-WP).
+
+* **Historical FAWA DHW Configuration Breakdown**
+  * **Source Title**: *FAWA – Feldanalyse von Wärmepumpen-Anlagen* (BFE / FWS, 2004)
+  * **Section / Page**: Section 5.2 (p. 44, Table 3)
+  * **Building Type**: Single-family house (Standard EFH 4-person)
+  * **Data Year**: 1995–2003
+  * **Sample Size**: **N = 236 installations**
+  * **Values**:
+    * Ground-source heat pump heating DHW via standard internal heat exchanger boiler: **JAZ_BWW = 3.4**.
+    * Ground-source heat pump with solar thermal integration & combi-storage tank (*Kombispeicher*): **JAZ_BWW = 2.8**.
+
+---
+
+🔍 **Follow-up Idea**: Would you like to explore how these field-measured JAZ and SPF efficiency values are applied to calculate the \\(E_{\text{as\_built}}\\) and \\(E_{\text{reference}}\\) baselines in your Python specification files?
+
+##### q12_usage   cited: {'TABULA_CommonCalculationMethod': 7, 'https://etkhpcorderapi.extweb.sp.se/api/file/2574': 3, '2503.16993v1 (1).pdf': 3, 'oSIST-prEN-12831-1-2025': 2, '2016_GEPAMOD_GPM_SIA_Effizienzpfad_Schlussbericht': 1, 'hpt-an46-05-task-1-test-procedures-and-quality-labels-for-he': 7}
+Here are the values for standard usage parameters—indoor setpoint, air change rate, internal gains, and domestic hot water demand—grounded directly in your uploaded sources.
+
+---
+
+### 1. Indoor Setpoint Temperature (\\(\theta_{\text{int}}\\) / \\(T_{\text{set}}\\))
+
+* **20.0 °C** (Standard Normative Setpoint)
+  * **Source Title**: *TABULA Common Calculation Method* (IWU / TABULA) [1, 2]
+  * **Table / Section / Page**: Section 2.1, Table 1, Page 11 (also Appendix, Page 29) [2]
+  * **Building Type**: Residential buildings (Single-unit housing & Multi-unit housing) [2]
+  * **Year of Data**: 2013 [2]
+
+* **20.0 °C** (Swiss Heating Baseline Target)
+  * **Source Title**: *Field Experience with Residential Heat Pumps in Switzerland...* (14th IEA Heat Pump Conference 2023, Paper 478) [3, 4]
+  * **Table / Section / Page**: Section 2 (System boundaries and key performance indicators), Page 3 & Nomenclature, Page 11 [3, 4]
+  * **Building Type**: Residential buildings (New builds & Renovations) [3]
+  * **Year of Data**: 2023 [5]
+
+* **20.0 °C** (Swiss Degree-Day Base Setpoint)
+  * **Source Title**: *2503.16993v1 (1).pdf* (HEAPO Preprint) [6]
+  * **Table / Section / Page**: Section 2.1.3 ("Weather Data"), Page 3, Formula (1) [6]
+  * **Building Type**: Single-family and Multi-family residential buildings [7]
+  * **Year of Data**: 2025 (citing SIA 381/3:1982 standard) [6, 8]
+
+---
+
+### 2. Standard Air Change Rate (\\(n_{\text{air}}\\))
+
+* **0.40 h⁻¹** (Utilization / Usage Air Change Rate, \\(n_{\text{air,use}}\\))
+  * **Source Title**: *TABULA Common Calculation Method* (IWU / TABULA) [9, 10]
+  * **Table / Section / Page**: Section 2.3, Table 1, Page 11 (also Appendix, Page 29) [9, 10]
+  * **Building Type**: Residential buildings (Single-unit housing & Multi-unit housing) [2, 9]
+  * **Year of Data**: 2013
+
+* **0.20 h⁻¹** (Infiltration Air Change Rate, \\(n_{\text{air,infilt}}\\))
+  * **Source Title**: *TABULA Common Calculation Method* (IWU / TABULA) [11]
+  * **Table / Section / Page**: Appendix (Energy Balance Calculation Example), Page 48 (yielding a total combined air change rate of \\(n = n_{\text{use}} + n_{\text{infilt}} = 0.40 + 0.20 = 0.60\text{ h}^{-1}\\)) [11]
+  * **Building Type**: Multi-unit housing (MFH example building) [11]
+  * **Year of Data**: 2013 [11]
+
+* **Minimum Air Change Rate under EN 12831**:
+  * **Status**: **not in the sources** (The excerpt for *prEN 12831-1:2025* lists table of contents headings for "Air change rate" in Annex A.3.4, but does not contain the numerical values) [12, 13].
+
+---
+
+### 3. Internal Heat Gains (\\(\phi_{\text{int}}\\) / \\(q_{\text{int}}\\))
+
+* **3.0 W/m²** (Average Internal Heat Sources per m² Reference Area)
+  * **Source Title**: *TABULA Common Calculation Method* (IWU / TABULA) [9, 14]
+  * **Table / Section / Page**: Section 2.1, Table 1, Page 11 (also Appendix, Page 48) [9, 14]
+  * **Building Type**: Residential buildings (Single-unit housing & Multi-unit housing) [2, 9]
+  * **Year of Data**: 2013 [2]
+
+* **2.4 W/m²** (Alternative TABULA Default Internal Heat Output)
+  * **Source Title**: *TABULA Common Calculation Method* (IWU / TABULA) [15]
+  * **Table / Section / Page**: Section 8, Table 1 / Appendix, Page 29 [15]
+  * **Building Type**: Residential buildings [2, 15]
+  * **Year of Data**: 2013
+
+* **33.3 kWh/m²a** (\\(\approx \mathbf{3.80\text{ W/m}^2}\\)) (Electrical Appliances / Internal Gains Baseline)
+  * **Source Title**: *Erweiterung des Gebäudeparkmodells gemäss SIA-Effizienzpfad Energie* (TEP Energy) [16]
+  * **Table / Section / Page**: Section 4.1 / Table Basisfall 2010, Page 158 [16]
+  * **Building Type**: Single-family house (**EFH**) and Multi-family house (**MFH**) [16]
+  * **Year of Data**: 2010 baseline [16]
+
+---
+
+### 4. Domestic Hot Water (DHW) Demand per Person
+
+#### **A. Normative Planning Standards (SIA 385/2)**
+* **Source Title**: *Task 1 - Test procedures and Quality Labels for Heat Pump Water Heaters* (IEA HPT Annex 46) [17, 18]
+* **Table / Section / Page**: Section 2.3.5 (Switzerland), Table 1, Page 54 [17, 18]
+* **Year of Data**: 2015 (citing standard SIA 385/2) [17, 18]
+* **Values**:
+  1. **Single-Family House / Condominium** (*EFH*):
+     * **Simple standard**: **40 litres/person/day** (average) / **50 litres/person/day** (maximum) [19]
+     * **Normal standard**: **45 litres/person/day** (average) / **60 litres/person/day** (maximum) [19]
+     * **High standard**: **55 litres/person/day** (average) / **70 litres/person/day** (maximum) [19]
+  2. **Multiple-Family Building** (*MFH*):
+     * **Simple standard**: **35 litres/person/day** (average) / **45 litres/person/day** (maximum) [19]
+     * **High standard**: **45 litres/person/day** (average) / **60 litres/person/day** (maximum) [19]
+  *(Note: The delivery temperature for SIA 385/2 standard liters is **not in the sources** in Table 1, which states only "standard liter per day")* [18].
+
+#### **B. Measured Field Consumption Studies**
+* **Multi-Family Houses (Vetsch et al. 2012)**:
+  * **Volume Demand**: **36 to 44 litres/person/day** [19]
+  * **Temperature**: Storage tank outlet temperatures **> 55 °C** [20]
+  * **Source Title**: *Task 1 - Test procedures and Quality Labels for Heat Pump Water Heaters* (IEA HPT Annex 46) [19, 20]
+  * **Table / Section / Page**: Section 2.3.5 (Switzerland), Table 2 & text, Pages 54–55 [19, 20]
+  * **Building Type**: Multi-family buildings (3 objects, 48 to 73 apartments) [20]
+  * **Year of Data**: 2012 [19, 20]
+
+* **Single-Family Houses and Apartments (Heim et al. 2016)**:
+  * **Volume Demand**: Mean **40 litres/person/day** (ranging across individual households from **8 to 65 litres/person/day**) [21, 22]
+  * **Temperature**: Supplied by electric water heaters at an average supply temperature of **63.9 °C** [22]
+  * **Source Title**: *Task 1 - Test procedures and Quality Labels for Heat Pump Water Heaters* (IEA HPT Annex 46) [21]
+  * **Table / Section / Page**: Section 2.3.5 (Switzerland), Table 3 & text, Page 55 [21]
+  * **Building Type**: Single-family houses and apartments (10 households, Minergie-P standard) [21, 23]
+  * **Year of Data**: 2016 [21]
+
+* **Swiss National Field Benchmark (FAWA 2004)**:
+  * **Thermal Energy Demand**: **3,811 kWh/year** for a 4-person Single-Family House (**EFH**), corresponding to **952.8 kWh/person/year** or **2.61 kWh/person/day**.
+  * **Source Title**: *FAWA – Feldanalyse von Wärmepumpen-Anlagen* (BFE / FWS)
+  * **Table / Section / Page**: Table 3, Page 44 & Table 4, Page 55
+  * **Building Type**: Single-family house (**EFH**, 4 residents)
+  * **Year of Data**: 2004
+
+---
+
+💡 **Next Step**: Would you like to review how these standard usage baselines (20 °C setpoint, 0.4 h⁻¹ air change, 3.0 W/m² internal gains) are integrated into `heapo-physical-model-spec-v3.md`?

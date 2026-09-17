@@ -1,0 +1,78 @@
+{
+  "status": "completed",
+  "task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+  "sources_found": 10,
+  "sources": [
+    {
+      "url": "https://episcope.eu/fileadmin/tabula/public/docs/scientific/DE_TABULA_ScientificReport_IWU.pdf",
+      "title": "TABULA – Scientific Report Germany - episcope.eu",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Detailed component area ratios relative to floor area for single-family houses."
+    },
+    {
+      "url": "https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/institute/spf/forschung/tools/referenz-mfh/referenz-mfh_2019-12-05_multifamily_reference_building_spf_v1.1.pdf",
+      "title": "Reference Framework for Building and System Simulations: Multifamily Reference Building - OST",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Technical reference values for window-to-floor area and shape factors."
+    },
+    {
+      "url": "https://cms.sia.ch/de/api/getMedia/940",
+      "title": "Harmonisierung SIA-Standardwerte und Gebäudekategorien - Statusbericht",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Model-based energy indicators for Swiss residential buildings by TEP Energy."
+    },
+    {
+      "url": "https://www.enerweb.ch/anwendung-sia3801-energienachweis-minergie-geakplus.html",
+      "title": "Anwendung der SIA 380/1 für Energienachweis, Minergie und GEAKPlus",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Current SIA 380/1:2016 standards for thermal building envelope calculations."
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9001180/",
+      "title": "Impact of the COVID-19 pandemic on the energy performance of residential neighborhoods and their occupancy behavior - PMC",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Specific window-to-wall ratios and surface-to-volume data for detached houses."
+    },
+    {
+      "url": "https://www.tep-energy.ch/en/projects/detail/p0514.php",
+      "title": "Extension of the Building Stock Model for the SIA Efficiency Path - TEP Energy",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Background on TEP Energy's building stock model for SIA standards."
+    },
+    {
+      "url": "https://www.tep-energy.ch/docs/p0207_INSPIRE_International_FinalReport_150119.pdf",
+      "title": "INTEGRATED STRATEGIES AND POLICY INSTRUMENTS FOR RETROFITTING BUILDINGS TO REDUCE PRIMARY ENERGY USE AND GHG EMISSIONS (INSPIRE)",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Component area estimations for floors, walls, ceilings, and windows."
+    },
+    {
+      "url": "https://www.wuestpartner.com/blog/swiss-building-stock-current-status-decarbonization-path/",
+      "title": "Swiss building stock: Current status of the decarbonization pathway - Wüest Partner",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Wüest Partner's analysis of building envelope quality and renovation impact."
+    },
+    {
+      "url": "https://sccer-jasm.ch/JASMpapers/JASM_energyEfficiency_buildings.pdf",
+      "title": "ENERGY EFFICIENCY IN BUILDINGS - sccer-jasm",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Wüest Partner data mapping energy reference areas to building types."
+    },
+    {
+      "url": "https://de.wikipedia.org/wiki/Geb%C3%A4udenutzfl%C3%A4che",
+      "title": "Gebäudenutzfläche - Wikipedia",
+      "result_type": 1,
+      "research_task_id": "8c041175-25fa-46d7-b760-bbd70992e48c",
+      "hint": "Swiss-specific definitions for Energy Reference Area and volume calculations."
+    }
+  ],
+  "report": ""
+}

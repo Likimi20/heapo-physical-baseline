@@ -1,0 +1,78 @@
+{
+  "status": "completed",
+  "task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+  "sources_found": 10,
+  "sources": [
+    {
+      "url": "https://pubdb.bfe.admin.ch/de/publication/download/11867",
+      "title": "Energetische Erneuerungsraten im Gebäu- debereich in der Periode von 2010 bis 2020 Synthesebericht zu Gebäudehülle und Hei",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You will find U-values categorized by specific construction periods."
+    },
+    {
+      "url": "https://www.stadt-zuerich.ch/content/dam/web/de/aktuell/publikationen/2016/studien-netto-null/urban-mining-potenzial-bestandsaufnahme-studie.pdf",
+      "title": "Urban Mining Potenzial - Dämmmaterialien im Gebäudepark der Schweiz - Stadt Zürich",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You can view U-value distributions specifically for Swiss facades."
+    },
+    {
+      "url": "https://ssrei.ch/PDF/SSREI_Handbuch_KF.pdf",
+      "title": "SSREI - Swiss Sustainable Real Estate Index Handbuch",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You will see historical window U-values linked to SIA 380/1."
+    },
+    {
+      "url": "https://inis.iaea.org/collection/NCLCollectionStore/_Public/37/048/37048281.pdf?r=1",
+      "title": "Best Practice Marktordnung, Markttransparenz und Marktregelung zugunsten der Durchsetzung energieeffizienter Lösungen am Markt - INIS-IAEA",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You will find a chronological table of window insulation evolution."
+    },
+    {
+      "url": "https://sccer-jasm.ch/JASMpapers/JASM_energyEfficiency_buildings.pdf",
+      "title": "ENERGY EFFICIENCY IN BUILDINGS - sccer-jasm",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You can examine thermal performance classes for all building elements."
+    },
+    {
+      "url": "https://www.tep-energy.ch/docs/2016_GEPAMOD_GPM_SIA_Effizienzpfad_Schlussbericht.pdf",
+      "title": "Erweiterung des Gebäudeparkmodells gemäss SIA-Effizienzpfad Energie - TEP Energy",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You will access the seminal TEP Energy building stock catalog."
+    },
+    {
+      "url": "https://www.bfh.ch/.documents/ris/2009-484.698.880/BFHID-1286002156-7/Forschungsbericht.pdf",
+      "title": "Nachhaltige Erneuerung historisch wertvoller Bauten Arbeitspaket 5: Innenliegende Wärmedämmung",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You will learn minimum insulation thicknesses to meet SIA standards."
+    },
+    {
+      "url": "https://cms.sia.ch/de/api/getMedia/941",
+      "title": "Grundlagenbericht zu SIA 2024 –",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You can review how SIA 2024 integrates updated U-values."
+    },
+    {
+      "url": "https://www.bafu.admin.ch/dam/de/sd-web/xyFckBE04UVc/die-wirkung-von-nachhaltigkeit-auf-immobilienwerte.pdf",
+      "title": "Die Wirkung von Nachhaltig- keit auf Immobilienwerte - BAFU",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You will understand how Wüest Partner rates building conditions."
+    },
+    {
+      "url": "https://ethz.ch/content/dam/ethz/special-interest/mtec/cepe/cepe-dam/documents/people/ejochem/Jakob_Jochem_Christen_Grenzkosten_Schlussbericht_Teil2.pdf",
+      "title": "4 Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebereich - ETH Zürich",
+      "result_type": 1,
+      "research_task_id": "9fb594c6-855f-4698-9f73-8f09d167cd94",
+      "hint": "You will find cost-benefit analyses for insulating Swiss walls."
+    }
+  ],
+  "report": ""
+}

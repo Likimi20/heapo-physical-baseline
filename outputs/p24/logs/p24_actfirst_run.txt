@@ -1,0 +1,21 @@
+ACT FIRST = worst 25% within era, 172 households in Category B
+  P22 (no vintage) 45   C (vintage everywhere) 45   A/B (not for KEEP units) 45
+  C vs P22: kept 40, IN 5, OUT 5
+  A vs P22: kept 42, IN 3, OUT 3
+
+  C brings IN:
+ Household_ID       era unit_recommendation  unit_age_years  def_off  term_vintage
+       121728  post2010        KEEP_IN_LIFE            10.0     78.0          95.0
+       512280  post2010        KEEP_IN_LIFE            10.0     78.0          82.0
+      7710511   pre1975    PLAN_REPLACEMENT            13.0   2916.0         177.0
+       858577 1976_1990 REPLACE_END_OF_LIFE            20.0   1538.0         298.0
+       876790 2001_2010    PLAN_REPLACEMENT            19.0   2225.0         288.0
+
+  A brings IN:
+ Household_ID       era unit_recommendation  unit_age_years  def_off  term_vintage
+      7710511   pre1975    PLAN_REPLACEMENT            13.0   2916.0         177.0
+       858577 1976_1990 REPLACE_END_OF_LIFE            20.0   1538.0         298.0
+       876790 2001_2010    PLAN_REPLACEMENT            19.0   2225.0         288.0
+
+  headline total  P22 268271   C=A 288788   B 284938 kWh/yr
+  vintage kWh by recommendation: {'KEEP_IN_LIFE': 3850.0, 'PLAN_REPLACEMENT': 5414.0, 'RECORD_INSTALL_YEAR': 0.0, 'REPLACE_END_OF_LIFE': 4674.0}

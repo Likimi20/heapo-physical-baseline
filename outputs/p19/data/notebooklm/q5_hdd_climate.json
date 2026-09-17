@@ -1,0 +1,26 @@
+{
+  "answer": "Based on your uploaded sources, here are the definitions, numbers, and page/section-level citations for each parameter:\n\n---\n\n### 1. Heating Degree Days (HDD) Definition\n\n* **Swiss Standard (SIA 381/3 / \"20/12\" Convention)**:\n  * **Base Temperature**: **\\\\(20.0^\\circ\\text{C}\\\\)**\n  * **Heating Limit (\\\\(T_{\\text{limit}}\\\\))**: **\\\\(12.0^\\circ\\text{C}\\\\)** (heating is triggered on days where the daily average outdoor temperature \\\\(T_{\\text{avg}} < 12.0^\\circ\\text{C}\\\\)).\n  * **Formula**: \n    \\\\[\\text{HDD (Switzerland)} = \\begin{cases} 20^\\circ\\text{C} - T_{\\text{avg}} & \\text{if } T_{\\text{avg}} < 12^\\circ\\text{C} \\\\ 0 & \\text{otherwise} \\end{cases}\\\\]\n  * **Source Title & Section**: \n    * *2503.16993v1 (1).pdf* — Section 2.1.3 (\"Weather Data\"), Page 3, Formula (1).\n    * *Research report: Swiss Building Standards & Heat Pump Benchmarks* — Section 5 (\"SIA 2028: Climate & Design Parameters\").\n\n* **US Standard (provided in weather metadata for comparison)**:\n  * **Base Temperature / Heating Limit**: **\\\\(18.3^\\circ\\text{C}\\\\)** (\\\\(\\text{HDD} = \\max(0, 18.3^\\circ\\text{C} - T_{\\text{avg}})\\\\)).\n  * **Source Title & Section**: *2503.16993v1 (1).pdf* — Section 2.1.3 (\"Weather Data\"), Page 3, Formula (2).\n\n---\n\n### 2. Design Outdoor Temperature (\\\\(T_{\\text{design}}\\\\))\n\n* **Zurich / Swiss Plateau**: **\\\\(-10.0^\\circ\\text{C}\\\\)** (per SIA 384.201 / SIA 2028).\n  * **Source Title & Section**: \n    * *Research report: Swiss Building Standards & Heat Pump Benchmarks* — Section 1 (\"SIA 384.201\") & Section 5 (\"SIA 2028\").\n    * *Heat Pump Control Configuration: Heating Curve, SG Ready & DHW Settings* — Section \"Heating Curve Configuration\", Paragraph \"Practical Application\".\n* **Other Regional Values in Sources**:\n  * **Vienna (Austria)**: **\\\\(-13^\\circ\\text{C}\\\\)** (per ÖNORM EN 12831).\n  * **Munich (Germany)**: **\\\\(-12^\\circ\\text{C}\\\\)** (per DIN EN 12831).\n  * **Source Title & Section**: *Heat Pump Control Configuration: Heating Curve, SG Ready & DHW Settings* — Section \"Heating Curve Configuration\", Paragraph \"Practical Application\".\n\n---\n\n### 3. Indoor Setpoint (\\\\(T_{\\text{set}}\\\\))\n\n* **Standard Indoor Setpoint**: **\\\\(20.0^\\circ\\text{C}\\\\)**\n  * **Source Title & Section**: *Research report: Swiss Building Standards & Heat Pump Benchmarks* — Section 3 (\"SIA 380/1 & SIA 2024: Target Values & Standard Usage Data\").\n\n---\n\n### 4. Standard Air Change Rate (\\\\(n_{\\text{air}}\\\\))\n\n* **Natural Window Ventilation**: **\\\\(0.7\\text{ h}^{-1}\\\\)**\n* **Mechanical Ventilation with Heat Recovery (MVHR)**: **\\\\(0.4\\text{ h}^{-1}\\\\)**\n  * **Source Title & Section**: *Research report: Swiss Building Standards & Heat Pump Benchmarks* — Section 3 (\"SIA 380/1 & SIA 2024: Target Values & Standard Usage Data\").\n\n---\n\n💡 **Next Step**: Would you like to review how these exact SIA degree-day definitions and setpoints are coded into the weather normalization step of your Python data loader?",
+  "conversation_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+  "turn_number": 29,
+  "is_follow_up": true,
+  "references": [],
+  "turn_key": {
+    "session_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+    "turn_id": "bfe5ed39-12a8-40a5-af86-c4b18222911c",
+    "turn_code": 4233657270
+  },
+  "next_steps": [
+    {
+      "question": "What is the +15% Category B gate?",
+      "type_code": 9
+    },
+    {
+      "question": "How do you define the uncertainty bands?",
+      "type_code": 9
+    },
+    {
+      "question": "Explain the 1.25 oversizing factor.",
+      "type_code": 9
+    }
+  ]
+}

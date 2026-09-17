@@ -1,0 +1,22 @@
+ok    Energetische Erneuerungsraten im Gebäu- debereich in der Periode von 2 
+ok    Erweiterung des Gebäudeparkmodells gemäss SIA-Effizienzpfad Energie -  
+ok    Grundlagenbericht zu SIA 2024 –                                        
+ok    4 Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebe 
+ok    The prebound-effect in detail: real indoor temperatures in basements a 
+ok    Checkliste Wärmebrücken Neubauten Version 10.0 Vereinfachtes Verfahren 
+ok    1 Anhang 1a U-Wert-Grenzwerte bei Neubauten Die Typen der Wärmebrücken 
+ok    Checkliste GEAK Publikationen                                          
+ok    oSIST prEN 12831-1:2025 - iTeh Standards                               
+ok    Test Procedures and Quality Labels for Heat Pump Water Heaters         
+ok    Field Experience with Residential Heat Pumps in Switzerland: Potential 
+FAIL  Field Performance Of Domestic Heat Pumps For Heating And Hot Water In  19:47:06 ERROR [notebooklm._rpc_executor] [req=b2995096] RPC ADD_SOURCE failed after 2.503s: RPCError rpc_code=9
+
+ok    Bericht «Feldmessungen von Wärme- pumpen-Anlagen Heizsaison 2021/22» - 
+ok    Der Heizleistungsbedarf als Beurteilungsgrösse für die energetische Qu 
+ok    TABULA Common Calculation Method                                       
+ok    BFH Waermebrueckenkatalog 2013                                         
+ok    BFE Faktenblatt typischer Haushalt 2021                                
+ok    SAFE Nipkow 2013 typischer Haushalt-Stromverbrauch                     
+ok    OST Feldmessungen 2019/20                                              
+ok    OST Feldmessungen 2020/21                                              
+ok    FAWA Schlussbericht 2004                                               

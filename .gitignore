@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+venv_viz/
+# the raw HEAPO archive is read from the parent tree and never vendored here
+heapo_data/
+heapo_data.zip

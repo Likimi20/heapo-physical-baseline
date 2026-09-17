@@ -1,0 +1,16 @@
+smoke test: pages/5_Physical_baseline_v2.py
+
+colour tokens the page paints with:
+   POS        #e66767                        ok
+   SERIES1    #3987e5                        ok
+   SERIES2    #d95926                        ok
+   AXIS_INK   #8a8a85                        ok
+
+  What the rank means    OK   markdown=13  tables=2  metrics=3  notebook=1  iframe=0  
+  The one list           OK   markdown=10  tables=2  metrics=0  notebook=0  iframe=0  
+  Worked example         OK   markdown=5   tables=0  metrics=0  notebook=0  iframe=0  
+
+legacy page 3 (must still run, and must WARN):
+  OK   warnings=1 (the legacy banner)
+
+ALL VIEWS EXECUTED

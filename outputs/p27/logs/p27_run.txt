@@ -1,0 +1,138 @@
+
+==============================================================================
+0. POPULATION AND CASE SELECTION
+==============================================================================
+  audited households in the export       214
+  reach the physics (geometry + record)   172
+  never computed (INCOMPLETE_AUDIT)       42
+
+  deep trace       116121
+  contrast cases   [876511, 121728, 100120]  (no-claim / refuses-to-claim / never-computed)
+
+==============================================================================
+1. THE HOUSE - every input, and the column it came from
+==============================================================================
+  area_m2              395.0                      <- Building_FloorAreaHeated_Total
+  footprint_m2         235.0                      <- max(Building_FloorAreaHeated_<storey>)
+  n_storeys_above      1                          <- count(Building_FloorAreaHeated_<storey> > 0)
+  heated_basement      True                       <- Building_FloorAreaHeated_Basement > 0
+  era                  pre1975                    <- Building_ConstructionYear_Interval
+  renovation_count     0                          <- Building_Renovated_Windows + _Walls + _Roof
+  residents            2                          <- Building_Residents
+  hp_type              air-source                 <- HeatPump_Installation_Type
+  emitter              radiator_only              <- HeatPump heat-distribution flags (floor / radiator)
+  dhw_electric         True                       <- DHW_Production_ByElectricWaterHeater
+  hp_install_year      2009.0                     <- HeatPump_Installation_Year
+  hdd_normal_per_day   4.052917477628678          <- weather_daily.parquet, station NORMAL year
+
+==============================================================================
+2. GEOMETRY - the thermal envelope
+==============================================================================
+  perimeter            61.32 m   = 4*sqrt(235)*1.00
+  thermal envelope    600.84 m2  = 1.52 x the heated floor area
+  a square plan is the MINIMUM perimeter, so perimeter_factor >= 1 widens it
+
+==============================================================================
+3. VENTILATION - identical in both baselines, so it CANCELS
+==============================================================================
+  H_ventilation       165.19 W/K
+  sits in BOTH baselines -> contributes exactly 0 to the deficiency
+
+==============================================================================
+4. THE TWO U-VALUES - where as-built and reference split
+==============================================================================
+  u_as_built          0.9028 W/m2K   era=pre1975   status=DERIVED
+  u_reference         0.2466 W/m2K   status=DERIVED
+  thermal bridge   +  0.1000 W/m2K   both baselines, so it cancels
+  H_as_built          767.71 W/K
+  H_reference         373.44 W/K   difference 394.27 W/K
+
+==============================================================================
+5. EFFICIENCY - three JAZ values, and the unit's generation
+==============================================================================
+  jaz current unit     2.900   (air-source, radiator_only)
+  vintage factor       0.908   install year 2009.0
+  jaz as-built         2.634   = current unit x vintage
+  jaz reference        3.700   floor heating + current unit
+  jaz hot water        2.800   electric cylinder? True
+
+  VINTAGE IS TECHNOLOGY GENERATION, NOT WEAR. FAWA saw no ageing loss over
+  9 years, so an old unit is not a worn unit - it is an older design.
+
+==============================================================================
+6. ENERGY - both baselines, then the difference
+==============================================================================
+  E_as_built            12251 kWh/yr   (heating 10346 + hot water 1905)
+  E_reference            4264 kWh/yr   (heating 3583 + hot water 680)
+  deficiency             7988 kWh/yr
+
+  NEITHER IS A PREDICTED BILL. Appliances are excluded from both, so each
+  level is incomplete on purpose. Only the DIFFERENCE is meaningful.
+
+==============================================================================
+7. THE FOUR TERMS - what the difference is made of
+==============================================================================
+  term            kWh/yr   who fixes it
+  envelope          5313   builder
+  dhw               1225   builder
+  emitter            989   builder
+  vintage            461   installer
+  TOTAL             7988
+
+==============================================================================
+8. THE CHECKS - the trace must reproduce the model AND the export
+==============================================================================
+  four terms == evaluate() deficiency      7987.506579 == 7987.506579   OK
+  E_as_built - E_reference == deficiency   OK
+  == the SHIPPED export                    7987.5 vs 7988.0   OK
+  house + heat pump == total               OK
+
+  These asserts are the point: if the model changes and this document does
+  not, the run FAILS instead of quietly printing a stale story.
+
+==============================================================================
+9. THE BAND - read from the export, never recomputed here
+==============================================================================
+  point    7988 kWh/yr
+  lower    7142 kWh/yr  <- what is ranked and shown: 'at least this much'
+  upper    9935 kWh/yr
+  tier   T1   (T1 tightest -> T3 widest)
+
+  The band is the PUBLISHED SPREAD of the constants, sampled. Not invented
+  error bars, and not a confidence interval from a fit - nothing is fitted.
+
+==============================================================================
+10. THE DECISION RULES THAT FIRED
+==============================================================================
+  status               HIGH_EXCESS            confirmed excess over code, in the worst 25% of the fleet by lower bound
+  rank (fleet)         1.0                    ranked on phys_rank_value_lo_kwh_yr
+  unit recommendation  PLAN_REPLACEMENT       age 15.0 yr as of 2024
+  vintage inside rank? True
+  heat-pump no-claim?  False
+
+==============================================================================
+11. WHY THE 42 WERE NEVER COMPUTED - measured, not the blanket string
+==============================================================================
+  building data missing ONLY    21   <- AN AUDITOR CAN FIX THIS
+  meter record too short ONLY   18   <- only more data fixes it, no visit helps
+  both                           3
+  total                         42
+
+  THE EXPORT PUTS ONE BLANKET STRING ON A MIXED SET:
+    phys_status_reason    'building data missing'    true for 24 of 42
+    phys_no_result_reason 'insufficient meter days'  true for 21 of 42
+  Neither holds for all 42, and the two causes have DIFFERENT FIXES, so
+  phys_no_result_is_fixable=True conflates 'go and look' with 'wait'.
+  Found by writing this walkthrough, 2026-09-17. Logged, export not yet changed.
+
+==============================================================================
+12. THREE CONTRAST CASES - where a different rule takes over
+==============================================================================
+ household       era           status  point     lo     hi  pump_point  pump_lo  no_claim                unit  rank                                                                      why
+    876511 1991_2000      HIGH_EXCESS 5961.0 5610.0 8377.0         0.0     13.0      True RECORD_INSTALL_YEAR   2.0 confirmed excess over code, in the worst 25% of the fleet by lower bound
+    121728  post2010     INCONCLUSIVE  176.0 -133.0  508.0        95.0     67.0     False        KEEP_IN_LIFE   NaN    band straddles zero - the excess cannot be resolved at this precision
+    100120       NaN INCOMPLETE_AUDIT    NaN    NaN    NaN         NaN      NaN     False                 NaN   NaN                           building data missing: no_footprint;no_storeys
+
+  trace rows 43   provenance mix {'GENERATED': 17, 'DATABASE': 13, 'VERIFIED': 7, 'DERIVED': 4, 'SECOND_HAND': 1, 'PHYSICAL': 1}
+  written: p27_trace, p27_contrast
+  written: p27_walkthrough.md, p27_walkthrough.html  (67 blocks)

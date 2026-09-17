@@ -1,0 +1,41 @@
+
+==============================================================================
+1. CATEGORY B - the vintage term, 172 households, normal-year HDD
+==============================================================================
+  installation year recorded: 109 / 172
+hp_type    air-source  ground-source
+grp                                 
+<2008              18              8
+2008-2014          20             13
+>=2015             34             16
+unknown            31             32
+
+  fleet deficiency: vintage OFF 268271  ON 288788  (+7.6%)   term_vintage 13938
+            n  factor    term  deficiency
+grp                                      
+<2008      26    0.85  314.15     1849.39
+2008-2014  33    0.93  133.56     1264.49
+>=2015     50    1.00    0.00     1048.00
+unknown    63    1.00    0.00     1677.03
+
+==============================================================================
+2. VALIDATION - P13 v2 measured slope (post-visit, free step) vs physics
+==============================================================================
+  median measured / physics slope, by installation-year group:
+  group         n       OFF        ON
+  <2008        20      1.47      1.28
+  2008-2014    30      1.22      1.15
+  >=2015       42      1.05      1.03
+  unknown      53      1.30      1.30
+  Spearman per m2, bp_off: +0.593
+  Spearman per m2, bp_on: +0.618
+
+  current P13 v2 status by group (vintage not yet applied there):
+visit_status  BELOW_PHYSICS  INCONCLUSIVE  SLOPE_EXCESS
+grp                                                    
+<2008                     1             9            10
+2008-2014                 7            12            11
+>=2015                    9            26             7
+unknown                   4            26            23
+
+  written: p23_category_b.parquet, p23_meter_check.parquet

@@ -1,0 +1,56 @@
+  curve / limit columns in protocols.csv:
+    HeatPump_HeatingCurveSetting_TooHigh_BeforeVisit             n=188
+    HeatPump_HeatingCurveSetting_Changed                         n=173
+    HeatPump_HeatingCurveSetting_Outside20_BeforeVisit           n=211
+    HeatPump_HeatingCurveSetting_Outside0_BeforeVisit            n=209
+    HeatPump_HeatingCurveSetting_OutsideMinus8_BeforeVisit       n=210
+    HeatPump_HeatingCurveSetting_Outside20_AfterVisit            n=51
+    HeatPump_HeatingCurveSetting_Outside0_AfterVisit             n=49
+    HeatPump_HeatingCurveSetting_OutsideMinus8_AfterVisit        n=57
+    HeatPump_HeatingLimitSetting_TooHigh_BeforeVisit             n=193
+    HeatPump_HeatingLimitSetting_Changed                         n=62
+    HeatPump_HeatingLimitSetting_BeforeVisit                     n=64
+    HeatPump_HeatingLimitSetting_AfterVisit                      n=52
+
+==============================================================================
+1. DO SETTINGS AND FAULTS DIFFER BY INSTALLATION YEAR? (145 assessed, P13 v2)
+==============================================================================
+  group         n |  curve@0C median | curve too high limit too high  curve changed
+  <2008        20 |    33.5 C (n=20) |       57% (14)       15% (20)       53% (17)
+  2008-2014    30 |    35.0 C (n=30) |       48% (29)       14% (29)       64% (28)
+  >=2015       42 |    33.0 C (n=42) |       57% (37)       35% (40)       67% (39)
+  unknown      53 |    33.5 C (n=52) |       42% (45)       30% (50)       79% (29)
+  curve@0C after the visit, median by group: {'<2008': np.float64(29.0), '2008-2014': np.float64(33.5), '>=2015': np.float64(30.5), 'unknown': np.float64(29.5)}
+
+==============================================================================
+2. DOES THE AGE GRADIENT SURVIVE WITHIN EQUAL SETTINGS / LABELS?
+==============================================================================
+  median measured/physics (vintage OFF) by group, split at curve@0C median 33.0 C:
+grp         <2008  2008-2014  >=2015
+setting                             
+high curve   1.86       1.39    1.16
+low curve    1.18       1.10    1.02
+grp         <2008  2008-2014  >=2015
+setting                             
+high curve     10         16      18
+low curve      10         14      24
+
+  ... split by the inspector's curve label (description only):
+grp         <2008  2008-2014  >=2015
+curve_high                          
+False        1.82       1.29    1.03
+True         1.11       1.15    0.99
+
+==============================================================================
+3. log(measured/physics) ~ age + curve setting, bootstrap 95% CI
+==============================================================================
+  model age              n=92
+    age     +0.0213 per unit  [+0.0089, +0.0343]  -> per year of age: +2.2%
+  model curve0           n=92
+    curve0  +0.0078 per unit  [-0.0045, +0.0238]  -> per K of curve: +0.8%
+  model age+curve0       n=92
+    age     +0.0212 per unit  [+0.0089, +0.0344]  -> per year of age: +2.1%
+    curve0  +0.0074 per unit  [-0.0052, +0.0236]  -> per K of curve: +0.7%
+
+  corr(age, curve@0C) = 0.016  (n=92)
+  vintage model's own slope, 1999-2017 (air/ground avg): about +1.4% per year of age

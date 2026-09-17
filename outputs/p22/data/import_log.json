@@ -1,0 +1,26 @@
+[
+ {
+  "title": "TABULA – Scientific Report Germany - episcope.eu",
+  "url": "https://episcope.eu/fileadmin/tabula/public/docs/scientific/DE_TABULA_ScientificReport_IWU.pdf",
+  "why": "TABULA Scientific Report DE, EFH component area ratios",
+  "ok": true
+ },
+ {
+  "title": "Harmonisierung SIA-Standardwerte und Gebäudekategorien - Statusbericht",
+  "url": "https://cms.sia.ch/de/api/getMedia/940",
+  "why": "SIA Harmonisierung status report, TEP model indicators",
+  "ok": true
+ },
+ {
+  "title": "INTEGRATED STRATEGIES AND POLICY INSTRUMENTS FOR RETROFITTING BUILDINGS TO REDUCE PRIMARY ENERGY USE AND GHG EMISSIONS (INSPIRE)",
+  "url": "https://www.tep-energy.ch/docs/p0207_INSPIRE_International_FinalReport_150119.pdf",
+  "why": "TEP INSPIRE final report, component area estimates",
+  "ok": true
+ },
+ {
+  "title": "ENERGY EFFICIENCY IN BUILDINGS - sccer-jasm",
+  "url": "https://sccer-jasm.ch/JASMpapers/JASM_energyEfficiency_buildings.pdf",
+  "why": "SCCER-JASM, Wuest Partner EBF mapping",
+  "ok": true
+ }
+]

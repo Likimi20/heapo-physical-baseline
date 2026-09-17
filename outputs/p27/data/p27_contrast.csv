@@ -1,0 +1,4 @@
+household;era;status;point;lo;hi;pump_point;pump_lo;no_claim;unit;rank;why
+876511;1991_2000;HIGH_EXCESS;5961.0;5610.0;8377.0;0.0;13.0;True;RECORD_INSTALL_YEAR;2.0;confirmed excess over code, in the worst 25% of the fleet by lower bound
+121728;post2010;INCONCLUSIVE;176.0;-133.0;508.0;95.0;67.0;False;KEEP_IN_LIFE;;band straddles zero - the excess cannot be resolved at this precision
+100120;;INCOMPLETE_AUDIT;;;;;;False;;;"building data missing: no_footprint;no_storeys"

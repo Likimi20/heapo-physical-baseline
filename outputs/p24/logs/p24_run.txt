@@ -1,0 +1,46 @@
+  age counted to REF_YEAR = 2024   (last meter date in the data: 2024-02-28)
+
+==============================================================================
+1. THE SOURCED SERVICE LIFE
+==============================================================================
+  hp_service_life_air        20 yr  [13-27]  Hubbuch & Vecsei, ZHAW Institut fuer Facility Management, 'Lebenszykluskosten von Waermepumpen' (for SIG Geneve), Weibull fit + Kaplan-Meier on Swiss owner survey | Tabelle 4.8: expected 20 +/- 2 yr, SD 7 +/- 2 yr, k = 3.0; N = 53 (43 from one firm)
+  hp_service_life_ground     27 yr  [22-31]  Hubbuch & Vecsei, ZHAW Institut fuer Facility Management, 'Lebenszykluskosten von Waermepumpen' (for SIG Geneve), Weibull fit + Kaplan-Meier on Swiss owner survey | Tabelle 4.7: expected 26.7 +/- 0.8 yr, SD 4.7 +/- 0.6 yr, k = 7; N = 223
+
+==============================================================================
+2. RECOMMENDATION PER HOUSEHOLD (all 214; Category B terms where assessable)
+==============================================================================
+hp_type              air-source  ground-source  water-source  All
+unit_recommendation                                              
+KEEP_IN_LIFE                 51             36             0   87
+PLAN_REPLACEMENT             27              3             0   30
+RECORD_INSTALL_YEAR          44             40             1   85
+REPLACE_END_OF_LIFE           8              4             0   12
+All                         130             83             1  214
+
+  term_vintage (kWh/yr, Category B households) by recommendation:
+                     count  median     sum
+unit_recommendation                       
+KEEP_IN_LIFE            76     0.0  3850.0
+PLAN_REPLACEMENT        23   215.0  5414.0
+RECORD_INSTALL_YEAR     63     0.0     0.0
+REPLACE_END_OF_LIFE     10   433.0  4674.0
+
+  curve first, then replace (old unit AND confirmed slope excess): 13
+ Household_ID       hp_type  unit_age_years unit_recommendation  term_vintage_kwh
+       111710 ground-source            32.0 REPLACE_END_OF_LIFE        866.882863
+      7086681    air-source            14.0    PLAN_REPLACEMENT        147.993773
+       881223    air-source            15.0    PLAN_REPLACEMENT        262.209326
+      7374981    air-source            13.0    PLAN_REPLACEMENT        196.530622
+       120741    air-source            14.0    PLAN_REPLACEMENT        137.136159
+       114721    air-source            18.0    PLAN_REPLACEMENT        237.473060
+      7710511    air-source            13.0    PLAN_REPLACEMENT        177.130256
+      1148611 ground-source            31.0 REPLACE_END_OF_LIFE        465.074184
+       108987    air-source            17.0    PLAN_REPLACEMENT        330.795433
+       991118 ground-source            41.0 REPLACE_END_OF_LIFE        424.619801
+       816910    air-source            28.0 REPLACE_END_OF_LIFE        634.387421
+      1001228    air-source            14.0    PLAN_REPLACEMENT        138.776285
+       107461    air-source            17.0    PLAN_REPLACEMENT        158.778827
+
+  KEEP_IN_LIFE carrying a non-zero vintage term (older than the table, still mid-life): 37
+
+  written: p24_unit_recommendation

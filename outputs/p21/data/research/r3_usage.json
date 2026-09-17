@@ -1,0 +1,78 @@
+{
+  "status": "completed",
+  "task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+  "sources_found": 10,
+  "sources": [
+    {
+      "url": "https://orbit.dtu.dk/files/257298658/qt4zk6g1jh.pdf",
+      "title": "An international review of occupant-related aspects of building energy codes and standards",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Details the link between SIA 380/1 and room data."
+    },
+    {
+      "url": "https://publications.ibpsa.org/proceedings/bausim/2022/papers/bausim2022_Loehr_Felix2.pdf",
+      "title": "A SCALABLE APPROACH TO LOAD PROFILE DETERMINATION ON A CITY DISTRICT LEVEL, APPLICABLE IN EARLY PLANNING STAGES S. Volkmer, F. L - IBPSA Publications",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Explains room usage profiles and modeling based on SIA 2024."
+    },
+    {
+      "url": "https://heatpumpingtechnologies.org/annex46/wp-content/uploads/sites/53/2020/10/hpt-an46-05-task-1-test-procedures-and-quality-labels-for-heat-pump-water-heaters.pdf",
+      "title": "Test Procedures and Quality Labels for Heat Pump Water Heaters",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Provides standard and maximum domestic hot water demand values."
+    },
+    {
+      "url": "https://infoscience.epfl.ch/bitstreams/aef0f5cd-31ad-4936-8b39-fe3a8b2cdc56/download",
+      "title": "Performance Assessment of a nZEB Carbon Neutral Living/Office Space and Its Integration into a District Energy-Hub - Infoscience - EPFL",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Specifies hot water demand as 40 liters per person."
+    },
+    {
+      "url": "https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/institute/spf/forschung/tools/referenz-mfh/referenz-mfh_2019-12-05_multifamily_reference_building_spf_v1.1.pdf",
+      "title": "Reference Framework for Building and System Simulations: Multifamily Reference Building - OST",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Connects SIA 2028 climate data to Zurich reference buildings."
+    },
+    {
+      "url": "http://www.equaonline.com/iceuser/pdf/Manual_IDA-ICE-48-Sui.pdf",
+      "title": "LOKALISIERUNG SCHWEIZ - equaonline.com",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Defines Zurich heating design periods and outdoor temperature minima."
+    },
+    {
+      "url": "https://etkhpcorderapi.extweb.sp.se/api/file/2574",
+      "title": "Field Experience with Residential Heat Pumps in Switzerland: Potential for Improvement and Future Developments - RISE",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Summarizes real-world seasonal performance factors for Swiss heat pumps."
+    },
+    {
+      "url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=3372&context=iracc",
+      "title": "Field Performance Of Domestic Heat Pumps For Heating And Hot Water In Switzerland – Insights And Analysis",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Analyzes field trial measurements of heat pump system efficiency."
+    },
+    {
+      "url": "https://www.ost.ch/fileadmin/dateiliste/3_forschung_dienstleistung/institute/ies/wpz/sonstige_wichtige_dokumente/2022_jahresbericht_feldmessungen.pdf",
+      "title": "Bericht «Feldmessungen von Wärme- pumpen-Anlagen Heizsaison 2021/22» - Ostschweizer Fachhochschule",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Documents recent field measurements for various heat pump objects."
+    },
+    {
+      "url": "https://energiehub-gebaeude.ch/wp-content/uploads/2025/08/ME_AgBau_Heizleistung_2014-1.pdf",
+      "title": "Der Heizleistungsbedarf als Beurteilungsgrösse für die energetische Qualität der Gebäudehülle - Energiehub Gebäude",
+      "result_type": 1,
+      "research_task_id": "7d2e2ea1-4b1c-4e86-8bee-6d5ffc21c5cc",
+      "hint": "Describes Zurich design outdoor temperatures based on 20-year data."
+    }
+  ],
+  "report": ""
+}

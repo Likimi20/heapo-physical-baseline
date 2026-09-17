@@ -1,0 +1,70 @@
+
+==============================================================================
+1. THE THREE GROUPS
+==============================================================================
+  households: 172   house + heat_pump == total to 2.73e-12 kWh/yr
+
+  group      what                          fleet   median median lo decisive (whole band > 0)
+  house      envelope + emitter + DHW     274851     1345       830 155 of 172
+  heat_pump  vintage                       13938        0        12 133 of 172
+  total      house + heat pump            288788     1498       907 158 of 172
+
+==============================================================================
+2. GROUP 1 - HOUSE (fabric): era and renovations
+==============================================================================
+            n   median  median_lo  renovated
+era                                         
+pre1975    37  2398.41    1724.01       0.81
+1976_1990  62  1186.30     830.20       0.55
+1991_2000  20   630.79     290.57       0.20
+2001_2010  35   932.90     765.06       0.00
+post2010   18    72.37     -85.63       0.00
+
+==============================================================================
+3. GROUP 2 - HEAT PUMP: replace or keep
+==============================================================================
+                      n  median_age  median   fleet
+unit_recommendation                                
+KEEP_IN_LIFE         76         7.0     0.0  3850.0
+PLAN_REPLACEMENT     23        15.0   215.0  5414.0
+RECORD_INSTALL_YEAR  63         NaN     0.0     0.0
+REPLACE_END_OF_LIFE  10        28.0   433.0  4674.0
+
+  the heat-pump group needs NO era ranking: a unit's vintage is equipment, and
+  its efficiency gap does not depend on the building's age.
+  median heat_pump kWh by era: {'pre1975': 0.0, '1976_1990': 0.0, '1991_2000': 0.0, '2001_2010': 0.0, 'post2010': 14.0}
+
+==============================================================================
+4. THE ERA QUESTION - fleet-wide versus within-era worst quartile
+==============================================================================
+
+  house: fleet-wide 43, within-era 45, shared 34
+    fleet-wide by era: {'pre1975': 16, '1976_1990': 10, '1991_2000': 5, '2001_2010': 12, 'post2010': 0}
+    within-era      : {'pre1975': 10, '1976_1990': 16, '1991_2000': 5, '2001_2010': 9, 'post2010': 5}
+
+  heat_pump: fleet-wide 43, within-era 45, shared 39
+    fleet-wide by era: {'pre1975': 7, '1976_1990': 17, '1991_2000': 5, '2001_2010': 12, 'post2010': 2}
+    within-era      : {'pre1975': 10, '1976_1990': 16, '1991_2000': 5, '2001_2010': 9, 'post2010': 5}
+
+  total: fleet-wide 43, within-era 45, shared 34
+    fleet-wide by era: {'pre1975': 16, '1976_1990': 10, '1991_2000': 5, '2001_2010': 12, 'post2010': 0}
+    within-era      : {'pre1975': 10, '1976_1990': 16, '1991_2000': 5, '2001_2010': 9, 'post2010': 5}
+
+==============================================================================
+5. WHAT A THREE-GROUP OVERVIEW WOULD SAY PER HOUSE
+==============================================================================
+  house     era         house lo   pump lo unit                 visit axis
+  116121    pre1975         6778       282 PLAN_REPLACEMENT     USES_LESS_THAN_MODELLED
+  876511    1991_2000       5354        23 RECORD_INSTALL_YEAR  SLOPE_EXCESS
+  1111201   pre1975         5053        70 KEEP_IN_LIFE         SLOPE_EXCESS
+  5011111   pre1975         4663        17 RECORD_INSTALL_YEAR  USES_LESS_THAN_MODELLED
+  1137376   1976_1990       4107         6 RECORD_INSTALL_YEAR  INCONCLUSIVE
+  700831    1976_1990       3826         9 RECORD_INSTALL_YEAR  INCONCLUSIVE
+  105900    2001_2010       3258         9 RECORD_INSTALL_YEAR  SLOPE_EXCESS
+  104118    1976_1990       2971        98 KEEP_IN_LIFE         nan
+  698983    pre1975         3091         0 KEEP_IN_LIFE         nan
+  7610179   1991_2000       2817        17 RECORD_INSTALL_YEAR  INCONCLUSIVE
+  671781    pre1975         2719       199 REPLACE_END_OF_LIFE  USES_LESS_THAN_MODELLED
+  8399121   2001_2010       2593       200 PLAN_REPLACEMENT     INCONCLUSIVE
+
+  written: p25_overview

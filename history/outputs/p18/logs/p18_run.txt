@@ -1,0 +1,46 @@
+
+==============================================================================
+1. STATION NORMAL-YEAR HDD_12 - complete years only
+==============================================================================
+            complete_years  normal_hdd_yr  sd_between_years  min_year  max_year   cv
+Weather_ID                                                                          
+8jB                      5         1359.1             142.4    1238.0    1590.6  0.1
+HbsbG                    3         1400.2             143.7    1277.6    1558.3  0.1
+Hg                       5         1356.8             141.4    1248.6    1590.0  0.1
+MqO                      5         1952.3             182.1    1814.0    2243.1  0.1
+ceOxS                    5         1360.2             156.1    1205.8    1597.6  0.1
+sV3mR                    4         1401.8             147.7    1249.3    1598.7  0.1
+wDD                      5         1479.3             146.8    1356.3    1719.1  0.1
+z6I                      5         1324.3             137.2    1206.7    1552.6  0.1
+
+  year-to-year CV, median over stations: 10.4%
+
+==============================================================================
+2. CATEGORY B ON NORMAL-YEAR HDD versus the P6 record-length correction
+==============================================================================
+  households: 172 (P6: 172)   without a station normal: 0
+
+  fleet deficiency: P6 route 321330   normal-year 351229 kWh/yr   (+9.3%)
+  median household: P6 1609   normal-year 1696
+  Spearman of the deficiency, fleet: 0.9731
+  Spearman within era: pre1975 0.917  1976_1990 0.899  1991_2000 0.982  2001_2010 0.983  post2010 0.930
+
+  by record length - raw HDD over normal is the P6 bias, measured again:
+  days         n |   raw/norm    P6/norm | def n/P6 | P6 bin median it replaces
+  <365        15 |      0.842      0.672 |    1.473 | extrapolated 1.252
+  365-548     24 |      1.053      0.841 |    1.112 | 1.252
+  548-730     26 |      0.879      0.919 |    1.033 | 0.956
+  730-1095    39 |      0.994      0.894 |    1.104 | 1.112
+  1095+       68 |      1.045      0.971 |    1.028 | 1.077
+
+  897731 (212 days, flagged in P6 as extrapolated):
+ n_days  hdd_raw_day  hdd_p6_day  hdd_normal_day  def_p6  def_normal
+    212         4.35        3.47            3.72 7434.88     7957.03
+
+==============================================================================
+3. THE RANKED QUEUE - does anything move?
+==============================================================================
+  worst quartile within era: P6 45, normal-year 45, shared 44, in/out 1/1
+  max |rank change| within era: 31
+
+  written: p18_normal_year, p18_station_normals

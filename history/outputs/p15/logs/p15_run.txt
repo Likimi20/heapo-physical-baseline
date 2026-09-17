@@ -1,0 +1,54 @@
+
+==============================================================================
+1. STATION CLIMATE - annual mean temperature over complete years
+==============================================================================
+            complete_years   T_me
+Weather_ID                       
+8jB                      5  10.83
+HbsbG                    3  10.55
+Hg                       5  10.83
+MqO                      5   8.13
+ceOxS                    5  10.96
+sV3mR                    4  10.67
+wDD                      5  10.17
+z6I                      5  11.01
+
+==============================================================================
+2. THE OFFSET, STEP BY STEP
+==============================================================================
+  modellable: 190   without a station T_me: 0
+  S0 reproduces evaluate() design_kw: max |diff| 7.11e-15 W/m2  OK
+  EN 12831 b_ground (f_g1 x f_g2): median 0.443  range 0.435 - 0.574   (live model 0.50)
+
+  ALL modellable households (ratio ours / SIA 384.201 midpoint)
+  era           n  bench |  S0 mn  S0 md |  S1 md  S2 md  D1 md | S2 W/m2
+  pre1975      42   60.0 |   1.27   1.26 |   1.19   1.18   1.00 |   70.7
+  1976_1990    66   45.0 |   1.29   1.30 |   1.21   1.18   0.95 |   53.3
+  1991_2000    25   35.0 |   1.28   1.31 |   1.19   1.19   0.89 |   41.6
+  2001_2010    38   32.5 |   1.19   1.17 |   1.04   1.03   0.71 |   33.5
+  post2010     19   25.0 |   1.13   1.13 |   0.96   0.96   0.54 |   23.9
+  range                  |   0.16   0.18 |   0.25   0.23   0.47
+  mid                    |   1.27   1.26 |   1.19   1.18   0.89
+
+  UNRENOVATED only - the table is for as-built stock
+  era           n  bench |  S0 mn  S0 md |  S1 md  S2 md  D1 md | S2 W/m2
+  pre1975       7   60.0 |   1.34   1.27 |   1.20   1.18   1.01 |   71.0
+  1976_1990    31   45.0 |   1.37   1.34 |   1.25   1.23   1.00 |   55.4
+  1991_2000    20   35.0 |   1.31   1.37 |   1.25   1.23   0.93 |   43.0
+  2001_2010    38   32.5 |   1.19   1.17 |   1.04   1.03   0.71 |   33.5
+  post2010     18   25.0 |   1.13   1.13 |   0.96   0.95   0.54 |   23.9
+  range                  |   0.24   0.24 |   0.29   0.28   0.47
+  mid                    |   1.31   1.27 |   1.20   1.18   0.93
+
+==============================================================================
+3. WHAT REMAINS
+==============================================================================
+  fleet median ratio: S0 1.23 -> S1 1.13 -> S2 1.12
+  ventilation share of the S2 load: median 22%
+
+  UNRESOLVABLE FROM THE DATA: the area basis. SIA tables are per m2 of
+  Energiebezugsflaeche (gross, SIA 416). If HEAPO's heated area is a NET area,
+  our W/m2 is inflated by EBF/net. The factor that would close S2 is 1.12.
+  That is WHAT IT WOULD TAKE, not a correction. Nothing is applied.
+
+  written: p15_design_load

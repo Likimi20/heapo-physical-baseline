@@ -1,0 +1,73 @@
+
+==============================================================================
+1. THE MEASURED SLOPE AND THE PHYSICAL SLOPE
+==============================================================================
+  households with both slopes : 172
+  slope excess kWh/yr : median 719  IQR -91 - 1572
+  slope excess %      : median 29%  IQR -3% - 61%
+  ~22%% is BASELINE for everyone (P9). Rank within era.
+
+==============================================================================
+2. APPLIANCES CANCEL - why the slope and not the level
+==============================================================================
+  LEVEL excess  median   6045 kWh/yr   5-95%   2058 -  15848   (appliances)
+  SLOPE excess  median    719 kWh/yr   5-95%  -1498 -   3502   (weather only)
+
+==============================================================================
+3. THE FAULT PROBABILITY - shown, NOT gated
+==============================================================================
+  model: logistic   suggests: heating curve too high, heating limit too high   advisory: night setback active
+
+  THE FAULT DOES NOT DECIDE STATUS OR RANK. It was checked and found to
+  pull AGAINST the sort (curve rho -0.39, recorded label AUC 0.441,
+  replicating the S-series 0.386), and the heating-limit model is driven
+  by blank form fields. See p13_filter_trap.md.
+
+==============================================================================
+4. THE VISIT QUEUE
+==============================================================================
+  {'SLOPE_EXCESS': np.int64(125), 'NO_SLOPE_EXCESS': np.int64(47)}
+
+  SLOPE_EXCESS     heating the building does not justify -> ranked
+  NO_SLOPE_EXCESS  heating response fits the building
+  NOT_ASSESSABLE   cannot compute. NO CLAIM.
+
+  within SLOPE_EXCESS (n=125), the fault information carried alongside:
+    fault model scored this house :  72
+    ...and names a fault >= 0.50  :  40
+    fault model never ran        :  53
+  None of these three affects the rank.
+
+  TOP OF THE QUEUE - sorted on slope excess alone:
+  house     era         recover  NOT rec   prob model suggests         fitted?
+  1114677   post2010       6162     1261    -   -                      not scored
+  6981151   pre1975        5660     2722   0.98 heating limit too high held out
+  680861    1991_2000      5504     1007   0.83 heating curve too high held out
+  881223    1976_1990      5435     3340   0.20 -                      held out
+  991118    1976_1990      5004     2581   0.22 -                      held out
+  102766    2001_2010      4493     1678    -   -                      not scored
+  816910    1991_2000      3896     2622   0.04 -                      TRAIN
+  7374981   post2010       3752     -140   0.51 heating curve too high TRAIN
+  105807    1976_1990      3516     1590    -   -                      not scored
+  801031    2001_2010      3490      317   0.44 -                      TRAIN
+  120741    1976_1990      3468     1634   0.91 heating limit too high TRAIN
+  611797    1976_1990      3342     2249    -   -                      not scored
+
+  4 of the top 12 were never scored by the fault model - they reach the
+  top on slope excess alone, which is the point of not gating.
+  THE TWO kWh COLUMNS ARE NEVER SUMMED.
+
+==============================================================================
+5. WHAT THIS QUEUE IS AND IS NOT
+==============================================================================
+  IS      a ranked list of heating the building does not justify, with a
+          separate figure for what needs a builder, and the fault model's
+          suggestion attached where it exists.
+  IS NOT  gated on the fault - the filter was measured to pull against the
+          sort and was removed, Miguel 2026-09-11.
+  IS NOT  an expected saving. No probability was multiplied by any kWh.
+  IS NOT  free of the ~22%% baseline offset (P9). Rank within era.
+
+  written: p13_visit_queue.csv / .parquet
+
+P13 complete.

@@ -1,0 +1,196 @@
+
+==============================================================================
+A. PORTABILITY - the physics layer must not know about HEAPO
+==============================================================================
+  ok   p_physics.py free of 'Building_'                           
+  ok   p_physics.py free of 'HeatPump_'                           
+  ok   p_physics.py free of 'HeatDistribution_'                   
+  ok   p_physics.py free of 'DHW_'                                
+  ok   p_physics.py free of 'Survey_'                             
+  ok   p_physics.py free of 'Household_ID'                        
+  ok   p_physics.py free of 'protocols.csv'                       
+  ok   p_physics.py free of 'daily_states'                        
+  ok   p_physics.py free of 'household_weather'                   
+  ok   p_physics.py imports no pandas                             
+  ok   p_adapter_heapo.py exists                                  
+
+==============================================================================
+B. THE INSPECTOR'S VERDICT IS A LABEL, NEVER AN INPUT
+==============================================================================
+  ok   physics never references 'CorrectlyPlanned'                
+  ok   physics never references 'TooHigh_BeforeVisit'             
+  ok   physics never references 'NightSetbackSetting'             
+  ok   physics never references 'TechnicallyOkay'                 
+  ok   physics never references 'Categorization'                  
+  ok   physics never references 'LastDescaling_TooLongAgo'        
+  ok   adapter marks label columns as validation-only             
+  ok   evaluate() runs on ROLES alone, no label present           
+
+==============================================================================
+C. THERMODYNAMIC SANITY - every JAZ published, and physically ordered
+==============================================================================
+  ok   air-source JAZ falls with flow temperature                 3.70 > 3.30 > 2.90
+  ok   ground-source JAZ falls with flow temperature              5.70 > 5.00 > 4.40
+  ok   no JAZ is derived - every cell is published                
+  ok   GSHP + radiators is the published 4.4, below GSHP floor    
+  ok   ground-source beats air-source at every emitter            
+  ok   DHW JAZ is below space-heating JAZ for each pump type      
+
+==============================================================================
+D. CONSTANTS - sourced, banded, and mutually consistent
+==============================================================================
+  ok   constant 'u_era_pre1975' carries value/lo/hi/unit/source/section 
+  ok   constant 'u_era_pre1975' band brackets its value           
+  ok   constant 'u_era_1976_1990' carries value/lo/hi/unit/source/section 
+  ok   constant 'u_era_1976_1990' band brackets its value         
+  ok   constant 'u_era_1991_2000' carries value/lo/hi/unit/source/section 
+  ok   constant 'u_era_1991_2000' band brackets its value         
+  ok   constant 'u_era_2001_2010' carries value/lo/hi/unit/source/section 
+  ok   constant 'u_era_2001_2010' band brackets its value         
+  ok   constant 'u_era_post2010' carries value/lo/hi/unit/source/section 
+  ok   constant 'u_era_post2010' band brackets its value          
+  ok   constant 'u_reference' carries value/lo/hi/unit/source/section 
+  ok   constant 'u_reference' band brackets its value             
+  ok   constant 'storey_height' carries value/lo/hi/unit/source/section 
+  ok   constant 'storey_height' band brackets its value           
+  ok   constant 'perimeter_factor' carries value/lo/hi/unit/source/section 
+  ok   constant 'perimeter_factor' band brackets its value        
+  ok   constant 'b_ground' carries value/lo/hi/unit/source/section 
+  ok   constant 'b_ground' band brackets its value                
+  ok   constant 'n_air' carries value/lo/hi/unit/source/section   
+  ok   constant 'n_air' band brackets its value                   
+  ok   constant 'v_net_per_m2' carries value/lo/hi/unit/source/section 
+  ok   constant 'v_net_per_m2' band brackets its value            
+  ok   constant 'rho_c' carries value/lo/hi/unit/source/section   
+  ok   constant 'rho_c' band brackets its value                   
+  ok   constant 't_set' carries value/lo/hi/unit/source/section   
+  ok   constant 't_set' band brackets its value                   
+  ok   constant 't_design' carries value/lo/hi/unit/source/section 
+  ok   constant 't_design' band brackets its value                
+  ok   constant 'jaz_ashp_floor' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_ashp_floor' band brackets its value          
+  ok   constant 'jaz_ashp_lowrad' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_ashp_lowrad' band brackets its value         
+  ok   constant 'jaz_ashp_rad' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_ashp_rad' band brackets its value            
+  ok   constant 'jaz_gshp_floor' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_gshp_floor' band brackets its value          
+  ok   constant 'jaz_dhw_hp' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_dhw_hp' band brackets its value              
+  ok   constant 'dhw_kwh_person_day' carries value/lo/hi/unit/source/section 
+  ok   constant 'dhw_kwh_person_day' band brackets its value      
+  ok   constant 'appl_efh_4p' carries value/lo/hi/unit/source/section 
+  ok   constant 'appl_efh_4p' band brackets its value             
+  ok   constant 'appl_efh_per_person' carries value/lo/hi/unit/source/section 
+  ok   constant 'appl_efh_per_person' band brackets its value     
+  ok   constant 'appl_taper_5plus' carries value/lo/hi/unit/source/section 
+  ok   constant 'appl_taper_5plus' band brackets its value        
+  ok   constant 'jaz_gshp_lowrad' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_gshp_lowrad' band brackets its value         
+  ok   constant 'jaz_gshp_rad' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_gshp_rad' band brackets its value            
+  ok   constant 'jaz_dhw_gshp' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_dhw_gshp' band brackets its value            
+  ok   constant 'du_thermal_bridge' carries value/lo/hi/unit/source/section 
+  ok   constant 'du_thermal_bridge' band brackets its value       
+  ok   constant 'jaz_vintage_old_air' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_vintage_old_air' band brackets its value     
+  ok   constant 'jaz_vintage_old_ground' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_vintage_old_ground' band brackets its value  
+  ok   constant 'jaz_vintage_year_old' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_vintage_year_old' band brackets its value    
+  ok   constant 'jaz_vintage_year_new' carries value/lo/hi/unit/source/section 
+  ok   constant 'jaz_vintage_year_new' band brackets its value    
+  ok   constant 'hp_service_life_ground' carries value/lo/hi/unit/source/section 
+  ok   constant 'hp_service_life_ground' band brackets its value  
+  ok   constant 'hp_service_life_air' carries value/lo/hi/unit/source/section 
+  ok   constant 'hp_service_life_air' band brackets its value     
+  ok   reference U (MuKEn 2014) sits at the lower edge of the post-2010 band 0.247 vs 0.247-0.291
+  ok   U never rises with construction era                        0.903 > 0.709 > 0.364 > 0.364 > 0.269
+  ok   b_ground is sourced, not invented                          currently: Hoffmann & Geissler, FHNW, Energy Procedia 122 (2017); TABULA CCM eq. 4
+
+==============================================================================
+E. THE HDD BIAS CORRECTION - P6's finding must not silently vanish
+==============================================================================
+  ok   hdd_correction() exists                                    
+  ok   short records are corrected DOWNWARD                       450 days -> divide by 1.252
+  ok   long records are corrected less than short ones            1.077 < 1.252
+  ok   no record length is corrected upward past 1.35             
+  ok   a short record yields a SMALLER deficiency than a long one, same inputs 
+
+==============================================================================
+F. MODEL ALGEBRA
+==============================================================================
+  ok   deficiency == E_as_built - E_reference                     
+  ok   terms sum to the deficiency                                
+  ok   an older heat pump adds a positive vintage term, and terms still sum (P23) 447 kWh/yr
+  ok   unknown installation year makes no vintage claim on the point estimate 
+  ok   H_as_built >= H_reference for a pre-1975 house             
+  ok   ventilation is identical in both baselines, so it CANCELS  H_V = 97.6 W/K drops out
+  ok   a bungalow carries more envelope than a stacked house of equal area 2.58 > 2.28
+  ok   a heated basement adds envelope                            
+
+==============================================================================
+G. POPULATION - the funnel, pinned
+==============================================================================
+  ok   protocols.csv holds 410 reports                            
+  ok   214 distinct households carry a Household_ID               NOT 217 - that is reports-with-an-ID
+  ok   190 households are modellable                              190
+  ok   24 are unjudgeable and carry a reason                      
+  ok   Household_ID is an integer, never float                    
+  ok   PV is three-level - absence is NOT 'no PV'                 42 True / 141 False / 31 NaN
+  ok   unknown DHW source is carried, not defaulted to heat pump  1 households tick no DHW source
+  ok   emitter is never silently defaulted                        2 NaN kept as NaN
+
+==============================================================================
+H. END TO END - the P22 numbers (sourced registry, normal-year HDD)
+==============================================================================
+  ok   172 households clear >=180/60/60 on all days               172
+  ok   every scored household has a station normal year           0 missing
+  ok   record length never enters Category B (P18)                
+  ok   fleet deficiency 275k-305k kWh/yr (P23)                    288788
+  ok   median household deficiency 1350-1650 kWh/yr (P23)         1498
+  ok   post-2010 houses sit at or below the reference             median 94 kWh/yr on n=18
+  ok   no household has a negative E_reference                    
+  ok   huellzahl is physically plausible fleet-wide (1.0-3.5)     min 1.14 max 2.96
+  ok   geometry that does not reconcile is tiered down, not dropped 23 households fail storey reconciliation
+
+==============================================================================
+I. THE CALIBRATION RULE - no constant may be fitted to the meter
+==============================================================================
+  ok   physics layer never touches 'kwh_total'                    
+  ok   physics layer never touches 'kwh_per_day'                  
+  ok   physics layer never touches 'curve_fit'                    
+  ok   physics layer never touches 'polyfit'                      
+  ok   physics layer never touches 'lstsq'                        
+  ok   physics layer never touches 'minimize'                     
+  ok   physics layer never touches 'OLS'                          
+  ok   physics layer never touches 'regress'                      
+  ok   HDD_SAMPLING is documented as WEATHER ONLY                 
+
+==============================================================================
+J. APPLIANCE TERM - the published table, reproduced (P14)
+==============================================================================
+  ok   4 persons reproduces BFE 2021 Tab 1 EFH total              4048.0
+  ok   2 persons = 4048 - 2 x 593.5                               2861.0
+  ok   5th person tapered by 50 kWh (Tab 1 footnote 1)            4591.5
+  ok   appliance load rises with every resident                   
+  ok   appliance term never enters evaluate(), so the deficiency is untouched 
+
+==============================================================================
+K. STANDARDS REGISTRY - every constant carries a status (P19)
+==============================================================================
+  ok   every constant has a registry status from the declared levels 
+  ok   registry is free of HEAPO names                            
+  status counts: {'CITATION_MISMATCH': 0, 'DERIVED': 12, 'PHYSICAL': 1, 'SECOND_HAND': 1, 'VERIFIED': 19}
+  WARN 0 constants cite a document that does not contain them:
+       
+  WARN 0 registry INPUTS are not verified: none
+  ok   derived U entries reproduce their published inputs exactly 
+
+==============================================================================
+SUMMARY
+==============================================================================
+  141 checks, 141 passed, 0 FAILED
+
+  all green.

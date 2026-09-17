@@ -1,0 +1,59 @@
+{
+  "answer": "The U-values (\\\\(\\text{W/m}^2\\text{K}\\\\)) for existing Swiss residential buildings by construction period and element, as well as target reference values, are documented in the uploaded source **\"Research report: Swiss Building Standards & Heat Pump Benchmarks\"**.\n\n---\n\n### 1. As-Built Typology U-Values by Construction Era\n\n**Source:** *Research report: Swiss Building Standards & Heat Pump Benchmarks*  \n**Section:** Section 2, *TABULA / EPISCOPE Swiss Building Typology U-Values (\\\\(E_{\\text{as\\_built}}\\\\))* [1]\n\n* **Before 1975 (< 1975: Pre-energy crisis)** [1]\n  * **Wall U-value:** \\\\(1.0 - 1.4\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Roof U-value:** \\\\(0.8 - 1.0\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Window U-value:** \\\\(2.8 - 3.0\\text{ W/m}^2\\text{K}\\\\) (Single/Glazed) [1]\n  * **Floor U-value:** \\\\(0.9 - 1.2\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Overall Mean Envelope \\\\(U_{\\text{as\\_built}}\\\\):** \\\\(\\mathbf{1.20 - 1.50\\text{ W/m}^2\\text{K}}\\\\) [1]\n\n* **1976 – 1990 (1st Thermal Insulation Regulations)** [1]\n  * **Wall U-value:** \\\\(0.50 - 0.63\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Roof U-value:** \\\\(0.28 - 0.40\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Window U-value:** \\\\(2.3 - 2.5\\text{ W/m}^2\\text{K}\\\\) (Double) [1]\n  * **Floor U-value:** \\\\(0.6 - 0.8\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Overall Mean Envelope \\\\(U_{\\text{as\\_built}}\\\\):** \\\\(\\mathbf{0.70 - 0.90\\text{ W/m}^2\\text{K}}\\\\) [1]\n\n* **1991 – 2000 (Enhanced Insulation)** [1]\n  * **Wall U-value:** \\\\(0.35 - 0.45\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Roof U-value:** \\\\(0.20 - 0.28\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Window U-value:** \\\\(1.5 - 1.8\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Floor U-value:** \\\\(0.4 - 0.5\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Overall Mean Envelope \\\\(U_{\\text{as\\_built}}\\\\):** \\\\(\\mathbf{0.50 - 0.60\\text{ W/m}^2\\text{K}}\\\\) [1]\n\n* **2001 – 2010 (MoPEC 2000 / Minergie)** [1]\n  * **Wall U-value:** \\\\(0.22 - 0.28\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Roof U-value:** \\\\(0.15 - 0.20\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Window U-value:** \\\\(1.2 - 1.3\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Floor U-value:** \\\\(0.25 - 0.35\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Overall Mean Envelope \\\\(U_{\\text{as\\_built}}\\\\):** \\\\(\\mathbf{0.35 - 0.45\\text{ W/m}^2\\text{K}}\\\\) [1]\n\n* **After 2010 (> 2010: MoPEC 2014 / NZEB)** [1]\n  * **Wall U-value:** \\\\(0.15 - 0.18\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Roof U-value:** \\\\(0.10 - 0.15\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Window U-value:** \\\\(0.8 - 1.0\\text{ W/m}^2\\text{K}\\\\) (Triple) [1]\n  * **Floor U-value:** \\\\(0.18 - 0.22\\text{ W/m}^2\\text{K}\\\\) [1]\n  * **Overall Mean Envelope \\\\(U_{\\text{as\\_built}}\\\\):** \\\\(\\mathbf{0.20 - 0.28\\text{ W/m}^2\\text{K}}\\\\) [1]\n\n---\n\n### 2. Standard Reference Target U-Values (\\\\(U_{\\text{limit}}\\\\))\n\n**Source:** *Research report: Swiss Building Standards & Heat Pump Benchmarks*  \n**Section:** Section 3, *SIA 380/1 & SIA 2024: Target Values & Standard Usage Data (\\\\(E_{\\text{reference}}\\\\))* [2]\n\n* **Façade / Exterior Wall:** \\\\(0.20\\text{ W/m}^2\\text{K}\\\\) [2]\n* **Roof / Attic Floor:** \\\\(0.15\\text{ W/m}^2\\text{K}\\\\) [2]\n* **Floor against ground/unheated:** \\\\(0.20\\text{ W/m}^2\\text{K}\\\\) [2]\n* **Windows:** \\\\(1.00\\text{ W/m}^2\\text{K}\\\\) [2]\n\n*(Note: Direct U-value tables for non-Swiss regions like Germany or Central Europe are not in the uploaded sources beyond these TABULA Swiss typology benchmarks).*",
+  "conversation_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+  "turn_number": 25,
+  "is_follow_up": true,
+  "references": [
+    {
+      "source_id": "88cca6a2-3c36-48af-ae90-8691552e3a28",
+      "citation_number": 1,
+      "cited_text": "\n--------------------------------------------------------------------------------\n2. TABULA / EPISCOPE Swiss Building Typology U-Values (E_{\\text{as\\_built}})Per-element U-values (\\text{W}/(\\text{m}^2\\cdot\\text{K})) for Swiss Single-Family (SFH) and Multi-Family (MFH) houses across construction periods:Era ClassWall U-valueRoof U-valueWindow U-valueFloor U-valueOverall Mean Envelope U_{\\text{as\\_built}}< 1975 (Pre-energy crisis)1.0 - 1.40.8 - 1.02.8 - 3.0 (Single/Glazed)0.9 - 1.21.20 – 1.50 W/m²K1976 – 1990 (1st Thermal Regs)0.50 - 0.630.28 - 0.402.3 - 2.5 (Double)0.6 - 0.80.70 – 0.90 W/m²K1991 – 2000 (Enhanced Insulation)0.35 - 0.450.20 - 0.281.5 - 1.80.4 - 0.50.50 – 0.60 W/m²K2001 – 2010 (MoPEC 2000 / Minergie)0.22 - 0.280.15 - 0.201.2 - 1.30.25 - 0.350.35 – 0.45 W/m²K> 2010 (MoPEC 2014 / NZEB)0.15 - 0.180.10 - 0.150.8 - 1.0 (Triple)0.18 - 0.220.20 – 0.28 W/m²K",
+      "start_char": 1837,
+      "end_char": 2712,
+      "chunk_id": "491998ac-d2f0-4c17-bb4c-007b48877964",
+      "passage_id": null,
+      "answer_start_char": 1837,
+      "answer_end_char": 2712,
+      "score": 0.8498010466121685,
+      "fragment_start_char": 1837,
+      "fragment_end_char": 2712,
+      "answer_anchor_start": 470,
+      "answer_anchor_end": 470
+    },
+    {
+      "source_id": "88cca6a2-3c36-48af-ae90-8691552e3a28",
+      "citation_number": 2,
+      "cited_text": "\n--------------------------------------------------------------------------------\n3. SIA 380/1 & SIA 2024: Target Values & Standard Usage Data (E_{\\text{reference}})Target Envelope Limit Values (U_{\\text{limit}} for Reference House)Façade / Exterior Wall: 0.20 \\text{ W/m}^2\\text{K}Roof / Attic Floor: 0.15 \\text{ W/m}^2\\text{K}Floor against ground/unheated: 0.20 \\text{ W/m}^2\\text{K}Windows: 1.00 \\text{ W/m}^2\\text{K}Standard Usage Parameters (SIA 380/1 & SIA 2024 Raumnutzungsdaten)Standard Indoor Setpoint (T_{\\text{set}}): 20.0^\\circ\\text{C}Internal Heat Gains (q_{\\text{int}}): 5.0 \\text{ W/m}^2 (120 \\text{ MJ/m}^2\\text{a} \\approx 33.3 \\text{ kWh/m}^2\\text{a})Air Change Rate (n_{\\text{air}}): 0.7 \\text{ h}^{-1} (Natural window ventilation) / 0.4 \\text{ h}^{-1} (Mechanical MVHR)",
+      "start_char": 2712,
+      "end_char": 3500,
+      "chunk_id": "c55365d1-1783-480b-8602-a30f3040c3f9",
+      "passage_id": null,
+      "answer_start_char": 2712,
+      "answer_end_char": 3500,
+      "score": 0.7988943392548333,
+      "fragment_start_char": 2712,
+      "fragment_end_char": 3500,
+      "answer_anchor_start": 2267,
+      "answer_anchor_end": 2267
+    }
+  ],
+  "turn_key": {
+    "session_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+    "turn_id": "f801e7f5-5fe5-4cc5-b3ed-f28ef5cc8bfe",
+    "turn_code": 3331581344
+  },
+  "next_steps": [
+    {
+      "question": "What are the specific U-values for windows before 1975?",
+      "type_code": 9
+    },
+    {
+      "question": "How did wall U-values change after the 1976 regulations?",
+      "type_code": 9
+    },
+    {
+      "question": "What is the target U-value for roofs in the SIA 380/1 standard?",
+      "type_code": 9
+    }
+  ]
+}

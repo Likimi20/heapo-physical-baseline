@@ -1,0 +1,119 @@
+
+==============================================================================
+1. THE PANEL
+==============================================================================
+  daily_states rows            : 953,007
+  household_weather rows       : 953,007
+  joined                       : 953,007
+  usable household-days        : 878,128
+  households present           : 1,387
+  protocol reports with an ID  : 217
+  distinct protocol households : 214
+  with a parsed visit date     : 214
+
+==============================================================================
+2. IS HDD_SIA THE SAME AS HDD_12 PLUS A STEP OF 8 ON HEATING DAYS (T < 12, strict)?
+==============================================================================
+  rows tested                  : 878,128
+  exact matches (< 1e-9)       : 878,128  (100.0000%)
+  max absolute deviation       : 3.55271e-15
+  -> IDENTITY HOLDS. HDD_SIA carries a STEP of 8 on every heating day.
+
+  correlation HDD_12 vs HDD_SIA, all days      : 0.9368
+  correlation on HEATING DAYS ONLY             : 1.0000  (n=509,936)
+  On heating days the two differ by a constant, so within the heating
+  season they are the SAME regressor up to an intercept shift. All of
+  the SIA definition's extra information sits at the season boundary.
+
+==============================================================================
+3. PROTOCOL COHORT (this workstream's population), all usable days
+==============================================================================
+  households fitted (>=180d, >=60 warm, >=60 cold) : 193
+
+  median R2   HDD_12  : 0.7299
+  median R2   HDD_SIA : 0.7226
+  median RMSE HDD_12  : 7.4573 kWh/day
+  median RMSE HDD_SIA : 7.9319 kWh/day
+
+  PAIRED, same households and same days:
+    mean   dR2 (SIA - HDD_12) : -0.0064   95% CI [-0.0132, +0.0003]
+    median dR2                : -0.0099
+    SIA fits better in        : 84 / 193  (43.5%)
+    median dRMSE              : +0.1017 kWh/day
+
+  DECOMPOSITION - is any SIA advantage the degree days, or the step?
+    median R2, step indicator alone      : 0.5048
+    median R2, HDD_12 + step (2 params)  : 0.7587
+    median R2, HDD_SIA alone (1 param)   : 0.7226
+    median R2 gap, (HDD_12+step) - SIA   : +0.0263
+    HDD_SIA is the CONSTRAINED version of HDD_12 + step, with the step
+    coefficient forced to exactly 8x the slope. A gap near zero means
+    the constraint costs nothing; a large gap means SIA imposes a
+    ratio the data does not support.
+
+  written: p0_hdd_fits_cohort_all.csv
+
+==============================================================================
+4. FLEET-WIDE, all usable days (robustness check)
+==============================================================================
+  households fitted (>=180d, >=60 warm, >=60 cold) : 1313
+
+  median R2   HDD_12  : 0.6773
+  median R2   HDD_SIA : 0.6782
+  median RMSE HDD_12  : 8.0149 kWh/day
+  median RMSE HDD_SIA : 8.0210 kWh/day
+
+  PAIRED, same households and same days:
+    mean   dR2 (SIA - HDD_12) : -0.0002   95% CI [-0.0026, +0.0024]
+    median dR2                : +0.0003
+    SIA fits better in        : 665 / 1313  (50.6%)
+    median dRMSE              : -0.0023 kWh/day
+
+  DECOMPOSITION - is any SIA advantage the degree days, or the step?
+    median R2, step indicator alone      : 0.4726
+    median R2, HDD_12 + step (2 params)  : 0.7080
+    median R2, HDD_SIA alone (1 param)   : 0.6782
+    median R2 gap, (HDD_12+step) - SIA   : +0.0201
+    HDD_SIA is the CONSTRAINED version of HDD_12 + step, with the step
+    coefficient forced to exactly 8x the slope. A gap near zero means
+    the constraint costs nothing; a large gap means SIA imposes a
+    ratio the data does not support.
+
+  written: p0_hdd_fits_fleet_all.csv
+
+==============================================================================
+5. PROTOCOL COHORT, POST-VISIT DAYS ONLY (the production rule)
+==============================================================================
+  households fitted (>=180d, >=60 warm, >=60 cold) : 154
+
+  median R2   HDD_12  : 0.7315
+  median R2   HDD_SIA : 0.7315
+  median RMSE HDD_12  : 7.3212 kWh/day
+  median RMSE HDD_SIA : 7.6395 kWh/day
+
+  PAIRED, same households and same days:
+    mean   dR2 (SIA - HDD_12) : -0.0025   95% CI [-0.0102, +0.0052]
+    median dR2                : -0.0036
+    SIA fits better in        : 74 / 154  (48.1%)
+    median dRMSE              : +0.0537 kWh/day
+
+  DECOMPOSITION - is any SIA advantage the degree days, or the step?
+    median R2, step indicator alone      : 0.5096
+    median R2, HDD_12 + step (2 params)  : 0.7648
+    median R2, HDD_SIA alone (1 param)   : 0.7315
+    median R2 gap, (HDD_12+step) - SIA   : +0.0238
+    HDD_SIA is the CONSTRAINED version of HDD_12 + step, with the step
+    coefficient forced to exactly 8x the slope. A gap near zero means
+    the constraint costs nothing; a large gap means SIA imposes a
+    ratio the data does not support.
+
+  written: p0_hdd_fits_cohort_post.csv
+
+==============================================================================
+6. VERDICT
+==============================================================================
+  protocol cohort, all days        : n=193    median R2 0.7299 (12) vs 0.7226 (SIA)   mean dR2 -0.0064  -> HDD_12
+  fleet-wide, all days             : n=1313   median R2 0.6773 (12) vs 0.6782 (SIA)   mean dR2 -0.0002  -> HDD_12
+  protocol cohort, post-visit      : n=154    median R2 0.7315 (12) vs 0.7315 (SIA)   mean dR2 -0.0025  -> HDD_12
+
+P0 complete.

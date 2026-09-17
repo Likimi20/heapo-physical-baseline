@@ -1,0 +1,86 @@
+
+==============================================================================
+1. POPULATION AND THE SIZING RATIO
+==============================================================================
+  households with a deficiency        : 172
+  ...and an installed capacity        : 160
+  sizing ratio: median 1.00  IQR 0.79-1.29  5-95% 0.49-1.88
+    above 1.3 :  37 (23.1%)   above 2.0 :   4 (2.5%)
+
+==============================================================================
+2. THE ASSUMED SHAPE - stated, not derived
+==============================================================================
+  d(ratio) = clip((ratio - 1.0)/(2.0 - 1.0), 0, 1) * d_max
+  d_max in [0.05, 0.15], midpoint 0.10  (FHNW / BEYOND / Brudermueller)
+
+  NOTHING SUPPLIED MAPS SIZING RATIO TO A PENALTY. The onset at 1.0 and
+  the linear rise to 2.0 are ASSUMED. A different shape gives a different
+  answer and this run cannot say which is right.
+    ratio 1.0 -> penalty 0.0% to 0.0%
+    ratio 1.2 -> penalty 1.0% to 3.0%
+    ratio 1.5 -> penalty 2.5% to 7.5%
+    ratio 2.0 -> penalty 5.0% to 15.0%
+    ratio 2.5 -> penalty 5.0% to 15.0%
+
+==============================================================================
+3. THE SCENARIO
+==============================================================================
+  capacity cost, kWh/yr, on 160 households:
+    LOW  fleet     3825   median      0   n>100 kWh  11
+    MID  fleet     7650   median      0   n>100 kWh  31
+    HIG  fleet    11476   median      0   n>100 kWh  38
+
+  against the terms that ARE measured, on the same 160 households:
+    term_envelope      220726 kWh/yr  (75.0% of the measured deficiency)
+    term_dhw            56721 kWh/yr  (19.3% of the measured deficiency)
+    term_emitter        16807 kWh/yr  (5.7% of the measured deficiency)
+    capacity (mid)       7650 kWh/yr  (2.6%)  <- SCENARIO, mid
+
+==============================================================================
+4. IS CAPACITY A ROUNDING ERROR OR A RIVAL?
+==============================================================================
+  ratio of the MID capacity scenario to each measured term:
+    capacity / term_envelope  0.03
+    capacity / term_dhw       0.13
+    capacity / term_emitter   0.46
+
+  households where the capacity scenario exceeds their DHW term : 52 of 160
+  ...exceeds their ENVELOPE term                                : 17 of 160
+
+  ANSWER: at FLEET level capacity is SMALL - 2.6% of the measured
+  deficiency at the mid scenario, an eighth of the DHW term. It does not
+  rival the envelope at any d_max in the supplied range.
+  But it is CONCENTRATED, not uniform: half the fleet sits at or below
+  its required capacity so the MEDIAN household carries zero, while a
+  minority carry a term that beats their own envelope. A fleet share
+  hides that - report it per household, never as a percentage.
+
+==============================================================================
+5. VALIDATION - and why it is CIRCULAR here, stated plainly
+==============================================================================
+  AUC of the capacity COST against the inspector's 'oversized' flag:
+    0.793 [0.656, 0.911]  n 14 vs 136
+
+  THIS IS NOT INDEPENDENT EVIDENCE. The cost is a monotone function of
+  the sizing ratio, and P1/P4 already validated the RATIO against this
+  same flag (0.772 and 0.786). The AUC here is the same fact restated,
+  not a second confirmation. Reported so nobody quotes it as one.
+
+  What WOULD be independent: disaggregating actual cycling frequency
+  from the 15-minute meter and checking it rises with the sizing ratio.
+  Not done - that is meter-based work and belongs on the A/C axis.
+
+==============================================================================
+6. WHAT SHIPS
+==============================================================================
+  Category B ships the MEASURED deficiency: envelope + emitter + DHW.
+  The capacity cost ships as a SEPARATE, LABELLED SCENARIO COLUMN, never
+  summed into the headline. Its shape is assumed and its range is wide.
+
+  fleet, measured deficiency          :   294255 kWh/yr
+  fleet, + capacity scenario (mid)    :   301905 kWh/yr
+  the scenario adds 2.6%
+
+  written: p8_capacity_scenario.csv, p8_capacity_scenario.parquet
+
+P8 complete.

@@ -1,0 +1,75 @@
+{
+  "answer": "### 1. EFH U-Values by Construction Period from Abbildung 30 to 33\n\n* **Source Title:** *Erweiterung des Gebäudeparkmodells gemäss SIA-Effizienzpfad Energie* (TEP Energy, 2016) [1]\n* **Section / Page:** Section 3.2.1, Pages 78–79, Abbildung 30–33\n* **Building Type:** Single-Family House (**EFH** / *Einfamilienhaus*)\n* **Data Year:** 2010 (Model baseline stock)\n\nValues are read from the **EFH** bars across the five construction periods (**vor 1920**, **1920 bis 1946**, **1947 bis 1975**, **1976 bis 1990**, **1991 bis 2009**), including error bars representing standard deviation:\n\n#### **Abbildung 30: Wand-U-Wert (Exterior Walls)**\n* **vor 1920:** **~0.86 W/m²K** (Standard deviation: **±0.10 W/m²K**)\n* **1920 bis 1946:** **~0.90 W/m²K** (Standard deviation: **±0.10 W/m²K**)\n* **1947 bis 1975:** **~0.95 W/m²K** (Standard deviation: **±0.20 W/m²K**)\n* **1976 bis 1990:** **~0.65 W/m²K** (Standard deviation: **±0.15 W/m²K**)\n* **1991 bis 2009:** **~0.27 W/m²K** (Standard deviation: **±0.07 W/m²K**)\n\n#### **Abbildung 31: Fenster-U-Wert (Windows)**\n* **vor 1920:** **~2.20 W/m²K** (Standard deviation: **±0.20 W/m²K**)\n* **1920 bis 1946:** **~2.09 W/m²K** (Standard deviation: **±0.20 W/m²K**)\n* **1947 bis 1975:** **~1.98 W/m²K** (Standard deviation: **±0.20 W/m²K**)\n* **1976 bis 1990:** **~1.75 W/m²K** (Standard deviation: **±0.20 W/m²K**)\n* **1991 bis 2009:** **~1.40 W/m²K** (Standard deviation: **±0.20 W/m²K**)\n\n#### **Abbildung 32: Dach-U-Wert (Roofs)**\n* **vor 1920:** **~0.75 W/m²K** (Standard deviation: **±0.15 W/m²K**)\n* **1920 bis 1946:** **~0.71 W/m²K** (Standard deviation: **±0.15 W/m²K**)\n* **1947 bis 1975:** **~0.70 W/m²K** (Standard deviation: **±0.05 W/m²K**)\n* **1976 bis 1990:** **~0.60 W/m²K** (Standard deviation: **±0.10 W/m²K**)\n* **1991 bis 2009:** **~0.25 W/m²K** (Standard deviation: **±0.06 W/m²K**)\n\n#### **Abbildung 33: Kellerdecke-U-Wert (Cellar Ceilings)**\n* **vor 1920:** **~0.67 W/m²K** (Standard deviation: **±0.03 W/m²K**)\n* **1920 bis 1946:** **~0.67 W/m²K** (Standard deviation: **±0.03 W/m²K**)\n* **1947 bis 1975:** **~0.70 W/m²K** (Standard deviation: **±0.05 W/m²K**)\n* **1976 bis 1990:** **~0.60 W/m²K** (Standard deviation: **±0.10 W/m²K**)\n* **1991 bis 2009:** **~0.35 W/m²K** (Standard deviation: **±0.06 W/m²K**)\n\n---\n\n### 2. Historical Component U-Values from Jakob / CEPE Studies\n\n* **Source Title:** *Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebereich* (Teil 2, Jakob, Jochem, Christen / CEPE ETH Zürich, 2002) [2]\n* **Table / Page:** Page 179, **Tabelle 4.3-38** (*Flächenspezifische U-Werte von Wand und Estrichboden...*)\n* **Building Type:** Residential / Existing Stock (Unrenovated Baseline State / *Ausgangslage*)\n* **Data Year:** 2002 (Data derived from SIA-Wärmebrückenkatalog 3 / SIA 1993)\n\n#### **Aussenwand (Exterior Wall)**\n* **Bis 1900:** **1.55 W/m²K**\n* **1900–1925:** **1.00 W/m²K**\n* **1925–1965:** **1.16 W/m²K**\n\n#### **Estrichboden (Attic Floor)**\n* **Bis 1900:** **0.72 W/m²K**\n* **1900–1925:** **0.87 W/m²K**\n* **1925–1965:** **0.88 W/m²K**\n\n---\n\n### 3. Area-Weighted Envelope Mean or Specific Heat Loss per Period\n\n* **Status:** **not in the sources** (as the summary research documents containing these aggregated envelope averages were excluded from this query).\n\n---\n\n### 4. Historical Legal U Limits by Period\n\n* **Pre-2000 Cantonal Legal U Limits:** **not in the sources**. The uploaded documents do not tabulate historical mandatory legal U-value limits for periods prior to 2000.\n* **Post-2000 Cantonal Energy Requirements (MuKEn / Minergie):**\n  * **Source Title:** *Beurteilung der energetischen Qualität der Gebäudehülle* (EnDK / Energiehub Gebäude, 2014) [3]\n  * **Table / Page:** Page 22, Abbildung 13 / **MuKEn Standards**\n  * **Building Type:** Multi-Family House (**MFH**) / New Build Standards\n  * **Data Year:** 2014\n  * **Values:**\n    * **MuKEn 2000:** Opake Bauteile Aussenluft: **0.30 W/m²K** | Unbeheizt / Erdreich: **0.35 W/m²K** | Fenster \\\\(U_w\\\\): **1.60 W/m²K**\n    * **MuKEn 2008:** Opake Bauteile Aussenluft: **0.20 W/m²K** | Unbeheizt / Erdreich: **0.25 W/m²K** | Fenster \\\\(U_w\\\\): **1.30 W/m²K**\n    * **MuKEn 2014:** Opake Bauteile Aussenluft: **0.17 W/m²K** | Unbeheizt / Erdreich: **0.25 W/m²K** | Fenster \\\\(U_w\\\\): **1.00 W/m²K**",
+  "conversation_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+  "turn_number": 32,
+  "is_follow_up": true,
+  "references": [
+    {
+      "source_id": "78db783e-5401-41d7-ac12-7365432f66fd",
+      "citation_number": 1,
+      "cited_text": "Energy Balance Calculation Building Performance  Standard Reference Calculation - based on: EN ISO 13790 / seasonal method Building DE.N.MFH.05.Gen.ReEx.001 (1958...1968) reference area AC,ref 3129,1 m² Climate DE.N   (Germany) (conditioned floor area) Uoriginal,i Uactual,i Aenv,i btr,i Htr,i W/(m²K) W/(m²K) m² W/K Roof 1 x x = 0,0 0,00 Roof 2 0,60 0,19 x 971,1 x 1,00 = 180,0 4,5 0,06 Wall 1 1,20 0,23 x 2039,0 x 1,00 = 476,3 12,0 0,15 Wall 2 x x = 0,0 0,00 Wall 3 x x = 0,0 0,00 Floor 1 1,60 0,31 x 971,1 x 0,50 = 151,2 3,8 0,05 ",
+      "start_char": 100439,
+      "end_char": 100972,
+      "chunk_id": "b9d32263-72f5-4533-a7aa-8103c68f57fb",
+      "passage_id": null,
+      "answer_start_char": 100439,
+      "answer_end_char": 100972,
+      "score": 0.8423493044822257,
+      "fragment_start_char": 100439,
+      "fragment_end_char": 100972,
+      "answer_anchor_start": 144,
+      "answer_anchor_end": 162
+    },
+    {
+      "source_id": "184dc7e3-7755-4813-a59a-c5160871ca45",
+      "citation_number": 2,
+      "cited_text": "68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 196 198209 217 221 222 226233 234 239 240 241 242 244 246 247 258 261 262 263 266 275 282 283 291 292 294 296 297 298 299 300 R² = 0.5468 10 15 20 25 30 35 0 0.5 1 1.5 2 Heizleistungsbedarf HL Grenzwert  li Heizleistungsbedarf Grenzwert konstant Linear (Heizleistungsbedarf)Ath/AE [ - ] I. MFH  MuKEn 2014, U=0.17 / g=0.45 / WRG 0% Zürich MeteoSchweiz HL [W/m2]        Abbildung 55: Kategorie I. Mehrfamilienhaus: Berechnung  Heizwärmebedarf SIA 380/1 und Grenzwert Qh,li. Datenbasis: 74 MFH, MuKEn 2014,  Klimastation Zürich MeteoSchweiz, mit Gebäude‐Nummern ",
+      "start_char": 59417,
+      "end_char": 60041,
+      "chunk_id": "b95ddcbf-4f62-4ac3-bfad-20263489c3f6",
+      "passage_id": null,
+      "answer_start_char": 59417,
+      "answer_end_char": 60041,
+      "score": 0.7295208655332303,
+      "fragment_start_char": 59417,
+      "fragment_end_char": 60041,
+      "answer_anchor_start": 2003,
+      "answer_anchor_end": 2060
+    },
+    {
+      "source_id": "184dc7e3-7755-4813-a59a-c5160871ca45",
+      "citation_number": 3,
+      "cited_text": "R² = 0.6139 R² = 0.5468 0 5 10 15 20 25 30 35 0 0.5 1 1.5 2 Heizleistungsbedarf HL Heizleistungsbedarf ohne Wärmebrücken Heizleistungsbedarf Wärmebrücken Linear (Heizleistungsbedarf ohne Wärmebrücken) Linear (Heizleistungsbedarf) Ath/AE [ - ] I. MFH  MuKEn 2014, U=0.17 / g=0.45 / WRG 0% Zürich MeteoSchweiz HL [W/m2] HL ohne Wärmebrücken  [W/m2]      10 Lüftungssysteme              Abbildung 19: Kategorie I. Mehrfamilienhaus: Berechnung  Heizleistungsbedarf  und Grenzwert Leistung.   Datenbasis: 74 Mehrfamilienhäuser,  Klimastation Zürich MeteoSchweiz  ",
+      "start_char": 28042,
+      "end_char": 28605,
+      "chunk_id": "95379c55-c42d-439a-b72b-c1b75fded5fd",
+      "passage_id": null,
+      "answer_start_char": 28042,
+      "answer_end_char": 28605,
+      "score": 0.7001545595054096,
+      "fragment_start_char": 28042,
+      "fragment_end_char": 28605,
+      "answer_anchor_start": 3022,
+      "answer_anchor_end": 3055
+    }
+  ],
+  "turn_key": {
+    "session_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+    "turn_id": "3a5781d2-5adb-4417-b483-9d83d3815294",
+    "turn_code": 3592439068
+  },
+  "next_steps": [
+    {
+      "question": "What are the most common faults found in Swiss heat pumps?",
+      "type_code": 9
+    },
+    {
+      "question": "How does the HEAPO dataset help optimize heat pump performance?",
+      "type_code": 9
+    },
+    {
+      "question": "Can smart meter data identify specific operational issues?",
+      "type_code": 9
+    }
+  ]
+}

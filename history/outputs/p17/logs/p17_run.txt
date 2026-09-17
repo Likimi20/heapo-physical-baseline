@@ -1,0 +1,60 @@
+
+==============================================================================
+1. REFIT - straight line versus line plus a free heating-season step
+==============================================================================
+  households: 172   (P9/P13: 172)
+  median R2  line 0.7248   line + free step 0.7545   (P0 cohort: 0.7299 / 0.7587)
+  step, kWh/day: median 5.70  IQR 3.33 - 9.20;  whole 95% band above zero: 134 / 172
+  step expressed in degree-days (step / slope): median 2.49 K   (SIA welds it at 8)
+  slope, step model / line model: median 0.835  IQR 0.759 - 0.910
+
+==============================================================================
+2. THE PHYSICAL SLOPE, point and Monte Carlo band
+==============================================================================
+  physics band, median relative width 38%
+
+==============================================================================
+3. THE ~22% - how much of it was the missing step?
+==============================================================================
+  line (P9/P13)      physics / measured median 0.778   -> measured runs +29% above physics
+  line + free step   physics / measured median 0.946   -> measured runs +6% above physics
+
+  era ratio measured/physics (median/median, P9 method):
+  era           n     line     step
+  pre1975      37     0.97     0.80
+  1976_1990    62     1.26     1.00
+  1991_2000    20     1.24     1.07
+  2001_2010    35     1.53     1.32
+  post2010     18     1.31     1.01
+  Spearman per m2, physics vs b_line  +0.536 [+0.412, +0.641]
+  Spearman per m2, physics vs b_step  +0.534 [+0.408, +0.648]
+
+==============================================================================
+4. THE BAND ON THE SLOPE EXCESS - status from the band, not the point
+==============================================================================
+  b_line  point > 0: 125   band: {'SLOPE_EXCESS': 77, 'INCONCLUSIVE': 75, 'BELOW_PHYSICS': 20}   excess median 719 kWh/yr, band median 1447
+  b_step  point > 0:  95   band: {'INCONCLUSIVE': 91, 'BELOW_PHYSICS': 41, 'SLOPE_EXCESS': 40}   excess median 107 kWh/yr, band median 1557
+
+  P13 today: SLOPE_EXCESS 125 / NO_SLOPE_EXCESS 47, on the point estimate (line).
+
+  cross-tab, line point status vs step band status:
+status_b_step   BELOW_PHYSICS  INCONCLUSIVE  SLOPE_EXCESS
+row_0                                                    
+point<=0 (P13)             38             9             0
+point>0 (P13)               3            82            40
+
+==============================================================================
+5. LIMITATION 3 RE-READ - P16's thermal-bridge scenarios on the STEP slope
+==============================================================================
+  households joined to P16: 172
+  dU_tb  slope |   pre1975  1976_1990  1991_2000  2001_2010   post2010 |  range | phys/meas
+  0.00   line  |      0.97       1.26       1.24       1.53       1.31 |   0.56 |     0.778
+  0.00   step  |      0.80       1.00       1.07       1.32       1.01 |   0.52 |     0.946
+  0.05   line  |      0.93       1.19       1.17       1.42       1.19 |   0.49 |     0.820
+  0.05   step  |      0.77       0.94       1.01       1.22       0.92 |   0.45 |     1.009
+  0.10   line  |      0.89       1.13       1.10       1.33       1.09 |   0.43 |     0.871
+  0.10   step  |      0.74       0.90       0.95       1.14       0.84 |   0.40 |     1.062
+  0.15   line  |      0.86       1.08       1.04       1.24       1.01 |   0.38 |     0.932
+  0.15   step  |      0.71       0.86       0.90       1.07       0.78 |   0.36 |     1.130
+
+  written: p17_slope_step

@@ -1,0 +1,155 @@
+{
+  "answer": "### 1. Design Outdoor Temperature for Zurich\n\n* **Design Outdoor Temperature (\\\\(T_{\\text{design}}\\\\))**: **\\\\(-8.0^\\circ\\text{C}\\\\)**\n  * **Source Title**: *Schlussbericht: Der Heizleistungsbedarf als Beurteilungsgrösse für die energetische Qualität der Gebäudehülle* (EnDK / Minergie / Energiehub Gebäude) [1, 2]\n  * **Section / Page**: Section 11, Page 44, Abbildung 43 & 44 (Klimastation Zürich MeteoSchweiz, \"Klima A, kalt\": \\\\(-8^\\circ\\text{C}\\\\)) [2]\n  * **Building Type**: Multi-Family House (**MFH**) and Single-Family House (**EFH**) context [3, 4]\n  * **Year of Data**: 2014\n  * **Additional Source**: *Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebereich* (CEPE ETH Zürich, Teil 2) [68–69]\n  * **Section / Page**: Section 4.2.10, Page 69 (Outdoor design temperature \\\\(T_a = -8^\\circ\\text{C}\\\\) for Swiss Mittelland / Zurich per SIA 382/4) [5]\n  * **Building Type**: Single-Family House (**EFH**) and Multi-Family House (**MFH**) [6]\n  * **Year of Data**: 2002\n\n---\n\n### 2. Specific Design Heat Load (\\\\(\\text{W/m}^2\\\\) of EBF) by Building Energy Standard\n\n#### **A. Cantonal Building Energy Standards (MuKEn / Minergie)**\n* **Source Title**: *Schlussbericht: Der Heizleistungsbedarf als Beurteilungsgrösse für die energetische Qualität der Gebäudehülle* (EnDK / Minergie / Energiehub Gebäude) [1]\n* **Data Year**: 2014\n\n1. **Multi-Family House (MFH)** (Data sample: 74 MFH, Zurich MeteoSchweiz climate) [3]:\n   * **MuKEn 2000 Standard** (\\\\(U_{\\text{opake}} = 0.30 \\text{ W/m}^2\\text{K}\\\\)): **\\\\(\\approx 25 - 35\\text{ W/m}^2\\\\)** (Section 8, Page 21, Abbildung 14) [26–28]\n   * **MuKEn 2008 Standard** (\\\\(U_{\\text{opake}} = 0.20 \\text{ W/m}^2\\text{K}\\\\)): **\\\\(\\approx 20 - 30\\text{ W/m}^2\\\\)** (mean fit line at **\\\\(25\\text{ W/m}^2\\\\)**) (Section 8, Page 21, Abbildung 15) [26, 28–29]\n   * **MuKEn 2014 Standard** (\\\\(U_{\\text{opake}} = 0.17 \\text{ W/m}^2\\text{K}\\\\)): **\\\\(15 - 35\\text{ W/m}^2\\\\)** (mean fit line at **\\\\(25\\text{ W/m}^2\\\\)**) (Section 7.1 & Section 8, Pages 12 & 20, Abbildung 6 & 13) [17–18, 26–27]\n   * **MINERGIE-P Standard** (\\\\(U_{\\text{opake}} = 0.10 \\text{ W/m}^2\\text{K}\\\\)): **\\\\(12 - 22\\text{ W/m}^2\\\\)** (mean fit line at **\\\\(18\\text{ W/m}^2\\\\)**) (Section 8, Page 22, Abbildung 17) [26, 29–30]\n\n2. **Single-Family House (EFH)** (Data sample: 73 EFH, Zurich MeteoSchweiz climate) [4]:\n   * **MuKEn 2014 Standard** (\\\\(U_{\\text{opake}} = 0.17 \\text{ W/m}^2\\text{K}\\\\)): **\\\\(20 - 35\\text{ W/m}^2\\\\)** (mean fit line around **\\\\(25\\text{ W/m}^2\\\\)**) (Section 7.2, Page 14, Abbildung 7) [19–20]\n\n---\n\n#### **B. SIA Normative Standards & Efficiency Tiers**\n* **Source Title**: *Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebereich* (CEPE ETH Zürich, Teil 2) [7]\n* **Section / Page**: Section 4.2.10, Page 71, Tabelle 4.2-26 [8]\n* **Data Year**: 2002\n* **Building Types**: Single-Family House (**EFH**) and Multi-Family House (**MFH**) [6]\n\n* **SIA 380/1 (1988) Grenzwert (Limit Value)**:\n  * **MFH**: **\\\\(25\\text{ W/m}^2\\\\)** Gross / **\\\\(18\\text{ W/m}^2\\\\)** Net [8]\n  * **EFH**: **\\\\(28\\text{ W/m}^2\\\\)** Gross / **\\\\(22\\text{ W/m}^2\\\\)** Net [8]\n* **SIA 380/1 (2001) Zielwert (Target Value)**:\n  * **MFH**: **\\\\(23\\text{ W/m}^2\\\\)** Gross / **\\\\(16\\text{ W/m}^2\\\\)** Net [8]\n  * **EFH**: **\\\\(25\\text{ W/m}^2\\\\)** Gross / **\\\\(21\\text{ W/m}^2\\\\)** Net [8]\n* **Minergie (2001 Baseline)**:\n  * **MFH**: **\\\\(19\\text{ W/m}^2\\\\)** Gross / **\\\\(14\\text{ W/m}^2\\\\)** Net [8]\n  * **EFH**: **\\\\(21\\text{ W/m}^2\\\\)** Gross / **\\\\(18\\text{ W/m}^2\\\\)** Net [8]\n* **Minergie-GHa (Building Envelope Alone)**:\n  * **MFH**: **\\\\(12\\text{ W/m}^2\\\\)** Gross / **\\\\(8\\text{ W/m}^2\\\\)** Net [8]\n  * **EFH**: **\\\\(13\\text{ W/m}^2\\\\)** Gross / **\\\\(12\\text{ W/m}^2\\\\)** Net [8]\n* **Passivhaus / Minergie-P**:\n  * **MFH**: **\\\\(8\\text{ W/m}^2\\\\)** Gross / **\\\\(6\\text{ W/m}^2\\\\)** Net [8]\n  * **EFH**: **\\\\(9\\text{ W/m}^2\\\\)** Gross / **\\\\(10\\text{ W/m}^2\\\\)** Net [8]\n\n---\n\n### 3. Specific Design Heat Load by Historical Building Age / Construction Decade\n\n* **Status**: **not in the sources**\n* *Details*: Specific design heat load (\\\\(\\text{W/m}^2\\\\)) values broken down by historical construction decades (e.g., pre-1920, 1950s, 1970s) are **not in the uploaded sources** (the sources only provide design heat load values broken down by building energy standards as listed above).",
+  "conversation_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+  "turn_number": 35,
+  "is_follow_up": true,
+  "references": [
+    {
+      "source_id": "184dc7e3-7755-4813-a59a-c5160871ca45",
+      "citation_number": 1,
+      "cited_text": "Daten wurden auch in die Berechnung mit dem MuKEn‐Tool eingesetzt.     Raumtemperatur  Die Raumtemperatur θi wird  für alle Gebäude aus der Standardnutzung gemäss SIA 380/1 übernommen.   Klimadaten  Die Klimadaten (Aussentemperatur) werden gemäss Merkblatt SIA 2028 eingesetzt.   Berechnung der Wärmeverluste  Der Wärmeleistungsbedarf   wird berechnet mit der Norm‐Aussentemperatur gemäss SIA 2028 (tiefstes  4‐Tages Mittel der Aussentemperatur der letzten 20 Kalenderjahre). In Abhängigkeit der spezifischen Wär‐ mekapazität des Gebäudes erfolgt eine Absenkung der Aussentemperatur um bis maximal 3K.    ",
+      "start_char": 13638,
+      "end_char": 14244,
+      "chunk_id": "44ae6b45-3d94-4061-8578-6dfa4dbec3c4",
+      "passage_id": null,
+      "answer_start_char": 13638,
+      "answer_end_char": 14244,
+      "score": 0.8865384615384615,
+      "fragment_start_char": 13638,
+      "fragment_end_char": 14244,
+      "answer_anchor_start": 230,
+      "answer_anchor_end": 268
+    },
+    {
+      "source_id": "184dc7e3-7755-4813-a59a-c5160871ca45",
+      "citation_number": 2,
+      "cited_text": "              Abbildung 43: Klimadaten für 3 Klimastationen zur Berechnung des Heizleistungsbedarfs mit Gewinnen (SIA 2028)    Abbildung 44: Kategorie I. Mehrfamilienhaus: Heizleistungsbedarf ohne und mit Gewinne (Klima A, kalt und Klima B, trüb (Ordnung Gebäudehüllzahl  aufsteigend)  Datenbasis: 74 Mehrfamilienhäuser, MuKEn 2014, Klimastation Zürich MeteoSchweiz        Zürich  MeteoSchweiz kalt trüb °C Temp -8 °C 45°gedreht -3 °C 45°gedreht W/m2 GH 53 GH 53.0 GH 21 GH 21.0 GS 102 GSW 71.1 GS 21 GSW 17.1 GE 41 GSE 44.7 GE 13 GSE 13.5 ",
+      "start_char": 53851,
+      "end_char": 54393,
+      "chunk_id": "e36f2bf9-ed88-48d5-b275-ef398ac1cbbd",
+      "passage_id": null,
+      "answer_start_char": 53851,
+      "answer_end_char": 54393,
+      "score": 0.9730769230769231,
+      "fragment_start_char": 53851,
+      "fragment_end_char": 54393,
+      "answer_anchor_start": 230,
+      "answer_anchor_end": 268
+    },
+    {
+      "source_id": "184dc7e3-7755-4813-a59a-c5160871ca45",
+      "citation_number": 3,
+      "cited_text": "  Abbildung 5: Daten Standardgebäude               7 Heizwärmebedarf und Heizleistungsbedarf  In  erster Näherung werden Heizwärmebedarf  und Heizleistungsbedarf  der Gebäudekategorien  einander  gegenübergestellt. Folgende Daten wurden in die Berechnung eingesetzt:          7.1  Gebäudekategorie I. Mehrfamilienhaus    Abbildung 6: Kategorie I. Mehrfamilienhaus: Berechnung  Heizwärmebedarf SIA 380/1 / Heizleistungsbedarf  SIA 384.201 und Grenzwert Qh,li. Da‐ tenbasis: 74 MFH, MuKEn 2014, Klimastation Zürich MeteoSchweiz  ",
+      "start_char": 17298,
+      "end_char": 17827,
+      "chunk_id": "edea3cbf-daaf-4bf3-97cd-c9c959c06aaa",
+      "passage_id": null,
+      "answer_start_char": 17298,
+      "answer_end_char": 17827,
+      "score": 0.9173076923076923,
+      "fragment_start_char": 17298,
+      "fragment_end_char": 17827,
+      "answer_anchor_start": 460,
+      "answer_anchor_end": 469
+    },
+    {
+      "source_id": "184dc7e3-7755-4813-a59a-c5160871ca45",
+      "citation_number": 4,
+      "cited_text": "      7.2 Gebäudekategorie II: Einfamilienhaus    Abbildung 7: Kategorie II. Einfamilienhaus: Berechnung  Heizwärmebedarf SIA 380/1 / Heizleistungsbedarf  SIA 384.201 und Grenzwert Qh,li.   Datenbasis: 73 Einfamilienhäuser, MuKEn 2014, Klimastation Zürich MeteoSchweiz  Der Unterschied zwischen Heizwärmebedarf und Heizleistungsbedarf ist bei den Einfamilienhäusern gut  erkennbar. Der Streubereich ist bei der Leistung ohne Berücksichtigung der Wärmegewinne deutlich kleiner  als beim Heizwärmebedarf.    ",
+      "start_char": 20066,
+      "end_char": 20573,
+      "chunk_id": "4390149b-8f44-45dc-bf8a-297492f40729",
+      "passage_id": null,
+      "answer_start_char": 20066,
+      "answer_end_char": 20573,
+      "score": 0.8096153846153846,
+      "fragment_start_char": 20066,
+      "fragment_end_char": 20573,
+      "answer_anchor_start": 460,
+      "answer_anchor_end": 469
+    },
+    {
+      "source_id": "148d1a84-4e7d-483b-aa30-33afc2a85fb0",
+      "citation_number": 5,
+      "cited_text": "Unter Berücksichtigung der relevanten Temperaturdifferenz und der anrechenbaren internen Wärmeleistungen von Elektrizität und Personen ergibt sich daraus in erster Näherung der Heizleistungsbedarf qh  iaih qTTHq −−⋅= )(   [W/m2 EBF] mit  Ti = Innentemperatur Ta = Aussentemperatur beim Auslegungspunkt gemäss SIA 382/4(typischerweise –8°C für das Mittelland) qi = Abwärmeleistung aus Elektrizität und Personen gemäss SIA 380/1 oder gemäss tatsächlicher Personenbelegung  Für die häufigkeitsrelevanten typischen Fälle des Mittellandes kann von einer Temperatur-differenz von 28 K ausgegangen werden. Damit ergibt sich ein Bruttoleistungsbedarf H · (Ti-Ta) gemäss Tabelle 4.2-23. ",
+      "start_char": 112083,
+      "end_char": 112761,
+      "chunk_id": "809115de-633a-496a-a3c8-2d1dc31c5198",
+      "passage_id": null,
+      "answer_start_char": 112083,
+      "answer_end_char": 112761,
+      "score": 0.8288461538461539,
+      "fragment_start_char": 112083,
+      "fragment_end_char": 112761,
+      "answer_anchor_start": 704,
+      "answer_anchor_end": 748
+    },
+    {
+      "source_id": "148d1a84-4e7d-483b-aa30-33afc2a85fb0",
+      "citation_number": 6,
+      "cited_text": " 0.2 1.1 24 16  0.15 0.8 21 12 Die einzelnen Beiträge der internen Abwärmeleistung qi sind in Tabelle 4.2-24 und  Tabelle 4.2-25 dargestellt: Tabelle 4.2-24 Durch Personen abgegebene Wärmeleistung gemäss SIA Norm 380/1  SIA 380/1 (1988) SIA 380/1 (2001)  m2/Person W/m2 m2/Person W/m2 EFH 50 0.8 60 0.7 MFH 30 1.3 40 1.0 Quelle SIA 380/1 (1988), SIA-Doku 0170 Der Vorschlag zu Minergie-P schlägt für die Berechnung der freien Wärme-Elektrizität eine verminderte EKZe von 60 MJ/m2a vor. Tabelle 4.2-25 Freie Wärmeleistung Elektrizität (Reduktionsfaktor Elekrizität=0.7) ",
+      "start_char": 113267,
+      "end_char": 113836,
+      "chunk_id": "779f7630-9736-4f63-863d-de12b4613b14",
+      "passage_id": null,
+      "answer_start_char": 113267,
+      "answer_end_char": 113836,
+      "score": 0.8634615384615385,
+      "fragment_start_char": 113267,
+      "fragment_end_char": 113836,
+      "answer_anchor_start": 816,
+      "answer_anchor_end": 817
+    },
+    {
+      "source_id": "148d1a84-4e7d-483b-aa30-33afc2a85fb0",
+      "citation_number": 7,
+      "cited_text": " Kosten und Nutzen von Energieeffizienzinvestitionen im Wohngebäudebereich 90 4.2.10 Berechnung des Wärmeleistungsbedarfs Die spezifischen Wärmekosten, welche den Grenzkosten gegenüber gestellt werden, werden u.a. von der Grösse (Leistung) der Heizanlage bestimmt. Der spezifische Heizleistungsbedarf ist dabei in Funktion der energetischen Qualität der Gebäudehülle und des Heizungsverteilungs-systems zu bestimmen. Die zur Zeit noch gültige Norm SIA 384/2 zur Berechnung des Heizleistungsbedarfs anhand des Jahreswärmebedarfs stammt aus dem Jahr 1982. Das Berechnungsverfahren ergibt selbst für den Referenzfall (SIA 380/1 wird erfüllt) eine (leichte) Überdimensionierung, welche bei einigen Anlagetypen (z.B. Wärmepumpen) zu erhöhten Investitionskosten führt. Sie trägt dem Aspekt, dass ein bestimmter jährlicher Heizwärmebedarf auf verschiedene Weise realisiert werden kann, nur annäherungsweise Rechnung. Die Annäherung wird jedoch umso ungenügender, je tiefer der Heizleistungs- bzw. der Heizwärmebedarf ist. Nicht zuletzt aus diesem Grund, wird die Norm zurzeit überarbeitet (Schlussversion der entsprechenden CEN-Norm ist in Vernehm-lassung).  ",
+      "start_char": 108444,
+      "end_char": 109596,
+      "chunk_id": "78ef2fba-9d80-4c19-88ce-3ee76b7feb74",
+      "passage_id": null,
+      "answer_start_char": 108444,
+      "answer_end_char": 109596,
+      "score": 0.7730769230769231,
+      "fragment_start_char": 108444,
+      "fragment_end_char": 109596,
+      "answer_anchor_start": 2294,
+      "answer_anchor_end": 2319
+    },
+    {
+      "source_id": "148d1a84-4e7d-483b-aa30-33afc2a85fb0",
+      "citation_number": 8,
+      "cited_text": "a) ca. Grenzwert 207 25 18 22 246 28 7 8 b) ca. Zielwert 182 23 16 21 207 25 6 7 c) ca. Minergie-heute 145 19 14 18 165 21 5 6 d) ca. Minergie-GHa 66 12 8 12 84 13 3 4 e) ca. Passivhaus 36 8 6 10 48 9 2 3 Gemäss SIA 380/1 (1988)  Minergie-heute: Entspricht ca. dem durchschnittlichen Qh der heutigen Minergie-Gebäude Minergie-Gha: Minergie wird mit Massnahmen an Gebäudehülle allein erreicht (Oel/Gas) Quelle Gebäudedaten gemäss Kapitel 4.3 (HBT), Qh-Berechnungen mit Entech (Monatsmethode) und Wärmeleistungsbedarf gemäss obigen Ausführungen (CEPE) ",
+      "start_char": 115114,
+      "end_char": 115664,
+      "chunk_id": "26e76211-3305-4569-9c3e-727fc7fda845",
+      "passage_id": null,
+      "answer_start_char": 115114,
+      "answer_end_char": 115664,
+      "score": 0.8807692307692307,
+      "fragment_start_char": 115114,
+      "fragment_end_char": 115664,
+      "answer_anchor_start": 2333,
+      "answer_anchor_end": 2374
+    }
+  ],
+  "turn_key": {
+    "session_id": "bca1d688-5df0-403d-be8f-6fc576edcb2e",
+    "turn_id": "977abc86-f588-49df-a89e-72ea2c25e6aa",
+    "turn_code": 2581921893
+  },
+  "next_steps": [
+    {
+      "question": "What is unjustified load?",
+      "type_code": 9
+    },
+    {
+      "question": "Explain building categories.",
+      "type_code": 9
+    },
+    {
+      "question": "Exclude night setback.",
+      "type_code": 9
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+
+==============================================================================
+1. BUILD - every household, none dropped, normal-year weather
+==============================================================================
+  households in protocols.csv : 214
+  modellable                  : 190
+  ...with sufficient days     : 172
+  INCOMPLETE_AUDIT            : 42
+  record length never enters Category B: max |hdd - station normal| = 0.00e+00
+
+==============================================================================
+2. STATUS AND THE FLEET-WIDE ORDER
+==============================================================================
+  {'EXCESS_CONFIRMED': np.int64(118), 'HIGH_EXCESS': np.int64(40), 'INCONCLUSIVE': np.int64(14)}
+
+  ORDER IS FLEET-WIDE on the lower bound of the ranking value (Miguel
+  2026-09-12), overriding 'rank within era'. era stays a column and a filter,
+  phys_rank_in_era is kept, and the bias travels in phys_rank_bias_note.
+  OPTION A: vintage is in the total but out of the ranking value for the 76
+  households whose unit we would keep.
+
+==============================================================================
+3. ASSEMBLE
+==============================================================================
+
+  NEVER COMPUTED, BY TRUE CAUSE (P27): building data only 21, meter record only 18, both 3
+  phys_no_result_fix says who acts; phys_no_result_is_fixable does NOT.
+
+==============================================================================
+4. SELF-VALIDATION
+==============================================================================
+  ok   schema version says v2                                     
+  ok   v1 still on disk for one cycle                             physical_baseline_v1
+  ok   all 214 households present                                 214
+  ok   household_id unique                                        
+  ok   every status is one of the four declared states            EXCESS_CONFIRMED, HIGH_EXCESS, INCOMPLETE_AUDIT, INCONCLUSIVE
+  ok   NO state claims a household is normal                      
+  ok   statuses use NO single letters                             
+  ok   no status on either axis says 'below', which reads both ways USES_LESS_THAN_MODELLED replaced BELOW_PHYSICS
+  ok   both no-result states are populated and distinguishable    {'INCOMPLETE_AUDIT': np.int64(42), 'INCONCLUSIVE': np.int64(14)}
+  ok   INCOMPLETE_AUDIT is flagged fixable, INCONCLUSIVE is not   
+  ok   every no-result row names a reason                         
+  ok   never-computed reasons are PER HOUSEHOLD, not one blanket string 8 distinct causes over 42 households
+  ok   every no-result row says who can fix it, and the two audit causes differ 
+  ok   no result-bearing row carries a no-result reason           
+  ok   every energy group travels with a band                     house, heat pump and total
+  ok   lo <= hi on every band, no exceptions                      checked on 172 scored rows
+  ok   the total's point sits inside its band, within rounding    tolerance 2 kWh/yr
+  ok   heat pump: known year is bracketed; unknown year claims nothing 109 known, 63 no-claim rows whose band sits above a zero point
+  ok   percent columns agree in sign with the kWh columns         
+  ok   the four terms sum to the deficiency within rounding       
+  ok   house + heat pump == total within rounding                 
+  ok   vintage stays INSIDE the headline total (decision 6)       
+  ok   OPTION A: the ranking value drops vintage only for KEEP_IN_LIFE units 76 rows keep their unit
+  ok   scenario columns are prefixed and flagged                  
+  ok   every confirmed-excess row carries a fleet rank AND an era rank 
+  ok   HIGH_EXCESS is a strict subset of confirmed excess         
+  ok   HIGH_EXCESS is the worst quartile of the FLEET, not of an era 158 confirmed
+  ok   the fleet-wide bias note ships on every row                
+  ok   the heat-pump recommendation uses the declared vocabulary  
+  ok   no vintage claim where the installation year is unknown    unknown year is a fixable audit gap, not an old unit
+  ok   ages are stated as of the data end, not today              2024
+  ok   Category B runs on normal-year weather                     
+  ok   appliances are excluded and the level is not a prediction  
+  ok   visit_status uses the four declared words                  {'INCONCLUSIVE': np.int64(82), 'NOT_ASSESSABLE': np.int64(69), 'SLOPE_EXCESS': np.int64(40), 'USES_LESS_THAN_MODELLED': np.int64(23)}
+  ok   NO fault column exists anywhere in this export             Aaditya's model is not loaded in this workstream
+  ok   the visit axis is flagged hidden from the building pages   
+  ok   the never-sum flags are set on both never-sum sets         
+  ok   every model column is prefixed against peer-model collision 
+
+==============================================================================
+5. WRITE
+==============================================================================
+  physical_baseline_v2.csv / .parquet   214 rows x 66 columns
+  physical_baseline_v1 stays on disk for one cycle.
+
+  status counts: {'EXCESS_CONFIRMED': np.int64(118), 'INCOMPLETE_AUDIT': np.int64(42), 'HIGH_EXCESS': np.int64(40), 'INCONCLUSIVE': np.int64(14)}
+  HIGH_EXCESS       40 households,   118462 kWh/yr on the lower bound
+  excess confirmed 158 households,   215121 kWh/yr on the lower bound
+
+  THE THREE GROUPS, fleet totals on the lower bound:
+    house        196311 kWh/yr   owner: builder
+    heat_pump      9291 kWh/yr   owner: installer
+    total        214004 kWh/yr
+
+  heat-pump decision: {'KEEP_IN_LIFE': np.int64(76), 'RECORD_INSTALL_YEAR': np.int64(63), 'PLAN_REPLACEMENT': np.int64(23), 'REPLACE_END_OF_LIFE': np.int64(10)}
+  visit axis (hidden from our pages): {'INCONCLUSIVE': np.int64(82), 'NOT_ASSESSABLE': np.int64(69), 'SLOPE_EXCESS': np.int64(40), 'USES_LESS_THAN_MODELLED': np.int64(23)}
+
+  TOP 12 OF THE ONE FLEET-WIDE LIST:
+  house     era         house lo   pump lo   rank lo unit                
+  116121    pre1975         6787       286      7142 PLAN_REPLACEMENT    
+  876511    1991_2000       5308        13      5610 RECORD_INSTALL_YEAR 
+  1111201   pre1975         4850        71      4850 KEEP_IN_LIFE        
+  5011111   pre1975         4617        13      4632 RECORD_INSTALL_YEAR 
+  1137376   1976_1990       4145         7      4269 RECORD_INSTALL_YEAR 
+  700831    1976_1990       3855        28      3984 RECORD_INSTALL_YEAR 
+  105900    2001_2010       3265        20      3463 RECORD_INSTALL_YEAR 
+  698983    pre1975         3122         0      3122 KEEP_IN_LIFE        
+  7610179   1991_2000       2834        27      3062 RECORD_INSTALL_YEAR 
+  671781    pre1975         2705       201      2986 REPLACE_END_OF_LIFE 
+  104118    1976_1990       2913        98      2913 KEEP_IN_LIFE        
+  8399121   2001_2010       2641       198      2905 PLAN_REPLACEMENT    
+
+  all export rules pass.
+
+P11 complete.

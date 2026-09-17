@@ -1,0 +1,80 @@
+
+==============================================================================
+1. BINDING #2 - A FOREIGN SCHEMA DRIVES THE PHYSICS UNCHANGED
+==============================================================================
+  synthetic source columns: ['GebaeudeNr', 'Baujahr_Klasse', 'Geschossflaechen_m2', 'Keller_beheizt', 'Sanierung_Anzahl', 'Bewohner', 'WP_Typ', 'Abgabe', 'WW_elektrisch', 'HGT12_pro_Tag', 'Messtage']
+  note: areas arrive as a LIST per building, era as a NUMERIC code,
+  emitter as FBH/HK/MIX, heat pump as L/W or S/W. Nothing HEAPO-shaped.
+
+  120 synthetic buildings evaluated, 0 changes to p_physics.py
+  ok   every building produced a deficiency                     
+  ok   every huellzahl is physically plausible (synthetic range is wider) 1.43 - 3.61  (HEAPO holds 1.14-2.96)
+  ok   the smallest single-storey buildings carry the largest huellzahl 
+
+==============================================================================
+2. ROUND TRIP - checked against arithmetic, not against the model
+==============================================================================
+  ok   envelope term matches hand arithmetic, correction included 72.09 vs 72.09 kWh/yr
+  ok   the HDD correction is genuinely applied inside evaluate() 4.000 -> 3.714
+  ok   emitter term is exactly zero when emitter == reference   0.00e+00
+  ok   DHW term is exactly zero when DHW == reference           0.00e+00
+  ok   electric DHW term matches hand arithmetic                2449.7 vs 2449.7 kWh/yr
+  ok   doubling HDD doubles the envelope term                   
+  ok   doubling HDD leaves the DHW term untouched               
+  ok   ventilation cancels out of the difference                H_V = 83.6 W/K present in both, absent from the difference
+  ok   a pre-1975 house has a larger deficiency than a post-2010 one 2112 > 72 kWh/yr
+
+==============================================================================
+3. BINDING #3 - A REAL SECOND SOURCE THAT CORRECTLY REFUSES
+==============================================================================
+  meta_data.csv: 1358 households - SIX TIMES the protocol cohort of 214
+
+            role  n_present   pct  status                                                  why_missing
+         area_m2       1339  98.6      OK                                                             
+    footprint_m2          0   0.0 MISSING    no per-storey areas - only one whole-dwelling living area
+ n_storeys_above          0   0.0 MISSING                            no storey information of any kind
+ heated_basement          0   0.0 MISSING                          no basement information of any kind
+             era          0   0.0 MISSING no construction or installation year exists in meta_data.csv
+renovation_count          0   0.0 MISSING                                          no renovation flags
+       residents       1348  99.3      OK                                                             
+         hp_type       1354  99.7      OK                                                             
+         emitter       1310  96.5      OK                                                             
+    dhw_electric       1358 100.0      OK                                                             
+  ok   the contract report names every missing role             footprint_m2, n_storeys_above, heated_basement, era, renovation_count
+  ok   no missing role was invented or defaulted                
+  ok   p_physics REFUSES a meta_data row rather than guessing   KeyError
+
+  This is the generic-versus-specific split made machine-checkable.
+  meta_data drives the PEER model - any fleet, no site visit, imprecise.
+  The physical model needs someone to have walked through the building,
+  and the contract says so BEFORE a number is computed, not after.
+
+==============================================================================
+4. THE PHYSICS LAYER WAS NOT TOUCHED
+==============================================================================
+  ok   p_physics.py free of 'Building_'                         
+  ok   p_physics.py free of 'HeatPump_'                         
+  ok   p_physics.py free of 'Survey_'                           
+  ok   p_physics.py free of 'Gebaeude'                          
+  ok   p_physics.py free of 'Baujahr'                           
+  ok   p_physics.py free of 'protocols.csv'                     
+  ok   p_physics.py free of 'meta_data'                         
+  ok   three adapters exist                                     
+
+==============================================================================
+5. THE SAME PHYSICS, THREE SOURCES
+==============================================================================
+  binding                           rows in   modellable  outcome
+  #1 heapo protocols.csv                214          190  the live deliverable
+  #2 synthetic (foreign schema)         120          120  round trip, all exact
+  #3 heapo meta_data.csv               1358            0  REFUSED - 5 required roles absent
+
+==============================================================================
+SUMMARY
+==============================================================================
+  23 checks, 23 passed, 0 FAILED
+
+  Portability is now DEMONSTRATED, not claimed.
+  Still absent: a second REAL dataset with audit-level building data.
+  Synthetic proves the interface; only foreign field data proves the
+  CONSTANTS travel. Say so.

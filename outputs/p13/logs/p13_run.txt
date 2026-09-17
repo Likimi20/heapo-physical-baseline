@@ -1,0 +1,54 @@
+
+==============================================================================
+1. THE MEASURED SLOPE - post-visit days, free heating-season step
+==============================================================================
+  modellable households with any usable day      : 184
+  ... sufficient on POST-VISIT days (>=180/60/60)   : 145   (v1, all days: 172)
+
+==============================================================================
+2. THE PHYSICAL SLOPE - P22 registry, station normal-year HDD
+==============================================================================
+  households with both slopes: 145   without a station normal: 0
+  physics / measured slope, median: 0.832
+  slope excess kWh/yr: median 480   band width median 1663
+
+==============================================================================
+3. THE VISIT QUEUE
+==============================================================================
+  {'INCONCLUSIVE': np.int64(82), 'SLOPE_EXCESS': np.int64(40), 'USES_LESS_THAN_MODELLED': np.int64(23)}
+
+  SLOPE_EXCESS   whole band above physics -> ranked within era on the LOWER bound
+  INCONCLUSIVE   band straddles zero. NO CLAIM.
+  USES_LESS_THAN_MODELLED  whole band below physics
+
+  v1 SLOPE_EXCESS 125 (point, all days)  ->  v2 40 (band, post-visit)   kept 38, new 2
+
+  TOP OF THE QUEUE - lower bound of the slope excess (n=40 ranked):
+  house     era         at least    point    band hi   NOT rec
+  1114677   post2010        3485     5377       6070      1969
+  991118    1976_1990       3053     3985       4459      3141
+  816910    1991_2000       3045     3895       4695      3106
+  881223    1976_1990       2769     4508       5636      3459
+  7374981   post2010        2613     3635       4395       308
+  9880798   1991_2000       2346     2972       3088      2859
+  105807    1976_1990       2173     3076       3737      1306
+  6981151   pre1975         2091     5599       7439      2023
+  120741    1976_1990       2026     2706       3310      1546
+  1121037   2001_2010       1768     2404       2648       201
+  1148611   1991_2000       1761     2345       2839      2860
+  611797    1976_1990       1245     3021       3733      2339
+  THE TWO kWh COLUMNS ARE NEVER SUMMED.
+
+==============================================================================
+4. WHAT THIS QUEUE IS AND IS NOT
+==============================================================================
+  IS      heating the building does not justify, confirmed by a band, on post-visit
+          days, with the builder's figure alongside.
+  IS NOT  a fault verdict - Aaditya's model is not loaded here at all (2026-09-12).
+          The two models meet only in a final target overview, each in its own column.
+  IS NOT  an expected saving - no probability x kWh anywhere.
+  IS NOT  a verdict on a curve OFFSET - that sits in the step column, unjudged.
+
+  written: p13_visit_queue.csv / .parquet
+
+P13 complete.

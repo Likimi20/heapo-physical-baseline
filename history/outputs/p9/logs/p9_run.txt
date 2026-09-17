@@ -1,0 +1,72 @@
+
+==============================================================================
+1. THE PHYSICAL PREDICTION AND THE MEASURED SLOPE
+==============================================================================
+  households with a physical prediction and a measured slope : 172
+  measured slope  kWh/degree-day : median 2.852  IQR 2.091-3.738
+  physical slope  kWh/degree-day : median 2.215  IQR 1.660-2.832
+  physical / measured            : median 0.78
+
+==============================================================================
+2. TEST 1 - RANK. Raw, then AREA-CONTROLLED, which is the real test
+==============================================================================
+  RAW      rho +0.540 [+0.419, +0.648]  n=172
+  AREA alone vs measured slope: rho +0.292 [+0.145, +0.432]
+  -> both quantities scale with house size, so the RAW figure is inflated
+     by area and is NOT the test.
+
+  PER m2  rho +0.536 [+0.422, +0.645]  n=172   <- THE TEST
+  Per m2 the physical prediction varies ONLY through era, renovation and
+  the geometric huellzahl. Nothing else is left for it to borrow from.
+
+==============================================================================
+3. TEST 2 - MAGNITUDE. The sharp one a rank correlation cannot fail
+==============================================================================
+  median heating slope per m2, kWh/(degree-day*m2):
+  era            n    physics   measured meas/phys
+  pre1975       37    0.01964    0.01898     0.97
+  1976_1990     62    0.01271    0.01598     1.26
+  1991_2000     20    0.00988    0.01227     1.24
+  2001_2010     35    0.00852    0.01302     1.53
+  post2010      18    0.00582    0.00760     1.31
+
+  THE PREDICTION: pre-1975 over post-2010, slope per m2
+    physics predicts 3.38x
+    the meter says   2.50x
+    ratio of ratios  0.74
+    measured ratio 95% CI [1.68, 3.45]
+
+  A rank correlation cannot fail this test. A ratio can. If the
+  measured multiple sits far from the predicted one, the U-values are
+  wrong even when the ordering is right.
+
+==============================================================================
+4. TEST 3 - SUB-METER. The cleanest check, if n allows
+==============================================================================
+  households with ANY kwh_hp day in the panel : 72
+  ...clearing 180/60/60 on the HeatPump channel : 63
+  ...AND modellable here                     : 18
+
+  physical vs SUB-METERED slope, per m2: rho +0.342 [-0.133, +0.744] n=18
+  physics / sub-metered slope: median 0.83
+  The sub-meter excludes household baseload, so this is the cleanest
+  comparison available - and the smallest.
+
+==============================================================================
+5. COARSE CROSS-CHECK - the consultant's consumption rating
+==============================================================================
+  coverage: 171 of 172
+  {'normal': np.int64(129), 'rather low': np.int64(26), 'rather high': np.int64(16), nan: np.int64(1)}
+
+  median term_envelope by the consultant's rating:
+    normal         n=129  envelope    1132 kWh/yr   measured slope/m2 0.01523
+    rather high    n=16   envelope    1188 kWh/yr   measured slope/m2 0.01693
+    rather low     n=26   envelope    1179 kWh/yr   measured slope/m2 0.01259
+
+  THIS RATES CONSUMPTION, NOT ENVELOPE. It conflates envelope with
+  settings, occupancy and DHW, and the consultant had seen the bills.
+  A coarse cross-check. NEVER quote it as envelope validation.
+
+  written: p9_envelope_validation.parquet/.csv
+
+P9 complete.
