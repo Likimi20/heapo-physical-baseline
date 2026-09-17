@@ -1896,6 +1896,21 @@ and driven with devtools. **Everything below was invisible to `p28_page_test.py`
    saying Rank. Ordered by Total it now prints `phys_rank_fleet`; on any other sort the
    header changes to `#` because there is no model rank to show.
 
+**THE ORDER RUNS ON A NUMBER THAT WAS NOT IN THE TABLE, for 31 of 158 rows.** Miguel
+asked 2026-09-18 whether view 1 explains how households are differentiated in order. It
+did not, and the gap was worse than wording: option A takes a `KEEP_IN_LIFE` unit
+vintage back out of the ranking value, so `phys_rank_value_lo_kwh_yr` differs from the
+displayed total on **31 of the 158** ranked rows (e.g. 120701 shows 1,306 but ranks on
+1,125). Sorted by Total those rows look mis-sorted with nothing to explain it. Fixed:
+view 1 gained a **What decides the order** section (lower bound not middle, one order
+fleet-wide, healthy units discounted, no ties - all 158 positions distinct), and the
+affected rows carry a **‡** marker with its own note.
+
+**Views renamed on Miguel's suggestion 2026-09-18:** `The one list` -> **Ranking**
+(the old name encoded an internal argument - that we deliberately did not build one
+list per era - which means nothing to a viewer), and `Worked example` -> **Walkthrough**,
+matching what the artefact has always been called.
+
 **Filter defaults, Miguel 2026-09-17: the page opens on what someone can act on.** Off
 by default: `No era recorded`, `No finding`, `Never computed`, `Record the installation
 year`. **`Keep` is deliberately ON** — the recommendation describes the HEAT PUMP, so

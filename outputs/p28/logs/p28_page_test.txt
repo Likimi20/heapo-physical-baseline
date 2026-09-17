@@ -6,9 +6,9 @@ colour tokens the page paints with:
    SERIES2    #d95926                        ok
    AXIS_INK   #8a8a85                        ok
 
-  What the rank means    OK   markdown=14  tables=2  metrics=0  notebook=1  iframe=0  
-  The one list           OK   markdown=7   tables=1  metrics=0  notebook=0  iframe=0  
-  Worked example         OK   markdown=5   tables=0  metrics=0  notebook=0  iframe=0  
+  What the rank means    OK   markdown=16  tables=3  metrics=0  notebook=1  iframe=0  
+  Ranking                OK   markdown=7   tables=1  metrics=0  notebook=0  iframe=0  
+  Walkthrough            OK   markdown=5   tables=0  metrics=0  notebook=0  iframe=0  
 
 the one list, ordered by each column (the sort branches four ways):
    Total       OK   tables=1

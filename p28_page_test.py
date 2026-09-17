@@ -174,7 +174,7 @@ print()
 
 ok = True
 RADIO = "English"
-for view in ["What the rank means", "The one list", "Worked example"]:
+for view in ["What the rank means", "Ranking", "Walkthrough"]:
     try:
         c = run(view)
         flags = []
@@ -196,7 +196,7 @@ print("\nthe one list, ordered by each column (the sort branches four ways):")
 for _rb in ["Total", "House", "Heat pump", "Over code"]:
     try:
         RADIO = _rb
-        c = run("The one list")
+        c = run("Ranking")
         print("   %-11s OK   tables=%d" % (_rb, c["table_html"]))
         if c["table_html"] < 1:
             print("   !! %s rendered no table" % _rb)
