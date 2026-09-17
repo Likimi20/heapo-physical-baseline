@@ -69,7 +69,31 @@ dashboard reads parquet). 97 rows render, zero green elements on the page.
   `delta` renders green with an up arrow, which turned 215,121 kWh/yr of waste into what
   looked like good news.
 
-### What is left
+### Closed 2026-09-18 — and the one thing that is parked
+
+**The physical-baseline side is finished.** Export, tests, notebook, walkthrough, page,
+v1 retirement and every stage's findings report are done and pushed to
+`Likimi20/heapo-physical-baseline`. Opened in a real browser and driven, not just
+executed.
+
+**THE DASHBOARD COMMIT IS PARKED, NOT PENDING.** `765335b` sits **1 ahead of
+`origin/combined-dashboard`** and is deliberately unpushed: Miguel 2026-09-18 — the
+combined dashboard goes up as **one pack once the forecast and stratum models close**, and
+a fresh commit will be made then. **Leave it as a commit; do not unwind it into the
+working tree.** Committed work cannot be swept into somebody else's commit by a stray
+`git add -A`; loose changes can, and were once in this session. Squash or amend it into
+the pack when the time comes.
+
+**Also uncommitted in that repo, and not ours:** `pages/1_Forecast_cycle.py`,
+`f7_walkthrough.py`, `forecast_data/F7_nextday_walkthrough.ipynb` and an 11.6 MB
+`f7_dashboard_nextday.parquet` — the forecast model mid-rewrite. Stage paths explicitly
+in that tree; never `git add -A`.
+
+**Still genuinely open, and not this workstream's to finish:** the **end-section target
+overview**, where this model and the fault model meet, each keeping its own column. This
+model's columns are ready and documented; the overview needs the other two closed first.
+
+### Earlier items, now done
 2. ~~The v1 export~~ **Retired 2026-09-18.** `physical_baseline_v1.*` and the old
    `SCHEMA.md` are deleted; the export directory holds v2 only. The gate stayed green,
    so nothing depended on them. `p11_export.py`'s `PREVIOUS_VERSION` constant still
