@@ -1874,6 +1874,50 @@ instruction ("render the `.md`; the `.html` is for the printed report"); the exi
 `f6_walkthrough.py` pattern is what caught it. Spanish has no `.md`, so it alone renders
 its self-contained HTML in a frame, labelled as the print version.
 
+### RENDERED IN A BROWSER 2026-09-17, and it found three things no test had
+
+Streamlit installed into `.venv` (it was in no environment), served on 8501, page opened
+and driven with devtools. **Everything below was invisible to `p28_page_test.py`.**
+
+1. **`st.metric` painted the headline numbers GREEN with up arrows.** "↑ 215,121 kWh/yr
+   at least" rendered as a green positive-delta badge — 215 MWh of wasted electricity
+   displayed as good news, on the page whose first rule is that nothing may read as
+   green. The colour came from the WIDGET, not from any token, which is exactly why the
+   test missed it: it checked `theme.POS` and friends and they were all fine.
+   **`st.metric` is now banned and the test raises if the page calls it** (or
+   `col.metric`); the tiles are hand-built HTML.
+2. **The table was squished, headers overlapping.** `.num` sets `white-space:nowrap`,
+   which `th.num` inherited, so "House, at least (kWh/yr)" could not wrap and ran over
+   its neighbour. The v1 page had a `th.num { white-space: normal }` rule for exactly
+   this and I dropped it when writing the new CSS. Restored, plus shorter cell labels
+   (`Act`, `Record year`) with the full wording kept on the filter chips.
+3. **The "Rank" column showed position-in-view, not the model's rank.** Under a filter,
+   numbering 1..n relabels a household sitting 20th in the fleet as "5" beneath a header
+   saying Rank. Ordered by Total it now prints `phys_rank_fleet`; on any other sort the
+   header changes to `#` because there is no model rank to show.
+
+**Filter defaults, Miguel 2026-09-17: the page opens on what someone can act on.** Off
+by default: `No era recorded`, `No finding`, `Never computed`, `Record the installation
+year`. **`Keep` is deliberately ON** — the recommendation describes the HEAT PUMP, so
+switching it off also hid houses with bad fabric and a healthy unit, which is most of the
+energy. Measured before and after: with Keep off the default showed **33** households and
+hid **150,263 of 197,851 kWh/yr** of house-side excess including ranks 2-7; with Keep on
+it shows **97** and hides **92,094** (all `RECORD_INSTALL_YEAR`, rank 2 among them).
+**Nothing is hidden silently** — the page always prints how many households the filters
+are holding back and which filter is doing it.
+
+**`Order the list by`**: Total (default) / House / Heat pump / Over code, with units in
+every header (`House (kWh/yr)`, `Over code (%)`) and `▾` on the active column. Only
+Total is the model's own order, because the export ranks on
+`phys_rank_value_lo_kwh_yr` — option A drops a `KEEP_IN_LIFE` unit's vintage — so the
+other three say so in a note and drop the word "Rank".
+
+**Two factual errors fixed in the NOTEBOOK, which the dashboard embeds:** it still
+called `INCOMPLETE_AUDIT` "building data missing — fixable" (true for 24 of 42, wrong for
+the other 18), and it printed the unit recommendation over all 214 audited households
+next to a list covering the scored 172 — the same column with two unlabelled
+populations. Both corrected and the notebook regenerated.
+
 **VERIFIED AGAINST THE EXPORT, NOT RENDERED.** 158 + 56 = 214 none dropped; 0 ranked
 rows missing a unit recommendation; 0 unranked rows missing a reason or a fix; 3/3
 figures inline with 0 unresolved refs; both pages byte-compile. **Streamlit is installed

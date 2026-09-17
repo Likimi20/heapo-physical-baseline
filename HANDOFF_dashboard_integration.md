@@ -49,11 +49,27 @@ used them). **Run it once before demonstrating it.**
 * **The bundled snapshot is refreshed to v2**, v1 retained for the legacy page. Both
   resolution roots verified to satisfy every path the page opens, so a fresh clone runs.
 
-### What is left
+### The page, as it now behaves
 
-1. **Open it in a browser once.** The only step no test here can cover — layout,
-   and whether the installed Streamlit has every API called. Streamlit is installed in
-   **no** environment in this repo; `requirements.txt` is the dashboard's own.
+**Rendered and driven in a browser on 2026-09-17** (Streamlit 1.64 installed into
+`.venv`, which had nothing; `pyarrow` too, which `requirements.txt` omits although the
+dashboard reads parquet). 97 rows render, zero green elements on the page.
+
+* **Three views:** what the rank means · the one list · the worked example.
+* **`Order the list by`** Total / House / Heat pump / Over code. **Only Total is the
+  model's order** (the export ranks on `phys_rank_value_lo_kwh_yr`, which drops a
+  `KEEP_IN_LIFE` unit's vintage), so the others show `#` instead of `Rank` and say so.
+* **Filters that start OFF:** `No era recorded`, `No finding`, `Never computed`,
+  `Record the installation year`. `Keep` starts **ON** on purpose — it describes the heat
+  pump, so switching it off also hid houses with bad fabric and a healthy unit.
+* **The page always states how many households the filters are hiding**, and which
+  filter. Default view: 97 shown, 117 hidden, 92,094 kWh/yr of house-side excess among
+  the hidden (all `RECORD_INSTALL_YEAR`, rank 2 included).
+* **`st.metric` is banned on this page** and `p28_page_test.py` fails if it appears: its
+  `delta` renders green with an up arrow, which turned 215,121 kWh/yr of waste into what
+  looked like good news.
+
+### What is left
 2. **The v1 export** still sits in the model tree under its own one-cycle rule. Delete
    `outputs/export/physical_baseline_v1.*` and `SCHEMA.md` whenever you like —
    `p11_export.py`'s `PREVIOUS_VERSION` constant is the only code that names them, and

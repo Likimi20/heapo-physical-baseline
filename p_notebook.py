@@ -186,7 +186,12 @@ if M is not None:
                       "n": M.groupby("grp").size()}).reindex(g)
     display(t.round(2))
 if R is not None:
-    display(R.unit_recommendation.value_counts().rename("households").to_frame())"""),
+    display(R.unit_recommendation.value_counts()
+            .rename("ALL audited households").to_frame())
+    print("these %d are every audited household; the dashboard list covers only the"
+          % len(R))
+    print("ones that were actually scored, so its counts are smaller - different")
+    print("populations, not a disagreement.")"""),
 
 md("""## P10 — does the method travel?
 
@@ -209,7 +214,7 @@ at or below code, and not one is. So the model confirms an excess, never its abs
 | `HIGH_EXCESS` | confirmed excess, worst 25% **of the fleet** |
 | `EXCESS_CONFIRMED` | confirmed excess, below that cut |
 | `INCONCLUSIVE` | computed, band straddles zero — **no claim** |
-| `INCOMPLETE_AUDIT` | not computed, building data missing — **fixable** |
+| `INCOMPLETE_AUDIT` | not computed. **A MIXED SET** — 21 missing building data (an auditor can fix that), 18 with too short a meter record (no visit helps), 3 both. Read `phys_no_result_fix` per household, never one blanket reason |
 
 **Ranked fleet-wide on the lower bound** (Miguel 2026-09-12), with era as a filter and
 `phys_rank_in_era` kept. Declared with it: per m² the physics under-predicts newer eras

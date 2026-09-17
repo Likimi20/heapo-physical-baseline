@@ -68,6 +68,7 @@ def check_no_green_tokens():
 class _Col:
     def metric(self, *a, **k):
         CALLS["metric"] += 1
+        raise AssertionError("col.metric is banned for the same reason as st.metric")
 
 
 class _Sidebar:
@@ -106,7 +107,17 @@ def _mk_streamlit():
     st.radio = lambda label, options, **k: (RADIO if RADIO in options else options[0])
     st.pills = lambda label, options, **k: list(k.get("default", options))
     st.columns = lambda n, **k: tuple(_Col() for _ in range(n if isinstance(n, int) else len(n)))
-    st.metric = lambda *a, **k: CALLS.__setitem__("metric", CALLS["metric"] + 1)
+    # st.metric renders its `delta` as a GREEN badge with an up arrow. On a page whose
+    # numbers are all "wasted electricity", green reads as good news, so the page must
+    # not use it at all - caught only by looking at the rendered page, because the
+    # colour came from the widget and not from any token this test checks.
+    def metric(*a, **k):
+        CALLS["metric"] += 1
+        raise AssertionError(
+            "st.metric is banned on this page: its delta renders green with an up "
+            "arrow. Build the tile in HTML instead.")
+
+    st.metric = metric
     st.caption = lambda *a, **k: CALLS.__setitem__("caption", CALLS["caption"] + 1)
     st.error = lambda *a, **k: CALLS.__setitem__("error", CALLS["error"] + 1)
     st.info = lambda *a, **k: CALLS.__setitem__("info", CALLS["info"] + 1)
@@ -180,6 +191,48 @@ for view in ["What the rank means", "The one list", "Worked example"]:
         print("  %-22s FAILED  %s: %s" % (view, type(e).__name__, e))
         import traceback
         traceback.print_exc()
+
+print("\nthe one list, ordered by each column (the sort branches four ways):")
+for _rb in ["Total", "House", "Heat pump", "Over code"]:
+    try:
+        RADIO = _rb
+        c = run("The one list")
+        print("   %-11s OK   tables=%d" % (_rb, c["table_html"]))
+        if c["table_html"] < 1:
+            print("   !! %s rendered no table" % _rb)
+            ok = False
+    except Exception as e:
+        ok = False
+        print("   %-11s FAILED  %s: %s" % (_rb, type(e).__name__, e))
+RADIO = "Total"
+
+# Every filter switched back on must bring the whole set back, including the two
+# no-result states that start hidden.
+print("\nwith every filter on, all 214 households are reachable:")
+try:
+    import importlib
+
+    src = (DASH / "pages" / "3_Physical_baseline.py").read_text(encoding="utf-8")
+    import pandas as _pd
+    _exp = (ROOT / "PHYSICAL-BASELINE MODEL" / "outputs" / "export"
+            / "physical_baseline_v2.parquet")
+    _d = _pd.read_parquet(_exp)
+    _ranked = int(_d.phys_rank_fleet.notna().sum())
+    _open = int(_d.phys_rank_fleet.isna().sum())
+    print("   ranked %d + not ranked %d = %d (export has %d)"
+          % (_ranked, _open, _ranked + _open, len(_d)))
+    if _ranked + _open != len(_d):
+        print("   !! the two tables do not cover the export")
+        ok = False
+    # the options the page starts with OFF must still exist as options
+    for _need in ("INCONCLUSIVE", "INCOMPLETE_AUDIT"):
+        if _need not in set(_d.phys_status):
+            print("   !! %s is not in the export, so it cannot be filtered back on"
+                  % _need)
+            ok = False
+except Exception as e:
+    ok = False
+    print("   FAILED  %s: %s" % (type(e).__name__, e))
 
 print("\n%s" % ("ALL VIEWS EXECUTED" if ok else "FAILURES ABOVE"))
 sys.stdout.flush()
